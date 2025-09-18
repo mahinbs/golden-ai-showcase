@@ -78,7 +78,7 @@ const RoadmapSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br from-background via-background to-secondary/20 relative overflow-hidden">
+    <section className="py-24 bg-black relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,215,0,0.03),transparent_50%)]"></div>
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent to-transparent"></div>

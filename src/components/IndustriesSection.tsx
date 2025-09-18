@@ -87,7 +87,7 @@ const IndustriesSection = () => {
   ];
 
   return (
-    <section id="industries" className="py-24 bg-secondary/30">
+    <section id="industries" className="py-24 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
