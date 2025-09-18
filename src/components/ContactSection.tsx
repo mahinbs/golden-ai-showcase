@@ -142,15 +142,37 @@ const ContactSection = () => {
 
               <div>
                 <label className="block text-sm font-medium text-muted-foreground mb-2">
-                  Project Type
+                  Services Needed *
+                </label>
+                <select 
+                  className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-accent focus:border-accent transition-colors duration-300 bg-background"
+                  required
+                >
+                  <option value="">Select a service you need</option>
+                  <option value="machine-learning">Machine Learning</option>
+                  <option value="ai-chatbots">AI Chatbots & Assistants</option>
+                  <option value="data-intelligence">Data Intelligence</option>
+                  <option value="process-automation">Process Automation</option>
+                  <option value="ai-integration">AI Integration</option>
+                  <option value="business-intelligence">Business Intelligence</option>
+                  <option value="custom-solution">Custom AI Solution</option>
+                  <option value="consultation">AI Consultation</option>
+                  <option value="multiple-services">Multiple Services</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-muted-foreground mb-2">
+                  Budget Range
                 </label>
                 <select className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-accent focus:border-accent transition-colors duration-300 bg-background">
-                  <option>Select a service</option>
-                  <option>Machine Learning</option>
-                  <option>AI Chatbots</option>
-                  <option>Data Intelligence</option>
-                  <option>Process Automation</option>
-                  <option>Custom AI Solution</option>
+                  <option value="">Select budget range</option>
+                  <option value="under-10k">Under $10,000</option>
+                  <option value="10k-25k">$10,000 - $25,000</option>
+                  <option value="25k-50k">$25,000 - $50,000</option>
+                  <option value="50k-100k">$50,000 - $100,000</option>
+                  <option value="100k-plus">$100,000+</option>
+                  <option value="discuss">Let's discuss</option>
                 </select>
               </div>
 
@@ -161,7 +183,7 @@ const ContactSection = () => {
                 <textarea
                   rows={4}
                   className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-accent focus:border-accent transition-colors duration-300 bg-background resize-none"
-                  placeholder="Tell us about your project requirements..."
+                  placeholder="Tell us about your project requirements, timeline, and any specific goals..."
                 ></textarea>
               </div>
 
