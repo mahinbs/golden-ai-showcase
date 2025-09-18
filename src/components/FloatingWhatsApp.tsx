@@ -28,18 +28,18 @@ const FloatingWhatsApp = () => {
       {/* WhatsApp Button */}
       <button
         onClick={handleWhatsAppClick}
-        className="group relative bg-green-500 hover:bg-green-600 text-white p-2.5 sm:p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 animate-pulse"
+        className="group relative p-0 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 animate-pulse"
         aria-label="Chat with us on WhatsApp"
       >
         {/* WhatsApp Logo */}
         <img 
-          src="https://res.cloudinary.com/dknafpppp/image/upload/v1758191674/whatsapp-vector-logo-icon-logotype-vector-social-media_901408-406_szipyq.avif"
+          src="https://res.cloudinary.com/dknafpppp/image/upload/v1758192024/3d-icon-social-media-app_23-2150049563_zio3jy.avif"
           alt="WhatsApp Logo"
-          className="w-6 h-6 sm:w-8 sm:h-8 object-contain"
+          className="w-12 h-12 sm:w-16 sm:h-16 object-contain rounded-full"
         />
         
         {/* Ripple Effect */}
-        <div className="absolute inset-0 rounded-full bg-green-400 opacity-0 group-hover:opacity-30 group-hover:scale-150 transition-all duration-500"></div>
+        <div className="absolute inset-0 rounded-full bg-green-400 opacity-0 group-hover:opacity-20 group-hover:scale-150 transition-all duration-500"></div>
         
         {/* Tooltip - Hidden on mobile */}
         <div className="hidden sm:block absolute right-full mr-3 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white text-sm px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
