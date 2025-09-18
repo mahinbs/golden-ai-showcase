@@ -29,24 +29,24 @@ const ContactSection = () => {
               for your organization. Get in touch for a free consultation.
             </p>
 
-            <div className="space-y-6 mb-8">
-              <div className="flex items-center group">
-                <div className="p-3 bg-accent rounded-lg group-hover:bg-accent/90 transition-colors duration-300">
-                  <Mail className="w-6 h-6 text-accent-foreground" />
+            <div className="space-y-8 mb-8">
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Mail className="w-6 h-6 text-white" />
                 </div>
-                <div className="ml-4">
-                  <p className="font-semibold">Email us</p>
-                  <p className="text-primary-foreground/80">support@specslo.com</p>
+                <div>
+                  <p className="font-bold text-white text-lg">Email us</p>
+                  <p className="text-white">support@specslo.com</p>
                 </div>
               </div>
 
-              <div className="flex items-center group">
-                <div className="p-3 bg-accent rounded-lg group-hover:bg-accent/90 transition-colors duration-300">
-                  <Phone className="w-6 h-6 text-accent-foreground" />
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Phone className="w-6 h-6 text-white" />
                 </div>
-                <div className="ml-4">
-                  <p className="font-semibold">Call us</p>
-                  <p className="text-primary-foreground/80">+91-7597406130</p>
+                <div>
+                  <p className="font-bold text-white text-lg">Call us</p>
+                  <p className="text-white">+91-7597406130</p>
                 </div>
               </div>
 
@@ -54,24 +54,24 @@ const ContactSection = () => {
                 href="https://api.whatsapp.com/send/?phone=917597406130&text&type=phone_number&app_absent=0" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center group hover:bg-accent/10 rounded-lg p-2 transition-colors duration-300"
+                className="flex items-start space-x-4 hover:opacity-80 transition-opacity duration-300"
               >
-                <div className="p-3 bg-accent rounded-lg group-hover:bg-accent/90 transition-colors duration-300">
-                  <MessageCircle className="w-6 h-6 text-accent-foreground" />
+                <div className="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <MessageCircle className="w-6 h-6 text-white" />
                 </div>
-                <div className="ml-4">
-                  <p className="font-semibold">WhatsApp us</p>
-                  <p className="text-primary-foreground/80">Quick chat support</p>
+                <div>
+                  <p className="font-bold text-white text-lg">WhatsApp us</p>
+                  <p className="text-white">Quick chat support</p>
                 </div>
               </a>
 
-              <div className="flex items-center group">
-                <div className="p-3 bg-accent rounded-lg group-hover:bg-accent/90 transition-colors duration-300">
-                  <MapPin className="w-6 h-6 text-accent-foreground" />
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-6 h-6 text-white" />
                 </div>
-                <div className="ml-4">
-                  <p className="font-semibold">Visit us</p>
-                  <p className="text-primary-foreground/80">Jupiter Plaza, Sector-4, Udaipur, India</p>
+                <div>
+                  <p className="font-bold text-white text-lg">Visit us</p>
+                  <p className="text-white">Jupiter Plaza, Sector-4, Udaipur, India</p>
                 </div>
               </div>
             </div>

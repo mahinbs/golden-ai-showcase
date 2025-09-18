@@ -56,14 +56,34 @@ const ServicesSection = () => {
   return (
     <section id="services" className="py-24 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            AI Development <span className="text-accent">Services</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We offer comprehensive AI solutions tailored to your business needs, 
-            from concept to deployment and beyond.
-          </p>
+        <div className="mb-16 animate-fade-in">
+          {/* Top horizontal line */}
+          <div className="w-full h-0.5 bg-black mb-6"></div>
+          
+          {/* Main headline with yellow vertical bar */}
+          <div className="relative">
+            <div className="absolute left-0 top-0 w-2 h-full bg-yellow-400"></div>
+            <div className="pl-8">
+              <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight">
+                <div>Specs</div>
+                <div>Inspired</div>
+                <div>Services</div>
+              </h2>
+            </div>
+          </div>
+          
+          {/* Bottom horizontal line */}
+          <div className="w-full h-0.5 bg-black mt-6 mb-8"></div>
+          
+          {/* Description */}
+          <div className="text-left">
+            <p className="text-lg md:text-xl text-white leading-relaxed">
+              We don't believe in one-size-fits-all.
+            </p>
+            <p className="text-lg md:text-xl text-white leading-relaxed">
+              Your specs shape every service we offer
+            </p>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

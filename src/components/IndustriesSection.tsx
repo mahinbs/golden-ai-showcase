@@ -89,13 +89,20 @@ const IndustriesSection = () => {
   return (
     <section id="industries" className="py-24 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Industries We <span className="text-accent">Serve</span>
+        <div className="mb-16 animate-fade-in">
+          {/* Main headline */}
+          <h2 className="text-4xl md:text-6xl font-bold text-center mb-6">
+            <span className="text-yellow-400">Specs</span>{" "}
+            <span className="text-white">That Fit Every</span>{" "}
+            <span className="text-yellow-400">Industry</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Our AI solutions span across multiple industries, delivering 
-            tailored innovations that drive measurable results.
+          
+          {/* Yellow separator line */}
+          <div className="w-24 h-1 bg-yellow-400 mx-auto mb-8"></div>
+          
+          {/* Description */}
+          <p className="text-lg md:text-xl text-white text-left max-w-4xl">
+            We decode your specs and build tech that aligns with your industry's unique demands.
           </p>
         </div>
 
@@ -131,7 +138,7 @@ const IndustriesSection = () => {
 
                 <div className="space-y-2 flex flex-col items-center">
                   {industry.use_cases.map((useCase, useCaseIndex) => (
-                    <div key={useCaseIndex} className="text-xs text-background bg-accent/20 backdrop-blur-md px-3 py-1 rounded-full border border-accent/30 font-medium text-center hover:bg-accent/30 hover:border-accent/50 transition-all duration-300 shadow-lg shadow-accent/10">
+                    <div key={useCaseIndex} className="text-xs text-white bg-accent/30 backdrop-blur-md px-3 py-1 rounded-full border border-accent/50 font-medium text-center hover:bg-accent/40 hover:border-accent/60 transition-all duration-300 shadow-lg shadow-accent/20">
                       {useCase}
                     </div>
                   ))}

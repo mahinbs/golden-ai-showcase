@@ -32,26 +32,28 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in">
-          {/* Animated Badge */}
-          <div className="inline-block mb-6 animate-slide-up">
-            <div className="flex items-center space-x-2 bg-accent/10 backdrop-blur-md border border-accent/20 rounded-full px-4 py-2 text-sm font-medium text-accent">
-              <Sparkles className="w-4 h-4 animate-spin" style={{ animationDuration: '3s' }} />
-              <span>AI-Powered Solutions</span>
-              <Zap className="w-4 h-4 animate-pulse" />
-            </div>
-          </div>
-
-          {/* Animated Title */}
-          <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight animate-slide-up">
-            Transform Your Business
-            <br />
-            with <span className="text-transparent bg-gradient-to-r from-accent via-accent/80 to-accent bg-clip-text animate-gradient-x">AI Innovation</span>
+          {/* Main Headline */}
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight animate-slide-up">
+            You've Got <span className="bg-yellow-400 text-black px-4 py-2 rounded-lg">Specs</span>
           </h1>
           
-          {/* Animated Subtitle */}
-          <p className="text-xl md:text-2xl text-foreground/90 mb-8 max-w-3xl mx-auto leading-relaxed animate-slide-up" style={{ animationDelay: '0.2s' }}>
-            We build cutting-edge AI solutions that drive growth, automate processes, 
-            and unlock new possibilities for forward-thinking companies.
+          {/* Sub-headline */}
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+            But No One Gets It Right ?
+          </h2>
+          
+          {/* Call to Action */}
+          <div className="text-3xl md:text-4xl font-bold text-yellow-400 mb-6 animate-slide-up" style={{ animationDelay: '0.4s' }}>
+            We'll Build What Matters.
+          </div>
+          
+          {/* Yellow Separator Line */}
+          <div className="w-24 h-1 bg-yellow-400 mx-auto mb-8 animate-slide-up" style={{ animationDelay: '0.6s' }}></div>
+          
+          {/* Description */}
+          <p className="text-lg md:text-xl text-white mb-8 max-w-4xl mx-auto leading-relaxed text-left animate-slide-up" style={{ animationDelay: '0.8s' }}>
+            At Specslo, we turn your specs into scalable digital products that solve real problems. 
+            We build AI software, apps, and websites that help you launch faster and lead your market.
           </p>
           
           {/* Enhanced Buttons */}
