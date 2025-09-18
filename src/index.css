@@ -6,13 +6,13 @@
 
 @layer base {
   :root {
-    /* Core Brand Colors */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 8%;
+    /* Core Brand Colors - Dark Theme */
+    --background: 0 0% 6%;
+    --foreground: 0 0% 95%;
     
-    /* Card Colors */
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 8%;
+    /* Card Colors - Dark Theme */
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 95%;
     
     /* Interactive Elements */
     --primary: 0 0% 8%;
@@ -24,16 +24,16 @@
     --accent-muted: 51 100% 90%;
     
     /* Secondary Elements */
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 8%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 95%;
     
     /* Muted Elements */
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 70%;
     
     /* Borders & Inputs */
-    --border: 0 0% 90%;
-    --input: 0 0% 96%;
+    --border: 0 0% 15%;
+    --input: 0 0% 12%;
     --ring: 51 100% 50%;
     
     /* Gradient System */

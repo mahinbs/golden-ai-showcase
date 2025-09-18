@@ -1,5 +1,11 @@
 import { Brain, Bot, Database, Zap, Code, BarChart3 } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import mlServiceImg from "@/assets/ml-service.jpg";
+import chatbotServiceImg from "@/assets/chatbot-service.jpg";
+import dataIntelligenceServiceImg from "@/assets/data-intelligence-service.jpg";
+import automationServiceImg from "@/assets/automation-service.jpg";
+import integrationServiceImg from "@/assets/integration-service.jpg";
+import biServiceImg from "@/assets/bi-service.jpg";
 
 const ServicesSection = () => {
   const services = [
@@ -7,37 +13,43 @@ const ServicesSection = () => {
       icon: <Brain className="w-8 h-8" />,
       title: "Machine Learning",
       description: "Custom ML models that learn from your data to predict outcomes and automate decision-making processes.",
-      features: ["Predictive Analytics", "Pattern Recognition", "Automated Classification"]
+      features: ["Predictive Analytics", "Pattern Recognition", "Automated Classification"],
+      image: mlServiceImg
     },
     {
       icon: <Bot className="w-8 h-8" />,
       title: "AI Chatbots & Assistants",
       description: "Intelligent conversational AI that enhances customer experience and streamlines support operations.",
-      features: ["Natural Language Processing", "24/7 Support", "Multi-platform Integration"]
+      features: ["Natural Language Processing", "24/7 Support", "Multi-platform Integration"],
+      image: chatbotServiceImg
     },
     {
       icon: <Database className="w-8 h-8" />,
       title: "Data Intelligence",
       description: "Transform raw data into actionable insights with advanced analytics and visualization tools.",
-      features: ["Real-time Analytics", "Custom Dashboards", "Automated Reporting"]
+      features: ["Real-time Analytics", "Custom Dashboards", "Automated Reporting"],
+      image: dataIntelligenceServiceImg
     },
     {
       icon: <Zap className="w-8 h-8" />,
       title: "Process Automation",
       description: "Streamline workflows and eliminate repetitive tasks with intelligent automation solutions.",
-      features: ["Workflow Optimization", "Task Automation", "Integration APIs"]
+      features: ["Workflow Optimization", "Task Automation", "Integration APIs"],
+      image: automationServiceImg
     },
     {
       icon: <Code className="w-8 h-8" />,
       title: "AI Integration",
       description: "Seamlessly integrate AI capabilities into existing systems and applications.",
-      features: ["API Development", "System Integration", "Legacy Modernization"]
+      features: ["API Development", "System Integration", "Legacy Modernization"],
+      image: integrationServiceImg
     },
     {
       icon: <BarChart3 className="w-8 h-8" />,
       title: "Business Intelligence",
       description: "Advanced BI solutions that provide deep insights and drive strategic decision-making.",
-      features: ["Performance Metrics", "Trend Analysis", "Predictive Forecasting"]
+      features: ["Performance Metrics", "Trend Analysis", "Predictive Forecasting"],
+      image: biServiceImg
     }
   ];
 
@@ -58,35 +70,46 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <Card 
               key={index}
-              className="p-8 hover:shadow-card transition-all duration-300 group cursor-pointer animate-slide-up border-border hover:border-accent/20"
+              className="overflow-hidden hover:shadow-yellow transition-all duration-300 group cursor-pointer animate-slide-up border-border hover:border-accent/30 bg-card"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="flex items-center mb-6">
-                <div className="p-3 bg-accent/10 rounded-lg group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-300">
-                  {service.icon}
+              <div className="relative h-48 overflow-hidden">
+                <img 
+                  src={service.image} 
+                  alt={service.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-card/90 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 flex items-center">
+                  <div className="p-3 bg-accent/90 rounded-lg group-hover:bg-accent transition-all duration-300">
+                    {service.icon}
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-foreground ml-4 group-hover:text-accent transition-colors duration-300">
-                  {service.title}
-                </h3>
               </div>
               
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                {service.description}
-              </p>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-accent transition-colors duration-300">
+                  {service.title}
+                </h3>
+                
+                <p className="text-muted-foreground mb-4 leading-relaxed text-sm">
+                  {service.description}
+                </p>
 
-              <div className="space-y-2">
-                {service.features.map((feature, featureIndex) => (
-                  <div key={featureIndex} className="flex items-center text-sm text-muted-foreground">
-                    <div className="w-2 h-2 bg-accent rounded-full mr-3"></div>
-                    {feature}
-                  </div>
-                ))}
-              </div>
+                <div className="space-y-2 mb-6">
+                  {service.features.map((feature, featureIndex) => (
+                    <div key={featureIndex} className="flex items-center text-sm text-muted-foreground">
+                      <div className="w-2 h-2 bg-accent rounded-full mr-3 flex-shrink-0"></div>
+                      {feature}
+                    </div>
+                  ))}
+                </div>
 
-              <div className="mt-6 pt-6 border-t border-border group-hover:border-accent/20 transition-colors duration-300">
-                <span className="text-accent font-semibold group-hover:underline">
-                  Learn More →
-                </span>
+                <div className="pt-4 border-t border-border group-hover:border-accent/30 transition-colors duration-300">
+                  <span className="text-accent font-semibold group-hover:underline text-sm">
+                    Learn More →
+                  </span>
+                </div>
               </div>
             </Card>
           ))}
