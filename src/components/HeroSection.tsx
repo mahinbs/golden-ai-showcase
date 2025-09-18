@@ -26,16 +26,8 @@ const HeroSection = () => {
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
       </div>
 
-      {/* Background Image with Enhanced Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src={heroImage} 
-          alt="AI Technology Background" 
-          className="w-full h-full object-cover animate-zoom-in"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/70 to-background/90"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent"></div>
-      </div>
+      {/* Completely Black Background */}
+      <div className="absolute inset-0 z-0 bg-black"></div>
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
