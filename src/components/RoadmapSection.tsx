@@ -86,16 +86,16 @@ const RoadmapSection = () => {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Header */}
-        <div className="text-center mb-20 animate-fade-in">
+        <div className="text-center mb-16 lg:mb-20 animate-fade-in">
           <div className="inline-block mb-4">
             <span className="text-sm font-semibold text-accent bg-accent/10 px-4 py-2 rounded-full border border-accent/20">
               Our Process
             </span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6 bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text">
             How We Bring <span className="text-transparent bg-gradient-to-r from-accent to-accent/80 bg-clip-text">Specs to Life</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Our proven process ensures your vision becomes reality through 
             systematic planning, execution, and continuous support.
           </p>
@@ -103,37 +103,52 @@ const RoadmapSection = () => {
 
         {/* Timeline */}
         <div className="relative">
-          {/* Central Line with Gradient */}
+          {/* Desktop Central Line with Gradient */}
           <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full hidden lg:block">
             <div className="w-full h-full bg-gradient-to-b from-accent/20 via-accent to-accent/20 rounded-full"></div>
             <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-accent rounded-full animate-pulse"></div>
             <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-accent rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
           </div>
           
+          {/* Mobile Timeline Line */}
+          <div className="absolute left-4 sm:left-8 top-0 w-0.5 h-full bg-gradient-to-b from-accent/20 via-accent to-accent/20 lg:hidden"></div>
+          
           {/* Steps */}
-          <div className="space-y-12">
+          <div className="space-y-8 lg:space-y-12">
             {steps.map((step, index) => (
               <div 
                 key={step.id}
-                className="relative flex items-center justify-center"
+                className="relative flex flex-col lg:flex-row lg:items-center lg:justify-center"
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
+                {/* Mobile Icon */}
+                <div className="flex items-center mb-4 lg:hidden">
+                  <div className="relative z-10 w-12 h-12 bg-gradient-to-br from-accent via-accent to-accent/80 rounded-full flex items-center justify-center text-background shadow-lg">
+                    {step.icon}
+                  </div>
+                  <div className="ml-4">
+                    <div className="w-8 h-8 bg-gradient-to-br from-accent to-accent/80 rounded-full flex items-center justify-center text-background font-bold text-sm shadow-md">
+                      {step.id}
+                    </div>
+                  </div>
+                </div>
+
                 {/* Content Card */}
-                <div className={`w-full lg:w-5/12 ${step.side === 'left' ? 'lg:pr-8' : 'lg:pl-8'}`}>
+                <div className="w-full lg:w-5/12 lg:mx-auto">
                   <div className="group relative">
                     {/* Card Glow Effect */}
                     <div className="absolute -inset-0.5 bg-gradient-to-r from-accent/20 via-accent/10 to-accent/20 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     
                     {/* Main Card */}
-                    <div className="relative bg-background/95 backdrop-blur-sm border border-accent/20 rounded-lg p-6 hover:border-accent/40 transition-all duration-500 hover:shadow-xl hover:shadow-accent/10 group-hover:scale-[1.01]">
+                    <div className="relative bg-background/95 backdrop-blur-sm border border-accent/20 rounded-lg p-4 sm:p-6 hover:border-accent/40 transition-all duration-500 hover:shadow-xl hover:shadow-accent/10 group-hover:scale-[1.01]">
                       {/* Card Header */}
                       <div className="flex items-start justify-between mb-4">
                         <div className="flex items-center space-x-3">
-                          <div className="w-8 h-8 bg-gradient-to-br from-accent to-accent/80 rounded-lg flex items-center justify-center text-background shadow-md group-hover:scale-105 transition-transform duration-300">
+                          <div className="w-8 h-8 bg-gradient-to-br from-accent to-accent/80 rounded-lg flex items-center justify-center text-background shadow-md group-hover:scale-105 transition-transform duration-300 hidden lg:flex">
                             {step.icon}
                           </div>
                           <div>
-                            <h3 className="text-lg font-bold bg-gradient-to-r from-accent to-accent/80 bg-clip-text text-transparent group-hover:from-accent group-hover:to-accent transition-all duration-300">
+                            <h3 className="text-lg lg:text-lg font-bold bg-gradient-to-r from-accent to-accent/80 bg-clip-text text-transparent group-hover:from-accent group-hover:to-accent transition-all duration-300">
                               {step.title}
                             </h3>
                             <div className="w-6 h-0.5 bg-gradient-to-r from-accent to-transparent mt-1"></div>
@@ -141,7 +156,7 @@ const RoadmapSection = () => {
                         </div>
                         
                         {/* Step Number */}
-                        <div className="relative">
+                        <div className="relative hidden lg:block">
                           <div className="w-7 h-7 bg-gradient-to-br from-accent to-accent/80 rounded-full flex items-center justify-center text-background font-bold text-sm shadow-md group-hover:scale-105 transition-transform duration-300">
                             {step.id}
                           </div>
@@ -150,7 +165,7 @@ const RoadmapSection = () => {
                       </div>
                       
                       {/* Description */}
-                      <p className="text-muted-foreground leading-relaxed text-sm group-hover:text-foreground/90 transition-colors duration-300">
+                      <p className="text-muted-foreground leading-relaxed text-sm lg:text-sm group-hover:text-foreground/90 transition-colors duration-300">
                         {step.description}
                       </p>
                       
@@ -173,21 +188,17 @@ const RoadmapSection = () => {
                     </div>
                   </div>
                 </div>
-
-
-                {/* Mobile Spacer */}
-                <div className="lg:hidden w-full"></div>
               </div>
             ))}
           </div>
         </div>
 
         {/* Enhanced Call to Action */}
-        <div className="text-center mt-20 animate-fade-in">
+        <div className="text-center mt-16 lg:mt-20 animate-fade-in">
           <div className="relative inline-block">
             <div className="absolute -inset-1 bg-gradient-to-r from-accent/20 via-accent/10 to-accent/20 rounded-2xl blur opacity-75"></div>
-            <div className="relative bg-background/95 backdrop-blur-sm border border-accent/20 rounded-2xl p-8">
-              <p className="text-muted-foreground mb-6 text-lg">
+            <div className="relative bg-background/95 backdrop-blur-sm border border-accent/20 rounded-2xl p-6 sm:p-8">
+              <p className="text-muted-foreground mb-6 text-base sm:text-lg">
                 Ready to start your project? Let's discuss your requirements and create something amazing together.
               </p>
               <button 
@@ -197,7 +208,7 @@ const RoadmapSection = () => {
                     element.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}
-                className="group relative bg-gradient-to-r from-accent to-accent/80 text-accent-foreground px-8 py-4 rounded-xl font-semibold text-lg hover:from-accent/90 hover:to-accent/70 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-accent/25"
+                className="group relative bg-gradient-to-r from-accent to-accent/80 text-accent-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:from-accent/90 hover:to-accent/70 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-accent/25"
               >
                 <span className="relative z-10">Start Your Project</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-accent/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
