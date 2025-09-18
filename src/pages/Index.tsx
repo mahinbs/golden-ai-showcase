@@ -1,11 +1,14 @@
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
+import RoadmapSection from "@/components/RoadmapSection";
 import IndustriesSection from "@/components/IndustriesSection";
 import PortfolioSection from "@/components/PortfolioSection";
 import BlogSection from "@/components/BlogSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
+import Footer from "@/components/Footer";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 const Index = () => {
   return (
@@ -13,11 +16,14 @@ const Index = () => {
       <Navigation />
       <HeroSection />
       <ServicesSection />
+      <RoadmapSection />
       <IndustriesSection />
       <PortfolioSection />
       <BlogSection />
       <TestimonialsSection />
       <ContactSection />
+      <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 };

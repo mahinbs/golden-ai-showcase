@@ -42,10 +42,14 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div 
-            className="text-2xl font-bold cursor-pointer hover:text-accent transition-colors duration-300"
+            className="flex items-center cursor-pointer hover:opacity-80 transition-opacity duration-300"
             onClick={() => scrollToSection("hero")}
           >
-            AI<span className="text-accent">.Dev</span>
+            <img 
+              src="https://res.cloudinary.com/dknafpppp/image/upload/v1758189905/LOGO_SpecsLo_rectangle_no_bg_ot6afi.png" 
+              alt="SpecsLo Logo" 
+              className="h-20 w-auto max-h-full object-contain"
+            />
           </div>
 
           {/* Desktop Navigation */}

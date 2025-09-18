@@ -17,56 +17,72 @@ const IndustriesSection = () => {
       title: "Healthcare",
       description: "AI-powered diagnostics, patient management, and medical research solutions.",
       use_cases: ["Medical Imaging", "Drug Discovery", "Patient Analytics"],
-      color: "bg-red-50 hover:bg-red-100"
+      color: "bg-red-50 hover:bg-red-100",
+      backgroundImage: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop&crop=center",
+      bgColor: "bg-red-500/10"
     },
     {
       icon: <Landmark className="w-10 h-10" />,
       title: "Finance",
       description: "Fraud detection, algorithmic trading, and risk assessment solutions.",
       use_cases: ["Fraud Prevention", "Credit Scoring", "Automated Trading"],
-      color: "bg-blue-50 hover:bg-blue-100"
+      color: "bg-blue-50 hover:bg-blue-100",
+      backgroundImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop&crop=center",
+      bgColor: "bg-blue-500/10"
     },
     {
       icon: <ShoppingCart className="w-10 h-10" />,
       title: "E-commerce",
       description: "Personalized recommendations, inventory optimization, and customer insights.",
       use_cases: ["Product Recommendations", "Price Optimization", "Customer Segmentation"],
-      color: "bg-green-50 hover:bg-green-100"
+      color: "bg-green-50 hover:bg-green-100",
+      backgroundImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop&crop=center",
+      bgColor: "bg-green-500/10"
     },
     {
       icon: <Factory className="w-10 h-10" />,
       title: "Manufacturing",
       description: "Predictive maintenance, quality control, and supply chain optimization.",
       use_cases: ["Predictive Maintenance", "Quality Control", "Supply Chain"],
-      color: "bg-orange-50 hover:bg-orange-100"
+      color: "bg-orange-50 hover:bg-orange-100",
+      backgroundImage: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop&crop=center",
+      bgColor: "bg-orange-500/10"
     },
     {
       icon: <GraduationCap className="w-10 h-10" />,
       title: "Education",
       description: "Personalized learning, automated grading, and student performance analytics.",
       use_cases: ["Adaptive Learning", "Performance Analytics", "Content Generation"],
-      color: "bg-purple-50 hover:bg-purple-100"
+      color: "bg-purple-50 hover:bg-purple-100",
+      backgroundImage: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop&crop=center",
+      bgColor: "bg-purple-500/10"
     },
     {
       icon: <Car className="w-10 h-10" />,
       title: "Automotive",
       description: "Autonomous driving, predictive maintenance, and smart manufacturing.",
       use_cases: ["Autonomous Systems", "Fleet Management", "Smart Manufacturing"],
-      color: "bg-gray-50 hover:bg-gray-100"
+      color: "bg-gray-50 hover:bg-gray-100",
+      backgroundImage: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=300&fit=crop&crop=center",
+      bgColor: "bg-gray-500/10"
     },
     {
       icon: <Building2 className="w-10 h-10" />,
       title: "Real Estate",
       description: "Property valuation, market analysis, and investment optimization.",
       use_cases: ["Property Valuation", "Market Trends", "Investment Analysis"],
-      color: "bg-indigo-50 hover:bg-indigo-100"
+      color: "bg-indigo-50 hover:bg-indigo-100",
+      backgroundImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=300&fit=crop&crop=center",
+      bgColor: "bg-indigo-500/10"
     },
     {
       icon: <Plane className="w-10 h-10" />,
       title: "Transportation",
       description: "Route optimization, fleet management, and logistics automation.",
       use_cases: ["Route Optimization", "Fleet Tracking", "Demand Forecasting"],
-      color: "bg-cyan-50 hover:bg-cyan-100"
+      color: "bg-cyan-50 hover:bg-cyan-100",
+      backgroundImage: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=300&fit=crop&crop=center",
+      bgColor: "bg-cyan-500/10"
     }
   ];
 
@@ -87,27 +103,35 @@ const IndustriesSection = () => {
           {industries.map((industry, index) => (
             <Card 
               key={index}
-              className={`p-6 hover:shadow-card transition-all duration-300 group cursor-pointer animate-scale-in border-border hover:border-accent/20 ${industry.color}`}
+              className={`relative p-6 hover:shadow-card transition-all duration-300 group cursor-pointer animate-scale-in border-border hover:border-accent/20 ${industry.color} overflow-hidden`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="text-center">
+              {/* Background Image with Overlay */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 group-hover:opacity-60 transition-opacity duration-300"
+                style={{ backgroundImage: `url(${industry.backgroundImage})` }}
+              />
+              <div className={`absolute inset-0 ${industry.bgColor} group-hover:opacity-80 transition-opacity duration-300`} />
+              
+              {/* Content */}
+              <div className="relative z-10 text-center">
                 <div className="mb-4 flex justify-center">
-                  <div className="p-4 bg-background rounded-full group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-300 shadow-sm">
+                  <div className="p-4 bg-background/90 backdrop-blur-sm rounded-full group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-300 shadow-sm">
                     {industry.icon}
                   </div>
                 </div>
                 
-                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-accent transition-colors duration-300">
+                <h3 className="text-xl font-bold text-background mb-3 group-hover:text-accent transition-colors duration-300">
                   {industry.title}
                 </h3>
                 
-                <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+                <p className="text-background/90 text-sm mb-4 leading-relaxed">
                   {industry.description}
                 </p>
 
-                <div className="space-y-2">
+                <div className="space-y-2 flex flex-col items-center">
                   {industry.use_cases.map((useCase, useCaseIndex) => (
-                    <div key={useCaseIndex} className="text-xs text-muted-foreground bg-background/50 px-3 py-1 rounded-full">
+                    <div key={useCaseIndex} className="text-xs text-background bg-accent/20 backdrop-blur-md px-3 py-1 rounded-full border border-accent/30 font-medium text-center hover:bg-accent/30 hover:border-accent/50 transition-all duration-300 shadow-lg shadow-accent/10">
                       {useCase}
                     </div>
                   ))}

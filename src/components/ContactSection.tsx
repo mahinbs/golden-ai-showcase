@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Send, ArrowRight } from "lucide-react";
+import { Mail, Phone, MapPin, Send, ArrowRight, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
@@ -36,7 +36,7 @@ const ContactSection = () => {
                 </div>
                 <div className="ml-4">
                   <p className="font-semibold">Email us</p>
-                  <p className="text-primary-foreground/80">hello@aidev.com</p>
+                  <p className="text-primary-foreground/80">support@specslo.com</p>
                 </div>
               </div>
 
@@ -46,9 +46,24 @@ const ContactSection = () => {
                 </div>
                 <div className="ml-4">
                   <p className="font-semibold">Call us</p>
-                  <p className="text-primary-foreground/80">+1 (555) 123-4567</p>
+                  <p className="text-primary-foreground/80">+91-7597406130</p>
                 </div>
               </div>
+
+              <a 
+                href="https://api.whatsapp.com/send/?phone=917597406130&text&type=phone_number&app_absent=0" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center group hover:bg-accent/10 rounded-lg p-2 transition-colors duration-300"
+              >
+                <div className="p-3 bg-accent rounded-lg group-hover:bg-accent/90 transition-colors duration-300">
+                  <MessageCircle className="w-6 h-6 text-accent-foreground" />
+                </div>
+                <div className="ml-4">
+                  <p className="font-semibold">WhatsApp us</p>
+                  <p className="text-primary-foreground/80">Quick chat support</p>
+                </div>
+              </a>
 
               <div className="flex items-center group">
                 <div className="p-3 bg-accent rounded-lg group-hover:bg-accent/90 transition-colors duration-300">
@@ -56,7 +71,7 @@ const ContactSection = () => {
                 </div>
                 <div className="ml-4">
                   <p className="font-semibold">Visit us</p>
-                  <p className="text-primary-foreground/80">San Francisco, CA</p>
+                  <p className="text-primary-foreground/80">Jupiter Plaza, Sector-4, Udaipur, India</p>
                 </div>
               </div>
             </div>
@@ -69,13 +84,6 @@ const ContactSection = () => {
               >
                 Schedule Consultation
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="bg-transparent border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground hover:text-foreground"
-              >
-                Download Portfolio
               </Button>
             </div>
           </div>
@@ -166,33 +174,6 @@ const ContactSection = () => {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="mt-24 pt-12 border-t border-primary-foreground/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div 
-              className="text-2xl font-bold mb-4 md:mb-0 cursor-pointer hover:text-accent transition-colors duration-300"
-              onClick={scrollToTop}
-            >
-              AI<span className="text-accent">.Dev</span>
-            </div>
-            
-            <div className="flex items-center space-x-8 text-sm">
-              <span className="text-primary-foreground/80">
-                © 2024 AI.Dev. All rights reserved.
-              </span>
-              <div className="hidden md:flex space-x-6">
-                <a href="#" className="text-primary-foreground/80 hover:text-accent transition-colors duration-300">
-                  Privacy Policy
-                </a>
-                <a href="#" className="text-primary-foreground/80 hover:text-accent transition-colors duration-300">
-                  Terms of Service
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
     </section>
   );
 };
