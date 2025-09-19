@@ -7,55 +7,49 @@ const TestimonialsSection = () => {
       name: "Sarah Johnson",
       position: "CTO",
       company: "MedTech Solutions",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
-      content: "The AI diagnostic platform they built for us has revolutionized our patient care. We've seen a 40% improvement in diagnostic accuracy and our doctors can now focus more on patient interaction rather than manual analysis.",
-      rating: 5,
-      industry: "Healthcare"
+      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=400&q=80",
+      content: "This company surpasses its competitors in service quality. Their products are of high quality, delivered promptly. I highly recommend this company.",
+      rating: 5
     },
     {
       name: "Michael Chen",
       position: "Head of Operations", 
       company: "FinanceFlow Inc",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
-      content: "Their trading algorithm implementation exceeded our expectations. We achieved a 234% ROI in the first quarter and the risk management features have protected us from several market downturns.",
-      rating: 5,
-      industry: "Finance"
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=400&q=80",
+      content: "This company surpasses its competitors in service quality. Their products are of high quality, delivered promptly. I highly recommend this company.",
+      rating: 5
     },
     {
       name: "Emily Rodriguez",
       position: "VP of Digital Strategy",
       company: "RetailMax",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
-      content: "The recommendation engine boosted our conversion rates by 45% and customer engagement by 60%. The implementation was seamless and the support team was incredibly responsive throughout the project.",
-      rating: 5,
-      industry: "E-commerce"
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=400&q=80",
+      content: "This company surpasses its competitors in service quality. Their products are of high quality, delivered promptly. I highly recommend this company.",
+      rating: 5
     },
     {
-      name: "David Park",
-      position: "Manufacturing Director",
-      company: "AutoParts Global",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
-      content: "The predictive maintenance system has transformed our operations. We've reduced unexpected downtime by 70% and maintenance costs by 40%. The ROI was evident within the first month of deployment.",
-      rating: 5,
-      industry: "Manufacturing"
-    },
-    {
-      name: "Jennifer Kim",
-      position: "Chief Innovation Officer",
-      company: "EduTech Future",
-      image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
-      content: "Their adaptive learning platform has personalized education for over 50,000 students. Student engagement increased by 80% and learning outcomes improved significantly across all age groups.",
-      rating: 5,
-      industry: "Education"
-    },
-    {
-      name: "Robert Thompson",
+      name: "David Thompson",
       position: "CEO",
-      company: "LogiFlow Solutions",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
-      content: "The route optimization AI reduced our delivery costs by 35% and improved customer satisfaction scores. The system learns and adapts to traffic patterns, making our logistics incredibly efficient.",
-      rating: 5,
-      industry: "Logistics"
+      company: "TechStart Inc",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=400&q=80",
+      content: "This company surpasses its competitors in service quality. Their products are of high quality, delivered promptly. I highly recommend this company.",
+      rating: 5
+    },
+    {
+      name: "Lisa Wang",
+      position: "CTO",
+      company: "DataFlow Systems",
+      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=400&q=80",
+      content: "This company surpasses its competitors in service quality. Their products are of high quality, delivered promptly. I highly recommend this company.",
+      rating: 5
+    },
+    {
+      name: "James Wilson",
+      position: "Head of Innovation",
+      company: "FutureTech Labs",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=400&q=80",
+      content: "This company surpasses its competitors in service quality. Their products are of high quality, delivered promptly. I highly recommend this company.",
+      rating: 5
     }
   ];
 
@@ -63,21 +57,31 @@ const TestimonialsSection = () => {
     return Array.from({ length: 5 }, (_, index) => (
       <Star
         key={index}
-        className={`w-4 h-4 ${
-          index < rating ? 'text-accent fill-accent' : 'text-muted-foreground'
+        className={`w-5 h-5 ${
+          index < rating ? 'text-black fill-black' : 'text-gray-400'
         }`}
       />
     ));
   };
 
   return (
-    <section id="testimonials" className="py-24 bg-black">
+    <section id="testimonials" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Client <span className="text-accent">Success Stories</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+        <div className="mb-16 animate-fade-in">
+          {/* Main headline with yellow vertical bar */}
+          <div className="relative">
+            <div className="absolute left-0 top-0 w-8 h-full bg-[#ffd63c]"></div>
+            <div className="pl-4">
+              <h2 className="text-4xl md:text-6xl font-bold text-black leading-tight relative z-10">
+                <div>Client</div>
+                <div>Success</div>
+                <div>Stories</div>
+              </h2>
+            </div>
+          </div>
+          
+          {/* Description */}
+          <p className="text-lg md:text-xl text-gray-600 leading-relaxed mt-8 max-w-4xl">
             Hear from industry leaders who've transformed their businesses 
             with our AI solutions.
           </p>
@@ -85,45 +89,78 @@ const TestimonialsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {testimonials.map((testimonial, index) => (
-            <Card 
+            <div 
               key={index}
-              className="p-6 hover:shadow-card transition-all duration-300 group cursor-pointer animate-slide-up border-border hover:border-accent/20 relative"
+              className="relative max-w-3xl w-full animate-slide-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="absolute top-4 right-4 text-accent/20">
-                <Quote className="w-8 h-8" />
+              {/* Big rounded stroke (black) around the yellow card */}
+              <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+                <svg viewBox="0 0 1200 700" className="w-full h-full" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M80 120 h420 a80 80 0 0 1 80 80 v360 a80 80 0 0 1 -80 80 h-420"
+                        fill="none" stroke="#000" strokeWidth="18" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M1120 580 h-420 a80 80 0 0 1 -80 -80 v-360 a80 80 0 0 1 80 -80 h420"
+                        fill="none" stroke="#000" strokeWidth="18" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
               </div>
 
-              <div className="flex items-center mb-4">
-                <img 
-                  src={testimonial.image} 
-                  alt={testimonial.name}
-                  className="w-12 h-12 rounded-full object-cover mr-4"
-                />
-                <div>
-                  <h4 className="font-semibold text-foreground group-hover:text-accent transition-colors duration-300">
-                    {testimonial.name}
-                  </h4>
-                  <p className="text-sm text-muted-foreground">
-                    {testimonial.position}
+              {/* Yellow inner rectangle */}
+              <div className="relative bg-yellow-300 rounded-md shadow-md z-10 px-10 py-16">
+                {/* top centered opening quote */}
+                <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 z-20">
+                  <svg width="48" height="36" viewBox="0 0 48 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <text x="0" y="28" fontSize="36" fontWeight="700" fill="#000">"</text>
+                  </svg>
+                </div>
+
+                {/* Review text */}
+                <div className="text-center">
+                  <p className="text-gray-900 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
+                    {testimonial.content}
                   </p>
-                  <p className="text-sm text-accent font-medium">
-                    {testimonial.company}
-                  </p>
+
+                  {/* stars */}
+                  <div className="mt-8 flex justify-center space-x-2">
+                    {Array.from({ length: 5 }, (_, starIndex) => (
+                      <svg key={starIndex} className="w-7 h-7 text-black" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 .587l3.668 7.431L23 9.75l-5.5 5.363L18.335 24 12 20.02 5.665 24 7.5 15.113 2 9.75l7.332-1.732z"/>
+                      </svg>
+                    ))}
+                  </div>
+                </div>
+
+                {/* bottom centered closing quote */}
+                <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 z-20">
+                  <svg width="48" height="36" viewBox="0 0 48 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <text x="0" y="28" fontSize="36" fontWeight="700" fill="#000">"</text>
+                  </svg>
                 </div>
               </div>
 
-              <div className="flex items-center mb-4">
-                {renderStars(testimonial.rating)}
-                <span className="ml-2 text-sm bg-accent/10 text-accent px-2 py-1 rounded-full">
-                  {testimonial.industry}
-                </span>
-              </div>
+              {/* Polaroid photo (rotated) with paperclip */}
+              <div className="absolute -top-8 right-0 transform rotate-6 z-30">
+                <div className="relative">
+                  <div className="bg-white p-2 rounded-md shadow-lg" style={{width: '120px'}}>
+                    <img 
+                      src={testimonial.image} 
+                      alt={testimonial.name}
+                      className="w-full h-28 object-cover rounded-sm block"
+                      onError={(e) => {
+                        e.currentTarget.src = 'https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=400&q=80';
+                      }}
+                    />
+                    <div className="mt-2 text-xs text-gray-600 text-center">{testimonial.name}</div>
+                  </div>
 
-              <p className="text-muted-foreground leading-relaxed italic">
-                "{testimonial.content}"
-              </p>
-            </Card>
+                  {/* paperclip SVG */}
+                  <svg className="absolute -top-4 -right-3 w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 11.5v5a4 4 0 0 1-4 4h-6a5 5 0 0 1-5-5v-9a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v7"
+                          stroke="#111827" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M9 3v4" stroke="#111827" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
 

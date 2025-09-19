@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Glacial+Indifference:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,26 +8,26 @@
 
 @layer base {
   :root {
-    /* Core Brand Colors - Dark Theme */
-    --background: 0 0% 6%;
-    --foreground: 0 0% 95%;
+    /* Core Brand Colors - Exact Hex Codes */
+    --background: 0 0% 0%; /* #000000 */
+    --foreground: 0 0% 100%; /* #ffffff */
     
     /* Card Colors - Dark Theme */
-    --card: 0 0% 8%;
-    --card-foreground: 0 0% 95%;
+    --card: 0 0% 0%; /* #000000 */
+    --card-foreground: 0 0% 100%; /* #ffffff */
     
     /* Interactive Elements */
-    --primary: 0 0% 8%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 0 0% 0%; /* #000000 */
+    --primary-foreground: 0 0% 100%; /* #ffffff */
     
-    /* Yellow Accent System */
-    --accent: 51 100% 50%;
-    --accent-foreground: 0 0% 8%;
-    --accent-muted: 51 100% 90%;
+    /* Yellow Accent System - Exact Hex Code */
+    --accent: 45 100% 62%; /* #ffd63c */
+    --accent-foreground: 0 0% 0%; /* #000000 */
+    --accent-muted: 45 100% 90%;
     
     /* Secondary Elements */
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 0 0% 0%; /* #000000 */
+    --secondary-foreground: 0 0% 100%; /* #ffffff */
     
     /* Muted Elements */
     --muted: 0 0% 12%;
@@ -34,17 +36,17 @@
     /* Borders & Inputs */
     --border: 0 0% 15%;
     --input: 0 0% 12%;
-    --ring: 51 100% 50%;
+    --ring: 45 100% 62%; /* #ffd63c */
     
     /* Gradient System */
-    --gradient-primary: linear-gradient(135deg, hsl(0 0% 8%), hsl(0 0% 15%));
-    --gradient-accent: linear-gradient(135deg, hsl(51 100% 50%), hsl(45 100% 60%));
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 8%) 0%, hsl(0 0% 12%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 0%), hsl(0 0% 15%));
+    --gradient-accent: linear-gradient(135deg, hsl(45 100% 62%), hsl(45 100% 70%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 0%) 0%, hsl(0 0% 12%) 100%);
     
     /* Shadow System */
-    --shadow-elegant: 0 10px 40px -10px hsl(0 0% 8% / 0.1);
-    --shadow-yellow: 0 10px 40px -10px hsl(51 100% 50% / 0.3);
-    --shadow-card: 0 4px 20px -4px hsl(0 0% 8% / 0.1);
+    --shadow-elegant: 0 10px 40px -10px hsl(0 0% 0% / 0.1);
+    --shadow-yellow: 0 10px 40px -10px hsl(45 100% 62% / 0.3);
+    --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.1);
     
     /* Animation & Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -61,6 +63,7 @@
 
   body {
     @apply bg-black text-foreground;
+    font-family: 'Glacial Indifference', sans-serif;
   }
 }
 

@@ -150,18 +150,19 @@ const Footer = () => {
             </div>
             
             {/* Social Links */}
-            <div className="flex flex-wrap items-center justify-center gap-4 mt-4 md:mt-0">
-              {socialLinks.map((social) => (
+            <div className="flex items-center justify-center gap-4 mt-4 md:mt-0">
+              {socialLinks.slice(0, 5).map((social) => (
                 <a
                   key={social.name}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center space-x-2 text-muted-foreground hover:text-accent transition-colors duration-300 bg-background/50 hover:bg-accent/10 px-3 py-2 rounded-lg border border-border hover:border-accent/30"
+                  className="w-12 h-12 bg-[#ffd63c] rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300 group"
                   aria-label={social.name}
                 >
-                  {social.icon}
-                  <span className="text-sm">{social.name}</span>
+                  <div className="text-black group-hover:text-black/80">
+                    {social.icon}
+                  </div>
                 </a>
               ))}
             </div>

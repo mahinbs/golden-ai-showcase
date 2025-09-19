@@ -13,136 +13,73 @@ import { Card } from "@/components/ui/card";
 const IndustriesSection = () => {
   const industries = [
     {
-      icon: <Heart className="w-10 h-10" />,
-      title: "Healthcare",
-      description: "AI-powered diagnostics, patient management, and medical research solutions.",
-      use_cases: ["Medical Imaging", "Drug Discovery", "Patient Analytics"],
-      color: "bg-red-50 hover:bg-red-100",
-      backgroundImage: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop&crop=center",
-      bgColor: "bg-red-500/10"
+      title: "FinTech & Banking",
+      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=400&fit=crop&crop=center"
     },
     {
-      icon: <Landmark className="w-10 h-10" />,
-      title: "Finance",
-      description: "Fraud detection, algorithmic trading, and risk assessment solutions.",
-      use_cases: ["Fraud Prevention", "Credit Scoring", "Automated Trading"],
-      color: "bg-blue-50 hover:bg-blue-100",
-      backgroundImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop&crop=center",
-      bgColor: "bg-blue-500/10"
+      title: "Healthcare & Biotech",
+      image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400&h=400&fit=crop&crop=center"
     },
     {
-      icon: <ShoppingCart className="w-10 h-10" />,
-      title: "E-commerce",
-      description: "Personalized recommendations, inventory optimization, and customer insights.",
-      use_cases: ["Product Recommendations", "Price Optimization", "Customer Segmentation"],
-      color: "bg-green-50 hover:bg-green-100",
-      backgroundImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop&crop=center",
-      bgColor: "bg-green-500/10"
+      title: "E-commerce & Retail",
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=400&fit=crop&crop=center"
     },
     {
-      icon: <Factory className="w-10 h-10" />,
-      title: "Manufacturing",
-      description: "Predictive maintenance, quality control, and supply chain optimization.",
-      use_cases: ["Predictive Maintenance", "Quality Control", "Supply Chain"],
-      color: "bg-orange-50 hover:bg-orange-100",
-      backgroundImage: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop&crop=center",
-      bgColor: "bg-orange-500/10"
+      title: "Gaming & Entertainment",
+      image: "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=400&h=400&fit=crop&crop=center"
     },
     {
-      icon: <GraduationCap className="w-10 h-10" />,
-      title: "Education",
-      description: "Personalized learning, automated grading, and student performance analytics.",
-      use_cases: ["Adaptive Learning", "Performance Analytics", "Content Generation"],
-      color: "bg-purple-50 hover:bg-purple-100",
-      backgroundImage: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop&crop=center",
-      bgColor: "bg-purple-500/10"
+      title: "Logistics & Supply Chain",
+      image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=400&fit=crop&crop=center"
     },
     {
-      icon: <Car className="w-10 h-10" />,
-      title: "Automotive",
-      description: "Autonomous driving, predictive maintenance, and smart manufacturing.",
-      use_cases: ["Autonomous Systems", "Fleet Management", "Smart Manufacturing"],
-      color: "bg-gray-50 hover:bg-gray-100",
-      backgroundImage: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=300&fit=crop&crop=center",
-      bgColor: "bg-gray-500/10"
-    },
-    {
-      icon: <Building2 className="w-10 h-10" />,
-      title: "Real Estate",
-      description: "Property valuation, market analysis, and investment optimization.",
-      use_cases: ["Property Valuation", "Market Trends", "Investment Analysis"],
-      color: "bg-indigo-50 hover:bg-indigo-100",
-      backgroundImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=300&fit=crop&crop=center",
-      bgColor: "bg-indigo-500/10"
-    },
-    {
-      icon: <Plane className="w-10 h-10" />,
-      title: "Transportation",
-      description: "Route optimization, fleet management, and logistics automation.",
-      use_cases: ["Route Optimization", "Fleet Tracking", "Demand Forecasting"],
-      color: "bg-cyan-50 hover:bg-cyan-100",
-      backgroundImage: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=300&fit=crop&crop=center",
-      bgColor: "bg-cyan-500/10"
+      title: "Education & E-Learning",
+      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=400&fit=crop&crop=center"
     }
   ];
 
   return (
     <section id="industries" className="py-24 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-16 animate-fade-in">
+        <div className="mb-16 animate-fade-in text-center">
           {/* Main headline */}
-          <h2 className="text-4xl md:text-6xl font-bold text-center mb-6">
-            <span className="text-yellow-400">Specs</span>{" "}
-            <span className="text-white">That Fit Every</span>{" "}
-            <span className="text-yellow-400">Industry</span>
-          </h2>
-          
-          {/* Yellow separator line */}
-          <div className="w-24 h-1 bg-yellow-400 mx-auto mb-8"></div>
+          <div className="text-center mb-6">
+            <h2 className="text-4xl md:text-6xl font-bold inline-block relative">
+              <span className="text-[#ffd63c]">Specs</span>{" "}
+              <span className="text-white">That Fit Every</span>{" "}
+              <span className="text-[#ffd63c]">Industry</span>
+              {/* Underline that matches text width */}
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#ffd63c]"></div>
+            </h2>
+          </div>
           
           {/* Description */}
-          <p className="text-lg md:text-xl text-white text-left max-w-4xl">
+          <p className="text-lg md:text-xl text-white text-center max-w-4xl mx-auto">
             We decode your specs and build tech that aligns with your industry's unique demands.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {industries.map((industry, index) => (
             <Card 
               key={index}
-              className={`relative p-6 hover:shadow-card transition-all duration-300 group cursor-pointer animate-scale-in border-border hover:border-accent/20 ${industry.color} overflow-hidden`}
+              className="relative aspect-square overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer animate-scale-in border-0 bg-[#ffd63c]"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Background Image with Overlay */}
-              <div 
-                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 group-hover:opacity-60 transition-opacity duration-300"
-                style={{ backgroundImage: `url(${industry.backgroundImage})` }}
-              />
-              <div className={`absolute inset-0 ${industry.bgColor} group-hover:opacity-80 transition-opacity duration-300`} />
+              {/* Industry Image */}
+              <div className="absolute inset-0">
+                <img 
+                  src={industry.image} 
+                  alt={industry.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
               
-              {/* Content */}
-              <div className="relative z-10 text-center">
-                <div className="mb-4 flex justify-center">
-                  <div className="p-4 bg-background/90 backdrop-blur-sm rounded-full group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-300 shadow-sm">
-                    {industry.icon}
-                  </div>
-                </div>
-                
-                <h3 className="text-xl font-bold text-background mb-3 group-hover:text-accent transition-colors duration-300">
+              {/* Industry Title Overlay */}
+              <div className="absolute bottom-0 left-0 right-0 bg-black/80 backdrop-blur-sm p-4">
+                <h3 className="text-white font-bold text-lg text-center">
                   {industry.title}
                 </h3>
-                
-                <p className="text-background/90 text-sm mb-4 leading-relaxed">
-                  {industry.description}
-                </p>
-
-                <div className="space-y-2 flex flex-col items-center">
-                  {industry.use_cases.map((useCase, useCaseIndex) => (
-                    <div key={useCaseIndex} className="text-xs text-white bg-accent/30 backdrop-blur-md px-3 py-1 rounded-full border border-accent/50 font-medium text-center hover:bg-accent/40 hover:border-accent/60 transition-all duration-300 shadow-lg shadow-accent/20">
-                      {useCase}
-                    </div>
-                  ))}
-                </div>
               </div>
             </Card>
           ))}

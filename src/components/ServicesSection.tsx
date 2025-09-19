@@ -54,7 +54,7 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="py-24 bg-black">
+    <section id="services" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16 animate-fade-in">
           {/* Top horizontal line */}
@@ -62,9 +62,9 @@ const ServicesSection = () => {
           
           {/* Main headline with yellow vertical bar */}
           <div className="relative">
-            <div className="absolute left-0 top-0 w-2 h-full bg-yellow-400"></div>
-            <div className="pl-8">
-              <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight">
+            <div className="absolute left-0 top-0 w-8 h-full bg-[#ffd63c]"></div>
+            <div className="pl-4">
+              <h2 className="text-4xl md:text-6xl font-bold text-black leading-tight relative z-10">
                 <div>Specs</div>
                 <div>Inspired</div>
                 <div>Services</div>
@@ -77,10 +77,10 @@ const ServicesSection = () => {
           
           {/* Description */}
           <div className="text-left">
-            <p className="text-lg md:text-xl text-white leading-relaxed">
+            <p className="text-lg md:text-xl text-black leading-relaxed">
               We don't believe in one-size-fits-all.
             </p>
-            <p className="text-lg md:text-xl text-white leading-relaxed">
+            <p className="text-lg md:text-xl text-black leading-relaxed">
               Your specs shape every service we offer
             </p>
           </div>
@@ -90,46 +90,32 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <Card 
               key={index}
-              className="overflow-hidden hover:shadow-yellow transition-all duration-300 group cursor-pointer animate-slide-up border-border hover:border-accent/30 bg-card"
+              className="overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer animate-slide-up border-2 border-[#ffd63c] bg-white"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
+              {/* Image Section */}
               <div className="relative h-48 overflow-hidden">
                 <img 
                   src={service.image} 
                   alt={service.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-card/90 to-transparent"></div>
-                <div className="absolute bottom-4 left-4 flex items-center">
-                  <div className="p-3 bg-accent/90 rounded-lg group-hover:bg-accent transition-all duration-300">
-                    {service.icon}
-                  </div>
-                </div>
               </div>
               
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-accent transition-colors duration-300">
+              {/* Text Section - Black Background */}
+              <div className="bg-black p-6">
+                {/* Title */}
+                <h3 className="text-xl font-bold text-[#ffd63c] mb-3">
                   {service.title}
                 </h3>
                 
-                <p className="text-muted-foreground mb-4 leading-relaxed text-sm">
+                {/* Yellow Separator Line */}
+                <div className="w-12 h-0.5 bg-[#ffd63c] mb-4"></div>
+                
+                {/* Description */}
+                <p className="text-white text-sm leading-relaxed">
                   {service.description}
                 </p>
-
-                <div className="space-y-2 mb-6">
-                  {service.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center text-sm text-muted-foreground">
-                      <div className="w-2 h-2 bg-accent rounded-full mr-3 flex-shrink-0"></div>
-                      {feature}
-                    </div>
-                  ))}
-                </div>
-
-                <div className="pt-4 border-t border-border group-hover:border-accent/30 transition-colors duration-300">
-                  <span className="text-accent font-semibold group-hover:underline text-sm">
-                    Learn More →
-                  </span>
-                </div>
               </div>
             </Card>
           ))}

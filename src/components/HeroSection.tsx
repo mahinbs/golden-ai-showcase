@@ -11,7 +11,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center justify-start overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 z-0">
         {/* Floating Particles */}
@@ -30,11 +30,11 @@ const HeroSection = () => {
       <div className="absolute inset-0 z-0 bg-black"></div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
         <div className="animate-fade-in">
           {/* Main Headline */}
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight animate-slide-up">
-            You've Got <span className="bg-yellow-400 text-black px-4 py-2 rounded-lg">Specs</span>
+            You've Got <span className="bg-[#ffd63c] text-black px-4 py-2 rounded-lg">Specs</span>
           </h1>
           
           {/* Sub-headline */}
@@ -43,21 +43,21 @@ const HeroSection = () => {
           </h2>
           
           {/* Call to Action */}
-          <div className="text-3xl md:text-4xl font-bold text-yellow-400 mb-6 animate-slide-up" style={{ animationDelay: '0.4s' }}>
+          <div className="text-3xl md:text-4xl font-bold text-[#ffd63c] mb-6 animate-slide-up" style={{ animationDelay: '0.4s' }}>
             We'll Build What Matters.
           </div>
           
           {/* Yellow Separator Line */}
-          <div className="w-24 h-1 bg-yellow-400 mx-auto mb-8 animate-slide-up" style={{ animationDelay: '0.6s' }}></div>
+          <div className="w-24 h-1 bg-[#ffd63c] mb-8 animate-slide-up" style={{ animationDelay: '0.6s' }}></div>
           
           {/* Description */}
-          <p className="text-lg md:text-xl text-white mb-8 max-w-4xl mx-auto leading-relaxed text-left animate-slide-up" style={{ animationDelay: '0.8s' }}>
+          <p className="text-lg md:text-xl text-white mb-8 max-w-4xl leading-relaxed animate-slide-up" style={{ animationDelay: '0.8s' }}>
             At Specslo, we turn your specs into scalable digital products that solve real problems. 
             We build AI software, apps, and websites that help you launch faster and lead your market.
           </p>
           
           {/* Enhanced Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-slide-up" style={{ animationDelay: '0.4s' }}>
+          <div className="flex flex-col sm:flex-row gap-4 justify-start items-start mb-12 animate-slide-up" style={{ animationDelay: '0.4s' }}>
             <Button 
               variant="hero" 
               size="xl"
@@ -85,16 +85,16 @@ const HeroSection = () => {
           </div>
 
           {/* Enhanced Stats with Animations */}
-          <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: '0.6s' }}>
-            <div className="text-center group">
+          <div className="grid grid-cols-3 gap-8 max-w-2xl animate-slide-up" style={{ animationDelay: '0.6s' }}>
+            <div className="text-left group">
               <div className="text-3xl md:text-4xl font-bold text-accent mb-2 animate-count-up group-hover:scale-110 transition-transform duration-300">100+</div>
               <div className="text-foreground/80 text-sm md:text-base group-hover:text-foreground transition-colors duration-300">Projects Delivered</div>
             </div>
-            <div className="text-center group" style={{ animationDelay: "0.1s" }}>
+            <div className="text-left group" style={{ animationDelay: "0.1s" }}>
               <div className="text-3xl md:text-4xl font-bold text-accent mb-2 animate-count-up group-hover:scale-110 transition-transform duration-300">50+</div>
               <div className="text-foreground/80 text-sm md:text-base group-hover:text-foreground transition-colors duration-300">Happy Clients</div>
             </div>
-            <div className="text-center group" style={{ animationDelay: "0.2s" }}>
+            <div className="text-left group" style={{ animationDelay: "0.2s" }}>
               <div className="text-3xl md:text-4xl font-bold text-accent mb-2 animate-count-up group-hover:scale-110 transition-transform duration-300">99%</div>
               <div className="text-foreground/80 text-sm md:text-base group-hover:text-foreground transition-colors duration-300">Success Rate</div>
             </div>
