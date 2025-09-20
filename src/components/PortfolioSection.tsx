@@ -58,14 +58,14 @@ const PortfolioSection = () => {
   return (
     <section id="portfolio" className="py-24 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 animate-fade-in">
-          <div className="text-center mb-6">
+        <div className="mb-16 animate-fade-in">
+          <div className="mb-6">
             <h2 className="text-4xl md:text-6xl font-bold inline-block">
               <span className="text-white">Our</span>{" "}
               <span className="bg-[#ffd63c] text-black px-4 py-2 rounded-lg">Builds</span>
             </h2>
           </div>
-          <p className="text-lg md:text-xl text-white max-w-4xl mx-auto">
+          <p className="text-lg md:text-xl text-white max-w-4xl">
             A showcase of solutions crafted to fit and perform.
           </p>
         </div>
