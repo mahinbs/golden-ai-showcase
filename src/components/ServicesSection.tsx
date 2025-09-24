@@ -15,7 +15,7 @@ const ServicesSection = () => {
     renderMode: "performance",
     drag: true,
     slides: {
-      perView: 2,
+      perView: 3,
       spacing: 20,
       origin: "auto",
     },
