@@ -2,7 +2,12 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -14,11 +19,12 @@ export default {
     },
     extend: {
       fontFamily: {
-        'sans': ['Glacial Indifference', 'sans-serif'],
-        'glacial': ['Glacial Indifference', 'sans-serif'],
+        sans: ["Glacial Indifference", "sans-serif"],
+        glacial: ["Glacial Indifference", "sans-serif"],
+        ibmPlex: ["Glacial Indifference", "sans-serif"],
       },
       colors: {
-        yellowClr:"#ffd63c",
+        yellowClr: "#ffd63c",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -55,19 +61,19 @@ export default {
         },
       },
       backgroundImage: {
-        'gradient-primary': 'var(--gradient-primary)',
-        'gradient-accent': 'var(--gradient-accent)',
-        'gradient-hero': 'var(--gradient-hero)',
+        "gradient-primary": "var(--gradient-primary)",
+        "gradient-accent": "var(--gradient-accent)",
+        "gradient-hero": "var(--gradient-hero)",
       },
       boxShadow: {
-        'elegant': 'var(--shadow-elegant)',
-        'yellow': 'var(--shadow-yellow)',
-        'card': 'var(--shadow-card)',
-        'large': '0px 0px 30px 10px rgba(0, 0, 0, 0.5)',
+        elegant: "var(--shadow-elegant)",
+        yellow: "var(--shadow-yellow)",
+        card: "var(--shadow-card)",
+        large: "0px 0px 30px 10px rgba(0, 0, 0, 0.5)",
       },
       transitionTimingFunction: {
-        'smooth': 'var(--transition-smooth)',
-        'bounce': 'var(--transition-bounce)',
+        smooth: "var(--transition-smooth)",
+        bounce: "var(--transition-bounce)",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -94,41 +100,41 @@ export default {
         "fade-in": {
           "0%": {
             opacity: "0",
-            transform: "translateY(20px)"
+            transform: "translateY(20px)",
           },
           "100%": {
-            opacity: "1",  
-            transform: "translateY(0)"
-          }
+            opacity: "1",
+            transform: "translateY(0)",
+          },
         },
         "slide-up": {
           "0%": {
             opacity: "0",
-            transform: "translateY(40px)"
+            transform: "translateY(40px)",
           },
           "100%": {
             opacity: "1",
-            transform: "translateY(0)"
-          }
+            transform: "translateY(0)",
+          },
         },
         "scale-in": {
           "0%": {
             opacity: "0",
-            transform: "scale(0.95)"
+            transform: "scale(0.95)",
           },
           "100%": {
             opacity: "1",
-            transform: "scale(1)"
-          }
+            transform: "scale(1)",
+          },
         },
-        "float": {
+        float: {
           "0%, 100%": {
-            transform: "translateY(0px)"
+            transform: "translateY(0px)",
           },
           "50%": {
-            transform: "translateY(-10px)"
-          }
-        }
+            transform: "translateY(-10px)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -136,7 +142,7 @@ export default {
         "fade-in": "fade-in 0.6s ease-out",
         "slide-up": "slide-up 0.6s ease-out",
         "scale-in": "scale-in 0.4s ease-out",
-        "float": "float 3s ease-in-out infinite",
+        float: "float 3s ease-in-out infinite",
       },
     },
   },
