@@ -15,8 +15,10 @@ export default {
     extend: {
       fontFamily: {
         'sans': ['Glacial Indifference', 'sans-serif'],
+        'glacial': ['Glacial Indifference', 'sans-serif'],
       },
       colors: {
+        yellowClr:"#ffd63c",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -61,6 +63,7 @@ export default {
         'elegant': 'var(--shadow-elegant)',
         'yellow': 'var(--shadow-yellow)',
         'card': 'var(--shadow-card)',
+        'large': '0px 0px 30px 10px rgba(0, 0, 0, 0.5)',
       },
       transitionTimingFunction: {
         'smooth': 'var(--transition-smooth)',

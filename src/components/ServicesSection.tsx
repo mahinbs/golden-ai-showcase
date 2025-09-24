@@ -1,127 +1,150 @@
-import { Brain, Bot, Database, Zap, Code, BarChart3 } from "lucide-react";
-import { Card } from "@/components/ui/card";
-import mlServiceImg from "@/assets/ml-service.jpg";
-import chatbotServiceImg from "@/assets/chatbot-service.jpg";
-import dataIntelligenceServiceImg from "@/assets/data-intelligence-service.jpg";
-import automationServiceImg from "@/assets/automation-service.jpg";
-import integrationServiceImg from "@/assets/integration-service.jpg";
-import biServiceImg from "@/assets/bi-service.jpg";
+import React from "react";
+import { PiCaretLeftBold, PiCaretRightBold } from "react-icons/pi";
+import { Link } from "react-router-dom";
+import { useKeenSlider } from "keen-slider/react";
+// import { createUrlParam } from "../../utils/helper";
+import { ourServices } from "../content/ourServices";
+import useScrollTriggerAnimations from "../hooks/useScrollTriggerAnimations";
+
+const animation = { duration: 40000, easing: (t) => t };
 
 const ServicesSection = () => {
-  const services = [
-    {
-      icon: <Brain className="w-8 h-8" />,
-      title: "Machine Learning",
-      description: "Custom ML models that learn from your data to predict outcomes and automate decision-making processes.",
-      features: ["Predictive Analytics", "Pattern Recognition", "Automated Classification"],
-      image: mlServiceImg
+  const scrollRef = useScrollTriggerAnimations();
+  const [sliderRef, instanceRef] = useKeenSlider({
+    loop: true,
+    renderMode: "performance",
+    drag: true,
+    slides: {
+      perView: 2,
+      spacing: 20,
+      origin: "auto",
     },
-    {
-      icon: <Bot className="w-8 h-8" />,
-      title: "AI Chatbots & Assistants",
-      description: "Intelligent conversational AI that enhances customer experience and streamlines support operations.",
-      features: ["Natural Language Processing", "24/7 Support", "Multi-platform Integration"],
-      image: chatbotServiceImg
+    breakpoints: {
+      "(max-width: 650px)": {
+        slides: {
+          perView: 1,
+          spacing: 10,
+        },
+      },
+      "(min-width: 651px)": {
+        slides: {
+          perView: 1.5,
+          spacing: 20,
+        },
+      },
+      "(min-width: 1024px)": {
+        slides: {
+          perView: 3,
+          spacing: 20,
+        },
+      },
     },
-    {
-      icon: <Database className="w-8 h-8" />,
-      title: "Data Intelligence",
-      description: "Transform raw data into actionable insights with advanced analytics and visualization tools.",
-      features: ["Real-time Analytics", "Custom Dashboards", "Automated Reporting"],
-      image: dataIntelligenceServiceImg
+    created(s) {
+      s.moveToIdx(5, true, animation);
     },
-    {
-      icon: <Zap className="w-8 h-8" />,
-      title: "Process Automation",
-      description: "Streamline workflows and eliminate repetitive tasks with intelligent automation solutions.",
-      features: ["Workflow Optimization", "Task Automation", "Integration APIs"],
-      image: automationServiceImg
+    updated(s) {
+      s.moveToIdx(s.track.details.abs + 5, true, animation);
     },
-    {
-      icon: <Code className="w-8 h-8" />,
-      title: "AI Integration",
-      description: "Seamlessly integrate AI capabilities into existing systems and applications.",
-      features: ["API Development", "System Integration", "Legacy Modernization"],
-      image: integrationServiceImg
+    animationEnded(s) {
+      s.moveToIdx(s.track.details.abs + 5, true, animation);
     },
-    {
-      icon: <BarChart3 className="w-8 h-8" />,
-      title: "Business Intelligence",
-      description: "Advanced BI solutions that provide deep insights and drive strategic decision-making.",
-      features: ["Performance Metrics", "Trend Analysis", "Predictive Forecasting"],
-      image: biServiceImg
-    }
-  ];
+  });
 
+  const prevClick = () => {
+    if (instanceRef.current) {
+      instanceRef.current.prev();
+    }
+  };
+
+  const nextClick = () => {
+    if (instanceRef.current) {
+      instanceRef.current.next();
+    }
+  };
   return (
-    <section id="services" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-16 animate-fade-in">
-          {/* Top horizontal line */}
-          <div className="w-full h-0.5 bg-black mb-6"></div>
-          
-          {/* Main headline with yellow vertical bar */}
-          <div className="relative">
-            <div className="absolute left-0 top-0 w-8 h-full bg-[#ffd63c]"></div>
-            <div className="pl-4">
-              <h2 className="text-4xl md:text-6xl font-bold text-black leading-tight relative z-10">
-                <div>Specs</div>
-                <div>Inspired</div>
-                <div>Services</div>
-              </h2>
-            </div>
-          </div>
-          
-          {/* Bottom horizontal line */}
-          <div className="w-full h-0.5 bg-black mt-6 mb-8"></div>
-          
-          {/* Description */}
-          <div className="text-left">
-            <p className="text-lg md:text-xl text-black leading-relaxed">
-              We don't believe in one-size-fits-all.
-            </p>
-            <p className="text-lg md:text-xl text-black leading-relaxed">
-              Your specs shape every service we offer
-            </p>
+    <div className="bg-white text-black py-14">
+      <div className="py-3">
+        <div
+          data-aos="fade-right"
+          className="wrapper flex justify-between items-center gap-7"
+        >
+          <p className="text3 font-ibmPlex bg-yellowClr p-2 rounded-lg">
+            Services
+          </p>
+          {/* <Link
+            to="/services"
+            className="w-10 h-10 flex items-center justify-center bg-yellowClr rounded-full hover:bg-black hover:text-yellowClr transition-all duration-200"
+          >
+            <PiCaretRightBold strokeWidth={0.5} size={30} />
+          </Link> */}
+        </div>
+      </div>
+      <div
+        ref={scrollRef}
+        className="wrapper pt-10 grid lg:grid-cols-[25%_1fr] gap-6"
+      >
+        <div className="relative space-y-4">
+          <div className="h-[2px] w-full bg-black"></div>
+          <h2 data-aos="fade-right" className="text1 z-[2] relative">
+            <div
+              data-aos="fade-right"
+              className="absolute left-0 top-0 w-[3rem] h-full bg-yellowClr z-0"
+            ></div>
+            <span className="pl-4">
+              <span className="relative z-[1] font-glacial">
+                Specs <br />
+                Inspired <br />
+                Services
+              </span>
+            </span>
+          </h2>
+          <div className="h-[1.5px] w-full bg-black"></div>
+          <p className="desc z-[2] relative">
+            We don’t believe in one-size-fits-all. Your specs shape every
+            service we offer
+          </p>
+          <div
+            data-aos="fade-right"
+            className="flex ml-10 gap-5 z-[2] relative"
+          >
+            <button
+              onClick={prevClick}
+              className="w-10 h-10 flex items-center justify-center rounded-full btn text-black btn hover:bg-black hover:text-yellowClr bg-yellowClr"
+            >
+              <PiCaretLeftBold strokeWidth={0.5} size={30} />
+            </button>
+            <button
+              onClick={nextClick}
+              className="w-10 h-10 flex items-center justify-center rounded-full btn text-black btn hover:bg-black hover:text-yellowClr bg-yellowClr"
+            >
+              <PiCaretRightBold strokeWidth={0.5} size={30} />
+            </button>
           </div>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <Card 
-              key={index}
-              className="overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer animate-slide-up border-2 border-[#ffd63c] bg-white"
-              style={{ animationDelay: `${index * 0.1}s` }}
+        <div data-aos="fade-up" ref={sliderRef} className="keen-slider w-full">
+          {ourServices.map((item) => (
+            <div
+              // to={`/services/${createUrlParam(item.title)}`}
+              key={item.title}
+              className="keen-slider__slide border-4 border-yellowClr"
             >
-              {/* Image Section */}
-              <div className="relative h-48 overflow-hidden">
-                <img 
-                  src={service.image} 
-                  alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              <div className="bg-black hover:text-black text-white h-full px-4 py-2 shadow-large space-y-3 hover:bg-yellowClr transition-all duration-300 shadow-black/20">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  loading="lazy"
+                  className="aspect-square object-cover"
                 />
+                <div className="space-y-2 py-2 px-1">
+                  <h4 className="text3">{item.title}</h4>
+                  <p className="desc">{item.desc}</p>
+                </div>
               </div>
-              
-              {/* Text Section - Black Background */}
-              <div className="bg-black p-6">
-                {/* Title */}
-                <h3 className="text-xl font-bold text-[#ffd63c] mb-3">
-                  {service.title}
-                </h3>
-                
-                {/* Yellow Separator Line */}
-                <div className="w-12 h-0.5 bg-[#ffd63c] mb-4"></div>
-                
-                {/* Description */}
-                <p className="text-white text-sm leading-relaxed">
-                  {service.description}
-                </p>
-              </div>
-            </Card>
+            </div>
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

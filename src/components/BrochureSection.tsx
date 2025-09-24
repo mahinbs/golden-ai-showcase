@@ -1,11 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 
+export const handleDownloadBrochure = () => {
+  // You can replace this with actual brochure download logic
+  window.open('/brochure.pdf', '_blank');
+};
 const BrochureSection = () => {
-  const handleDownloadBrochure = () => {
-    // You can replace this with actual brochure download logic
-    window.open('/brochure.pdf', '_blank');
-  };
 
   return (
     <section className="py-24 bg-black relative overflow-hidden">

@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,13 +24,27 @@ const Navigation = () => {
     }
   };
 
-  const navItems = [
-    { label: "Services", id: "services" },
-    { label: "Industries", id: "industries" },
-    { label: "Portfolio", id: "portfolio" },
-    { label: "Blog", id: "blog" },
-    { label: "Testimonials", id: "testimonials" },
-  ];
+  // Different navigation items based on current page
+  const getNavItems = () => {
+    if (location.pathname === "/about") {
+      return [
+        { label: "Our Story", id: "about-story" },
+        { label: "Why We Started", id: "why-we-started" },
+        { label: "Partnership", id: "partnership" },
+        { label: "Vision", id: "vision" },
+        { label: "Founder", id: "founder" },
+      ];
+    }
+    return [
+      { label: "Services", id: "services" },
+      { label: "Industries", id: "industries" },
+      { label: "Portfolio", id: "portfolio" },
+      { label: "Blog", id: "blog" },
+      { label: "Testimonials", id: "testimonials" },
+    ];
+  };
+
+  const navItems = getNavItems();
 
   return (
     <nav
@@ -41,19 +57,41 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <div 
+          <div
             className="flex items-center cursor-pointer hover:opacity-80 transition-opacity duration-300"
-            onClick={() => scrollToSection("hero")}
+            onClick={() => {
+              if (location.pathname === "/about") {
+                scrollToSection("about-story");
+              } else {
+                scrollToSection("hero");
+              }
+            }}
           >
-            <img 
-              src="https://res.cloudinary.com/dknafpppp/image/upload/v1758189905/LOGO_SpecsLo_rectangle_no_bg_ot6afi.png" 
-              alt="SpecsLo Logo" 
+            <img
+              src="https://res.cloudinary.com/dknafpppp/image/upload/v1758189905/LOGO_SpecsLo_rectangle_no_bg_ot6afi.png"
+              alt="SpecsLo Logo"
               className="h-20 w-auto max-h-full object-contain"
             />
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8">
+            {location.pathname !== "/about" && (
+              <Link
+                to="/about"
+                className="text-foreground hover:text-accent transition-colors duration-300 font-medium"
+              >
+                Who We Are
+              </Link>
+            )}
+            {location.pathname === "/about" && (
+              <Link
+                to="/"
+                className="text-foreground hover:text-accent transition-colors duration-300 font-medium"
+              >
+                Home
+              </Link>
+            )}
             {navItems.map((item) => (
               <button
                 key={item.id}
@@ -63,8 +101,8 @@ const Navigation = () => {
                 {item.label}
               </button>
             ))}
-            <Button 
-              variant="hero" 
+            <Button
+              variant="hero"
               onClick={() => scrollToSection("contact")}
               className="ml-4"
             >
@@ -74,7 +112,7 @@ const Navigation = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2"
+            className="lg:hidden p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -83,8 +121,16 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-background/95 backdrop-blur-md border-t border-border animate-slide-up">
+          <div className="lg:hidden bg-background/95 backdrop-blur-md border-t border-border animate-slide-up">
             <div className="px-4 py-4 space-y-4">
+              {location.pathname !== "/about" && (
+                <Link
+                  to="/about"
+                  className="block w-full text-left text-foreground hover:text-accent transition-colors duration-300 font-medium py-2"
+                >
+                  Who We Are
+                </Link>
+              )}
               {navItems.map((item) => (
                 <button
                   key={item.id}
@@ -94,8 +140,8 @@ const Navigation = () => {
                   {item.label}
                 </button>
               ))}
-              <Button 
-                variant="hero" 
+              <Button
+                variant="hero"
                 className="w-full mt-4"
                 onClick={() => scrollToSection("contact")}
               >
