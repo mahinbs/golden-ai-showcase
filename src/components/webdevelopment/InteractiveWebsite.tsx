@@ -1,6 +1,6 @@
-import img1 from "../../assets/websites we build/1. Essential Website.png";
+import React from "react";
 
-const WebDevelopmentServices = ({ showDescription = true, showHeading = true }: { showDescription?: boolean; showHeading?: boolean }) => {
+const InteractiveWebsite = () => {
   return (
     <div className="bg-white text-black py-16">
       <div className="wrapper">
@@ -9,44 +9,36 @@ const WebDevelopmentServices = ({ showDescription = true, showHeading = true }: 
           {/* Left Section - Description */}
           <div className="space-y-6">
             <div className="space-y-4">
-              {showHeading && (
-                <div className="border-y-2 border-black py-3 w-fit">
-                  <h2 className="text1 z-[2] relative">
-                    <div className="absolute left-0 top-0 w-[3rem] h-full bg-yellowClr z-0"></div>
-                    <p className="pl-4">
-                      <span className="relative z-[1] font-glacial">
-                        Websites We Build
-                      </span>
-                    </p>
-                  </h2>
-                </div>
-              )}
-              {showDescription && (
-                <p className="text-lg leading-relaxed text-gray-700">
-                  From simple brand presence sites to advanced platforms with AI
-                  and workflow automation, we craft websites that fit your specs
-                  and support your business growth.
-                </p>
-              )}
+              {/* No heading or description for this section */}
             </div>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-10">
-            {/* Middle Section - Essential Website Package */}
+            {/* Left Section - Tablet Visual */}
+            <div className="relative mx-auto">
+              <div className="translate-x-4 -translate-y-4 bg-yellowClr w-full h-full absolute inset-0 z-[1] rounded-3xl" />
+              <img
+                src="https://res.cloudinary.com/dknafpppp/image/upload/v1758908591/Screenshot_2025-09-27_at_12.42.42_AM_pc2e1e.png"
+                alt="Interactive Website"
+                className="h-full w-full aspect-[4/3] object-cover rounded-3xl z-[2] relative"
+              />
+            </div>
+
+            {/* Right Section - Interactive Website Package */}
             <div className="relative">
-              <div className="translate-x-4 -translate-y-4 bg-yellowClr w-full h-full absolute inset- z-[1] rounded-3xl" />
+              <div className="translate-x-4 -translate-y-4 bg-yellowClr w-full h-full absolute inset-0 z-[1] rounded-3xl" />
               <div className="relative z-[2]">
                 <div className="bg-white border-2 border-black rounded-3xl p-8 shadow-lg relative">
                   <div className="space-y-6 relative z-[10]">
                     <div>
                       <h3 className="text3 !font-normal mb-2 border-y-2 border-black py-2 w-fit">
                         <span className="relative">
-                          Essential{" "}
+                          Interactive{" "}
                           <span className="bg-yellowClr">Website</span>
                         </span>
                       </h3>
                       <p className="text-gray-600">
-                        For businesses establishing a credible online presence.
+                        For brands ready to engage visitors and build authority.
                       </p>
                     </div>
 
@@ -54,65 +46,67 @@ const WebDevelopmentServices = ({ showDescription = true, showHeading = true }: 
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
                         <span className="text-sm">
-                          Up to 10 Pages to showcase services clearly.
+                          Everything in Essential Website, plus:
                         </span>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
                         <span className="text-sm">
-                          Lead Capture Forms to start conversations.
+                          10 to 25 Pages
                         </span>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
                         <span className="text-sm">
-                          Mobile-Responsive Design for all devices.
+                          CMS Integration (WordPress/Headless Options)
                         </span>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
                         <span className="text-sm">
-                          SSL Security & Core SEO Optimization.
+                          Blog & Content Management
                         </span>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
                         <span className="text-sm">
-                          Fast Loading & Clean User Experience.
+                          Google Optimization & Search Submission
                         </span>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
                         <span className="text-sm">
-                          Chat & WhatsApp Widget Integration
+                          Multilingual Support
                         </span>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
                         <span className="text-sm">
-                          Custom Design (1-2 style options).
+                          Free Stock Images (up to 10)
+                        </span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-sm">
+                          Lead Magnet Integration
+                        </span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-sm">
+                          Custom Theme (2-3 options)
                         </span>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
                         <span className="text-sm font-semibold">
-                          Delivery: 2-3 weeks
+                          Delivery: 4-6 weeks
                         </span>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-
-            {/* Right Section - Tablet Visual */}
-            <div className="relative mx-auto">
-              <div className="translate-x-4 -translate-y-4 bg-yellowClr w-full h-full absolute inset-0 z-[1] rounded-3xl" />
-              <img
-                src={img1}
-                alt="Essential Website"
-                className="h-full w-full aspect-[4/3] object-cover rounded-3xl z-[2] relative"
-              />
             </div>
           </div>
         </div>
@@ -121,4 +115,4 @@ const WebDevelopmentServices = ({ showDescription = true, showHeading = true }: 
   );
 };
 
-export default WebDevelopmentServices;
+export default InteractiveWebsite;

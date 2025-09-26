@@ -1,8 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Sparkles, Zap, Brain } from "lucide-react";
+import { useLocation } from "react-router-dom";
 import heroImage from "@/assets/ai-hero-bg.jpg";
 
 const HeroSection = () => {
+  const location = useLocation();
+  const isWebDevelopmentPage = location.pathname === '/web-development';
+  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -56,27 +60,46 @@ const HeroSection = () => {
           <div className="animate-fade-in">
             {/* Main Headline */}
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight animate-slide-up">
-              You've Got{" "}
-              <span className="bg-[#ffd63c] text-black px-4 py-2 rounded-lg">
-                Specs
-              </span>
+              {isWebDevelopmentPage ? (
+                <>
+                  Custom{" "}
+                  <span className="bg-[#ffd63c] text-black px-4 py-2 rounded-lg">
+                    Web
+                  </span>
+                  <br />
+                  Development
+                </>
+              ) : (
+                <>
+                  You've Got{" "}
+                  <span className="bg-[#ffd63c] text-black px-4 py-2 rounded-lg">
+                    Specs
+                  </span>
+                </>
+              )}
             </h1>
 
             {/* Sub-headline */}
             <h2
-              className="text-2xl md:text-4xl font-bold text-white mb-6 animate-slide-up"
+              className={`font-bold text-white mb-6 animate-slide-up ${
+                isWebDevelopmentPage 
+                  ? "text-5xl md:text-7xl" 
+                  : "text-2xl md:text-4xl"
+              }`}
               style={{ animationDelay: "0.2s" }}
             >
-              But No One Gets It Right ?
+              {isWebDevelopmentPage ? "Solution" : "But No One Gets It Right ?"}
             </h2>
 
             {/* Call to Action */}
-            <div
-              className="text-2xl md:text-4xl font-bold text-[#ffd63c] mb-6 animate-slide-up"
-              style={{ animationDelay: "0.4s" }}
-            >
-              We'll Build What Matters.
-            </div>
+            {!isWebDevelopmentPage && (
+              <div
+                className="text-2xl md:text-4xl font-bold text-[#ffd63c] mb-6 animate-slide-up"
+                style={{ animationDelay: "0.4s" }}
+              >
+                We'll Build What Matters.
+              </div>
+            )}
 
             {/* Yellow Separator Line */}
             <div
@@ -106,23 +129,25 @@ const HeroSection = () => {
                 className="group relative overflow-hidden"
               >
                 <span className="relative z-10 flex items-center">
-                  Explore Our Services
+                  {isWebDevelopmentPage ? "Request a Free Quote" : "Explore Our Services"}
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Button>
-              <Button
-                variant="outline"
-                size="xl"
-                onClick={() => scrollToSection("portfolio")}
-                className="bg-foreground/10 border-foreground/50 text-foreground hover:bg-foreground hover:text-background backdrop-blur-sm group relative overflow-hidden"
-              >
-                <span className="relative z-10 flex items-center">
-                  <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-                  View Our Work
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-foreground/5 to-foreground/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </Button>
+              {!isWebDevelopmentPage && (
+                <Button
+                  variant="outline"
+                  size="xl"
+                  onClick={() => scrollToSection("portfolio")}
+                  className="bg-foreground/10 border-foreground/50 text-foreground hover:bg-foreground hover:text-background backdrop-blur-sm group relative overflow-hidden"
+                >
+                  <span className="relative z-10 flex items-center">
+                    <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+                    View Our Work
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-foreground/5 to-foreground/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </Button>
+              )}
             </div>
 
             {/* Enhanced Stats with Animations */}
@@ -186,12 +211,20 @@ const HeroSection = () => {
         </div>
       </section>
       {/* What to expect section */}
-      <div className="relative z-10 w-full py-[2rem] wrapper text-center bg-gradient-to-b from-transparent to-black">
-        <h2 className="text2">
-          What You Can <span className="text-yellowClr font-glacial">Expect</span>{" "}
-          From Us?
-        </h2>
-      </div>
+        <div className="relative z-10 w-full py-[2rem] wrapper text-center bg-gradient-to-b from-transparent to-black">
+          <h2 className="text2">
+            {isWebDevelopmentPage ? (
+              <>
+                <span className="text-yellowClr font-glacial">Websites</span> for Every <span className="text-yellowClr font-glacial">Specs</span>
+              </>
+            ) : (
+              <>
+                What You Can <span className="text-yellowClr font-glacial">Expect</span>{" "}
+                From Us?
+              </>
+            )}
+          </h2>
+        </div>
     </>
   );
 };

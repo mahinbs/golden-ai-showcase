@@ -1,52 +1,32 @@
-import img1 from "../../assets/websites we build/1. Essential Website.png";
+import img1 from "../../assets/websites we build/1. Essential Website.png"; // Placeholder, actual image not provided
 
-const WebDevelopmentServices = ({ showDescription = true, showHeading = true }: { showDescription?: boolean; showHeading?: boolean }) => {
+const AdvancedWebsite = () => {
   return (
     <div className="bg-white text-black py-16">
       <div className="wrapper">
-        {/* Main Content Grid */}
         <div className="grid lg:grid-cols-[35%,1fr] gap-8 items-start">
-          {/* Left Section - Description */}
           <div className="space-y-6">
             <div className="space-y-4">
-              {showHeading && (
-                <div className="border-y-2 border-black py-3 w-fit">
-                  <h2 className="text1 z-[2] relative">
-                    <div className="absolute left-0 top-0 w-[3rem] h-full bg-yellowClr z-0"></div>
-                    <p className="pl-4">
-                      <span className="relative z-[1] font-glacial">
-                        Websites We Build
-                      </span>
-                    </p>
-                  </h2>
-                </div>
-              )}
-              {showDescription && (
-                <p className="text-lg leading-relaxed text-gray-700">
-                  From simple brand presence sites to advanced platforms with AI
-                  and workflow automation, we craft websites that fit your specs
-                  and support your business growth.
-                </p>
-              )}
+              {/* No heading or description for this section */}
             </div>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-10">
-            {/* Middle Section - Essential Website Package */}
+            {/* Left Section - Advanced Website Package */}
             <div className="relative">
-              <div className="translate-x-4 -translate-y-4 bg-yellowClr w-full h-full absolute inset- z-[1] rounded-3xl" />
+              <div className="translate-x-4 -translate-y-4 bg-yellowClr w-full h-full absolute inset-0 z-[1] rounded-3xl" />
               <div className="relative z-[2]">
                 <div className="bg-white border-2 border-black rounded-3xl p-8 shadow-lg relative">
                   <div className="space-y-6 relative z-[10]">
                     <div>
                       <h3 className="text3 !font-normal mb-2 border-y-2 border-black py-2 w-fit">
                         <span className="relative">
-                          Essential{" "}
+                          Advanced{" "}
                           <span className="bg-yellowClr">Website</span>
                         </span>
                       </h3>
                       <p className="text-gray-600">
-                        For businesses establishing a credible online presence.
+                        For scaling brands, digital products, and growth driven businesses.
                       </p>
                     </div>
 
@@ -54,49 +34,67 @@ const WebDevelopmentServices = ({ showDescription = true, showHeading = true }: 
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
                         <span className="text-sm">
-                          Up to 10 Pages to showcase services clearly.
+                          Everything in Interactive Website, plus:
                         </span>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
                         <span className="text-sm">
-                          Lead Capture Forms to start conversations.
+                          20+ Pages
                         </span>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
                         <span className="text-sm">
-                          Mobile-Responsive Design for all devices.
+                          Role-Based Content Management
                         </span>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
                         <span className="text-sm">
-                          SSL Security & Core SEO Optimization.
+                          Advanced SEO Tools Integration
                         </span>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
                         <span className="text-sm">
-                          Fast Loading & Clean User Experience.
+                          AI Chatbot/AI Features Integration
                         </span>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
                         <span className="text-sm">
-                          Chat & WhatsApp Widget Integration
+                          E-commerce or Membership Functionality
                         </span>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
                         <span className="text-sm">
-                          Custom Design (1-2 style options).
+                          Blog Categorization & Search System
+                        </span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-sm">
+                          Free Stock Images (up to 20)
+                        </span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-sm">
+                          Custom Theme (3–4 options)
+                        </span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-sm">
+                          Integration with CRM, Analytics, Marketing Tools
                         </span>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
                         <span className="text-sm font-semibold">
-                          Delivery: 2-3 weeks
+                          Delivery: 8–12 weeks
                         </span>
                       </div>
                     </div>
@@ -109,8 +107,8 @@ const WebDevelopmentServices = ({ showDescription = true, showHeading = true }: 
             <div className="relative mx-auto">
               <div className="translate-x-4 -translate-y-4 bg-yellowClr w-full h-full absolute inset-0 z-[1] rounded-3xl" />
               <img
-                src={img1}
-                alt="Essential Website"
+                src="https://res.cloudinary.com/dknafpppp/image/upload/v1758909475/Advanced-WordPress-web-development-crop-820x369_ly3deo.webp"
+                alt="Advanced Website"
                 className="h-full w-full aspect-[4/3] object-cover rounded-3xl z-[2] relative"
               />
             </div>
@@ -121,4 +119,4 @@ const WebDevelopmentServices = ({ showDescription = true, showHeading = true }: 
   );
 };
 
-export default WebDevelopmentServices;
+export default AdvancedWebsite;
