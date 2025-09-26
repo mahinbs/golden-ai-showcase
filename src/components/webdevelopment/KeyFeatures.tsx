@@ -46,7 +46,8 @@ const KeyFeatures = ({
   description = "",
   showImage = true,
   showCards = true,
-  showTechStack = false
+  showTechStack = false,
+  characterImage: customCharacterImage
 }: { 
   title?: string; 
   subtitle?: string;
@@ -55,12 +56,13 @@ const KeyFeatures = ({
   showImage?: boolean;
   showCards?: boolean;
   showTechStack?: boolean;
+  characterImage?: string;
 }) => {
   return (
     <div className="bg-black text-white py-16">
       <div className="wrapper">
-        <div className={`grid ${showImage ? 'lg:grid-cols-[38%,1fr]' : showTechStack ? 'lg:grid-cols-[50%,1fr]' : 'lg:grid-cols-1'} gap-12 items-start`}>
-          {/* Left Side - Title and Character */}
+        <div className={`grid ${showImage && !showCards ? 'lg:grid-cols-[1fr,38%]' : showImage ? 'lg:grid-cols-[38%,1fr]' : showTechStack ? 'lg:grid-cols-[50%,1fr]' : 'lg:grid-cols-1'} gap-12 items-start`}>
+          {/* Left Side - Title */}
           <div className="space-y-8">
             {/* Title Section */}
             <div className="space-y-4 border-y w-fit border-white py-2">
@@ -79,20 +81,38 @@ const KeyFeatures = ({
               )}
             </div>
 
-            {/* Character Image */}
-            {showImage && (
+            {/* Character Image - Left side when cards are shown */}
+            {showImage && showCards && (
               <div className="flex justify-center lg:justify-start">
                 <img
-                  src={characterImage}
+                  src={customCharacterImage || characterImage}
                   alt="character"
                   className="max-w-[20rem] w-full object-contain"
                 />
               </div>
             )}
+
+            {/* Book a Call Button - Show when no cards and no tech stack */}
+            {!showCards && !showTechStack && (
+              <div className="mt-8">
+                <p className="text-white text-lg mb-4">Let's talk details</p>
+                <button 
+                  onClick={() => {
+                    const contactSection = document.getElementById('contact');
+                    if (contactSection) {
+                      contactSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                  className="bg-yellowClr text-black px-8 py-4 rounded-lg font-semibold text-lg hover:bg-yellow-400 transition-colors duration-300 shadow-lg hover:shadow-xl"
+                >
+                  Book a Call
+                </button>
+              </div>
+            )}
           </div>
 
-          {/* Right Side - Feature Cards */}
-          {showCards && (
+          {/* Right Side - Feature Cards or Image */}
+          {showCards ? (
             <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
               {features.map(({ label, desc, img }, index) => (
                 <div
@@ -124,7 +144,15 @@ const KeyFeatures = ({
                 </div>
               ))}
             </div>
-          )}
+          ) : showImage && !showCards ? (
+            <div className="flex justify-center lg:justify-end">
+              <img
+                src={customCharacterImage || characterImage}
+                alt="character"
+                className="max-w-[20rem] w-full object-contain"
+              />
+            </div>
+          ) : null}
 
           {/* Tech Stack Circles */}
           {showTechStack && (

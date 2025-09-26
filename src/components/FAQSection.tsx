@@ -1,10 +1,14 @@
 import { useState } from "react";
 import { ChevronDown, ChevronRight } from "lucide-react";
 
-const FAQSection = () => {
+const FAQSection = ({ 
+  isWebDevelopment = false 
+}: { 
+  isWebDevelopment?: boolean 
+}) => {
   const [openIndex, setOpenIndex] = useState(1); // Second item open by default
 
-  const faqs = [
+  const generalFaqs = [
     {
       question: "Why Is SEO Important For Small Business?",
       answer: "SEO is crucial for small businesses because it helps them compete with larger companies by improving their online visibility. It drives organic traffic, builds credibility, and provides long-term marketing value at a fraction of the cost of paid advertising."
@@ -30,6 +34,35 @@ const FAQSection = () => {
       answer: "We use modern technologies including React, Node.js, Python, AI/ML frameworks, cloud platforms like AWS and Azure, and various databases. Our tech stack is chosen based on your project requirements and scalability needs."
     }
   ];
+
+  const webDevelopmentFaqs = [
+    {
+      question: "What Types of Websites Do You Build?",
+      answer: "We build all types of websites including business websites, e-commerce stores, portfolios, blogs, corporate sites, and custom web applications. From simple brochure sites to complex web platforms, we handle projects of any size and complexity."
+    },
+    {
+      question: "How Long Does Web Development Take?",
+      answer: "Development time varies based on project complexity. Simple websites take 2-4 weeks, while complex applications can take 2-6 months. We provide detailed timelines during consultation and keep you updated throughout the development process."
+    },
+    {
+      question: "Do You Provide Website Maintenance?",
+      answer: "Yes, we offer comprehensive maintenance packages including security updates, content updates, performance monitoring, backups, and technical support. Our maintenance plans ensure your website stays secure, fast, and up-to-date."
+    },
+    {
+      question: "What Technologies Do You Use for Web Development?",
+      answer: "We use modern technologies like React, Next.js, Vue.js, Node.js, Python, and various databases. Our tech stack includes cloud platforms (AWS, Azure), payment gateways (Stripe, Razorpay), and deployment tools (Docker, Vercel) to build scalable, secure applications."
+    },
+    {
+      question: "Can You Help with SEO and Performance?",
+      answer: "Absolutely! We build SEO-friendly websites with optimized performance, fast loading times, mobile responsiveness, and proper meta tags. We also provide ongoing SEO services to improve your search engine rankings and online visibility."
+    },
+    {
+      question: "Do You Offer Custom Web Applications?",
+      answer: "Yes, we specialize in custom web applications tailored to your business needs. From CRM systems to inventory management, we build scalable applications that integrate with your existing systems and workflows."
+    }
+  ];
+
+  const faqs = isWebDevelopment ? webDevelopmentFaqs : generalFaqs;
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? -1 : index);

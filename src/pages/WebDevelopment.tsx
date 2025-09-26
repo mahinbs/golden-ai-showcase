@@ -39,9 +39,16 @@ const WebDevelopment = () => {
       <PortfolioSection />
       <BlogSection />
       <TestimonialsSection />
-      <FAQSection />
+      <FAQSection isWebDevelopment={true} />
       <BrochureSection />
       <ContactSection />
+      <KeyFeatures 
+        title="Looking to build a Website" 
+        subtitle="that actually fits your business ?"
+        showCards={false}
+        showImage={true}
+        characterImage="https://res.cloudinary.com/dknafpppp/image/upload/v1758912017/Screenshot_2025-09-27_at_1.40.08_AM_heawgv.png"
+      />
       <Footer />
       <FloatingWhatsApp />
     </div>
