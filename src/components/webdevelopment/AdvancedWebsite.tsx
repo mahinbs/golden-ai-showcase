@@ -1,8 +1,6 @@
-import img1 from "../../assets/websites we build/1. Essential Website.png"; // Placeholder, actual image not provided
-
 const AdvancedWebsite = () => {
   return (
-    <div className="bg-white text-black py-16">
+    <div className="bg-white text-black pb-8">
       <div className="wrapper">
         <div className="grid lg:grid-cols-[35%,1fr] gap-8 items-start">
           <div className="space-y-6">
@@ -11,7 +9,7 @@ const AdvancedWebsite = () => {
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-10">
+          <div className="grid sm:grid-cols-2 gap-10">
             {/* Left Section - Advanced Website Package */}
             <div className="relative">
               <div className="translate-x-4 -translate-y-4 bg-yellowClr w-full h-full absolute inset-0 z-[1] rounded-3xl" />
@@ -21,12 +19,12 @@ const AdvancedWebsite = () => {
                     <div>
                       <h3 className="text3 !font-normal mb-2 border-y-2 border-black py-2 w-fit">
                         <span className="relative">
-                          Advanced{" "}
-                          <span className="bg-yellowClr">Website</span>
+                          Advanced <span className="bg-yellowClr">Website</span>
                         </span>
                       </h3>
                       <p className="text-gray-600">
-                        For scaling brands, digital products, and growth driven businesses.
+                        For scaling brands, digital products, and growth driven
+                        businesses.
                       </p>
                     </div>
 
@@ -39,9 +37,7 @@ const AdvancedWebsite = () => {
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
-                        <span className="text-sm">
-                          20+ Pages
-                        </span>
+                        <span className="text-sm">20+ Pages</span>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>

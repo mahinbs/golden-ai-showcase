@@ -2,7 +2,7 @@ import React from "react";
 
 const InteractiveWebsite = () => {
   return (
-    <div className="bg-white text-black py-16">
+    <div className="bg-white text-black pb-10">
       <div className="wrapper">
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-[35%,1fr] gap-8 items-start">
@@ -13,7 +13,7 @@ const InteractiveWebsite = () => {
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-10">
+          <div className="grid sm:grid-cols-2 gap-10">
             {/* Left Section - Tablet Visual */}
             <div className="relative mx-auto">
               <div className="translate-x-4 -translate-y-4 bg-yellowClr w-full h-full absolute inset-0 z-[1] rounded-3xl" />

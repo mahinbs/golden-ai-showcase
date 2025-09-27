@@ -157,7 +157,7 @@ const KeyFeatures = ({
           {/* Tech Stack Circles */}
           {showTechStack && (
             <div className="flex justify-center lg:justify-start">
-              <div className="grid grid-cols-6 gap-6 max-w-4xl">
+              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 max-w-4xl">
                 {/* Row 1 */}
                 <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center p-3 shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300 cursor-pointer group">
                   <img 

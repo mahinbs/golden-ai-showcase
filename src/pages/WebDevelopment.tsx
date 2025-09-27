@@ -16,6 +16,8 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import KeyFeatures from "@/components/webdevelopment/KeyFeatures";
+import WhyCustomWebsitesMatter from "@/components/webdevelopment/WhyCustomWebsitesMatter";
+import HowWeBuild from "@/components/webdevelopment/HowWeBuild";
 
 const WebDevelopment = () => {
   return (
@@ -27,23 +29,25 @@ const WebDevelopment = () => {
       <InteractiveWebsite />
       <AdvancedWebsite />
       <KeyFeatures />
-      <KeyFeatures 
-        title="Our Tech" 
-        subtitle="Stack" 
+      <HowWeBuild />
+      <KeyFeatures
+        title="Our Tech"
+        subtitle="Stack"
         titleSize="text-4xl md:text-5xl lg:text-6xl"
         description="Website Development Tools We Are Specialized In"
         showImage={false}
         showCards={false}
         showTechStack={true}
       />
+      <WhyCustomWebsitesMatter />
       <PortfolioSection />
       <BlogSection />
       <TestimonialsSection />
       <FAQSection isWebDevelopment={true} />
       <BrochureSection />
       <ContactSection />
-      <KeyFeatures 
-        title="Looking to build a Website" 
+      <KeyFeatures
+        title="Looking to build a Website"
         subtitle="that actually fits your business ?"
         showCards={false}
         showImage={true}

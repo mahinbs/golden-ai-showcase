@@ -31,7 +31,7 @@ const WebDevelopmentServices = ({ showDescription = true, showHeading = true }: 
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-10">
+          <div className="grid sm:grid-cols-2 gap-10">
             {/* Middle Section - Essential Website Package */}
             <div className="relative">
               <div className="translate-x-4 -translate-y-4 bg-yellowClr w-full h-full absolute inset- z-[1] rounded-3xl" />
