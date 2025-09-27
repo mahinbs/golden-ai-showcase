@@ -102,11 +102,11 @@ const AdvancedWebsite = () => {
             {/* Right Section - Tablet Visual */}
             <div className="relative mx-auto">
               <div className="translate-x-4 -translate-y-4 bg-yellowClr w-full h-full absolute inset-0 z-[1] rounded-3xl" />
-              <img
-                src="https://res.cloudinary.com/dknafpppp/image/upload/v1758909475/Advanced-WordPress-web-development-crop-820x369_ly3deo.webp"
-                alt="Advanced Website"
-                className="h-full w-full aspect-[4/3] object-cover rounded-3xl z-[2] relative"
-              />
+                        <img
+                          src="https://res.cloudinary.com/drdjii8fe/image/upload/v1758986306/3._Advanced_Website_ky2shk.png"
+                          alt="Advanced Website"
+                          className="h-full w-full aspect-[4/3] object-cover rounded-3xl z-[2] relative"
+                        />
             </div>
           </div>
         </div>

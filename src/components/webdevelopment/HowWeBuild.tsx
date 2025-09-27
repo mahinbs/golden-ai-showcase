@@ -20,7 +20,8 @@ const HowWeBuild = () => {
                 <div className="absolute right-0 top-0 w-[3rem] h-full bg-yellowClr z-0"></div>
                 <p className="pl-4">
                   <span className="relative z-[1] font-glacial">
-                    How We Build
+                    How We<br />
+                    Build
                   </span>
                 </p>
               </h2>
@@ -32,7 +33,7 @@ const HowWeBuild = () => {
           </div>
           <div className="max-w-[20rem]">
             <video
-              src={video}
+              src="https://res.cloudinary.com/drdjii8fe/video/upload/v1758986364/How_We_Build_2_x6kuyo.mp4"
               width="100%"
               height="100%"
               playsInline

@@ -68,6 +68,8 @@ const HeroSection = () => {
                   </span>
                   <br />
                   Development
+                  <br />
+                  Solution
                 </>
               ) : (
                 <>
@@ -79,16 +81,22 @@ const HeroSection = () => {
               )}
             </h1>
 
+            {/* Yellow Separator Line */}
+            <div
+              className="w-[32rem] h-1 bg-[#ffd63c] mb-6 animate-slide-up"
+              style={{ animationDelay: "0.2s" }}
+            ></div>
+
             {/* Sub-headline */}
             <h2
               className={`font-bold text-white mb-6 animate-slide-up ${
                 isWebDevelopmentPage 
-                  ? "text-5xl md:text-7xl" 
+                  ? "text-base md:text-xl" 
                   : "text-2xl md:text-4xl"
               }`}
-              style={{ animationDelay: "0.2s" }}
+              style={{ animationDelay: "0.3s" }}
             >
-              {isWebDevelopmentPage ? "Solution" : "But No One Gets It Right ?"}
+              {isWebDevelopmentPage ? "websites that fit and perform, Crafted around your specs" : "But No One Gets It Right ?"}
             </h2>
 
             {/* Call to Action */}
@@ -100,12 +108,6 @@ const HeroSection = () => {
                 We'll Build What Matters.
               </div>
             )}
-
-            {/* Yellow Separator Line */}
-            <div
-              className="w-24 h-1 bg-[#ffd63c] mb-8 animate-slide-up"
-              style={{ animationDelay: "0.6s" }}
-            ></div>
 
             {/* Description */}
             {/* <p
