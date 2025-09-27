@@ -25,25 +25,41 @@ const WebDevelopment = () => {
       <Navigation />
       <HeroSection />
       <StatsSection />
-      <WebDevelopmentServices />
+      <div id="services">
+        <WebDevelopmentServices />
+      </div>
       <InteractiveWebsite />
       <AdvancedWebsite />
-      <KeyFeatures />
-      <HowWeBuild />
-      <KeyFeatures
-        title="Our Tech"
-        subtitle="Stack"
-        titleSize="text-4xl md:text-5xl lg:text-6xl"
-        description="Website Development Tools We Are Specialized In"
-        showImage={false}
-        showCards={false}
-        showTechStack={true}
-      />
+      <div id="key-features">
+        <KeyFeatures />
+      </div>
+      <div id="how-we-build">
+        <HowWeBuild />
+      </div>
+      <div id="tech-stack">
+        <KeyFeatures
+          title="Our Tech"
+          subtitle="Stack"
+          titleSize="text-4xl md:text-5xl lg:text-6xl"
+          description="Website Development Tools We Are Specialized In"
+          showImage={false}
+          showCards={false}
+          showTechStack={true}
+        />
+      </div>
       <WhyCustomWebsitesMatter />
-      <PortfolioSection />
-      <BlogSection />
-      <TestimonialsSection />
-      <FAQSection isWebDevelopment={true} />
+      <div id="portfolio">
+        <PortfolioSection />
+      </div>
+      <div id="blog">
+        <BlogSection />
+      </div>
+      <div id="testimonials">
+        <TestimonialsSection />
+      </div>
+      <div id="faq">
+        <FAQSection isWebDevelopment={true} />
+      </div>
       <BrochureSection />
       <ContactSection />
       <KeyFeatures

@@ -35,6 +35,16 @@ const Navigation = () => {
         { label: "Founder", id: "founder" },
       ];
     }
+    if (location.pathname === "/web-development") {
+      return [
+        { label: "Services", id: "services" },
+        { label: "Key Features", id: "key-features" },
+        { label: "Portfolio", id: "portfolio" },
+        { label: "Blog", id: "blog" },
+        { label: "Testimonials", id: "testimonials" },
+        { label: "FAQ", id: "faq" },
+      ];
+    }
     return [
       { label: "Services", id: "services" },
       { label: "Industries", id: "industries" },
@@ -84,6 +94,7 @@ const Navigation = () => {
                 Who We Are
               </Link>
             )}
+
             {location.pathname === "/about" && (
               <Link
                 to="/"
@@ -91,6 +102,16 @@ const Navigation = () => {
               >
                 Home
               </Link>
+            )}
+            {location.pathname === "/about" || location.pathname === "/" ? (
+              <Link
+                to="/web-development"
+                className="text-foreground hover:text-accent transition-colors duration-300 font-medium"
+              >
+                Web Development
+              </Link>
+            ) : (
+              ""
             )}
             {navItems.map((item) => (
               <button
@@ -123,6 +144,14 @@ const Navigation = () => {
         {isMobileMenuOpen && (
           <div className="lg:hidden bg-background/95 backdrop-blur-md border-t border-border animate-slide-up">
             <div className="px-4 py-4 space-y-4">
+              {location.pathname === "/about" && (
+                <Link
+                  to="/"
+                  className="text-foreground hover:text-accent transition-colors duration-300 font-medium"
+                >
+                  Home
+                </Link>
+              )}
               {location.pathname !== "/about" && (
                 <Link
                   to="/about"
@@ -131,6 +160,12 @@ const Navigation = () => {
                   Who We Are
                 </Link>
               )}
+              <Link
+                to="/web-development"
+                className="text-foreground hover:text-accent transition-colors duration-300 font-medium"
+              >
+                Web Development
+              </Link>
               {navItems.map((item) => (
                 <button
                   key={item.id}
