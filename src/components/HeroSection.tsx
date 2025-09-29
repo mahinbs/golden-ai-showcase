@@ -32,7 +32,7 @@ const HeroSection = () => {
 
         {/* Content */}
         <div className="relative z-10 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col-reverse lg:grid grid-cols-2 gap-5 min-h-screen">
+          <div className="flex flex-col-reverse lg:grid grid-cols-2 items-center gap-5 min-h-screen">
           {/* <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between min-h-screen"> */}
             {/* Left Content */}
             <div className="flex-1 flex flex-col justify-center text-left animate-fade-in">
@@ -166,7 +166,7 @@ const HeroSection = () => {
             <div className="flex-1 lg:max-w-lg xl:max-w-xl h-[400px] lg:h-[600px] flex items-center justify-center translate-y-24 sm:translate-y-0">
               <Logo3D 
                 className="w-full h-full"
-                scale={isWebDevelopmentPage ? 2.7 : 2.7}
+                scale={isWebDevelopmentPage ? 2.8 : 2.8}
                 position={[0, 0, 0]}
                 autoRotate={true}
                 enableControls={false}
