@@ -28,7 +28,7 @@ const FloatingWhatsApp = () => {
       {/* WhatsApp Button */}
       <button
         onClick={handleWhatsAppClick}
-        className="group relative p-0 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 animate-pulse"
+        className="group relative p-0 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 animate-pulse cursor-pointer z-40"
         aria-label="Chat with us on WhatsApp"
       >
         {/* WhatsApp Logo */}

@@ -1,12 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Sparkles, Zap, Brain } from "lucide-react";
 import { useLocation } from "react-router-dom";
-import heroImage from "@/assets/ai-hero-bg.jpg";
+import heroImage from "@/assets/banners/home-banner.png";
+import Logo3D from "./Logo3D";
 
 const HeroSection = () => {
   const location = useLocation();
-  const isWebDevelopmentPage = location.pathname === '/web-development';
-  
+  const isWebDevelopmentPage = location.pathname === "/web-development";
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -20,50 +21,27 @@ const HeroSection = () => {
         id="hero"
         className="relative min-h-screen flex items-center justify-start overflow-hidden"
       >
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 z-0">
-          {/* Floating Particles */}
-          <div
-            className="absolute top-20 left-10 w-2 h-2 bg-accent/30 rounded-full animate-float"
-            style={{ animationDelay: "0s", animationDuration: "6s" }}
-          ></div>
-          <div
-            className="absolute top-40 right-20 w-3 h-3 bg-accent/20 rounded-full animate-float"
-            style={{ animationDelay: "2s", animationDuration: "8s" }}
-          ></div>
-          <div
-            className="absolute bottom-40 left-20 w-1 h-1 bg-accent/40 rounded-full animate-float"
-            style={{ animationDelay: "4s", animationDuration: "7s" }}
-          ></div>
-          <div
-            className="absolute top-60 right-40 w-2 h-2 bg-accent/25 rounded-full animate-float"
-            style={{ animationDelay: "1s", animationDuration: "9s" }}
-          ></div>
-          <div
-            className="absolute bottom-60 right-10 w-1 h-1 bg-accent/35 rounded-full animate-float"
-            style={{ animationDelay: "3s", animationDuration: "5s" }}
-          ></div>
-
-          {/* Gradient Orbs */}
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-accent/10 rounded-full blur-3xl animate-pulse"></div>
-          <div
-            className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-pulse"
-            style={{ animationDelay: "2s" }}
-          ></div>
-        </div>
+        <img
+          src={heroImage}
+          className="absolute inset-0 h-full w-full z-0 object-cover"
+          alt=""
+        />
 
         {/* Completely Black Background */}
-        <div className="absolute inset-0 z-0 bg-black"></div>
+        <div className="absolute inset-0 z-10 bg-black/90"></div>
 
         {/* Content */}
-        <div className="relative z-10 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 text-left">
-          <div className="animate-fade-in">
+        <div className="relative z-10 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col-reverse lg:grid grid-cols-2 gap-5 min-h-screen">
+          {/* <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between min-h-screen"> */}
+            {/* Left Content */}
+            <div className="flex-1 flex flex-col justify-center text-left animate-fade-in">
             {/* Main Headline */}
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight animate-slide-up">
               {isWebDevelopmentPage ? (
                 <>
                   Custom{" "}
-                  <span className="bg-[#ffd63c] text-black px-4 py-2 rounded-lg">
+                  <span className="bg-[#ffd63c] text-black px-4 py-1 rounded-lg">
                     Web
                   </span>
                   <br />
@@ -74,7 +52,7 @@ const HeroSection = () => {
               ) : (
                 <>
                   You've Got{" "}
-                  <span className="bg-[#ffd63c] text-black px-4 py-2 rounded-lg">
+                  <span className="bg-[#ffd63c] text-black px-4 py-1 rounded-lg">
                     Specs
                   </span>
                 </>
@@ -83,20 +61,22 @@ const HeroSection = () => {
 
             {/* Yellow Separator Line */}
             <div
-              className="w-[32rem] h-1 bg-[#ffd63c] mb-6 animate-slide-up"
+              className="max-w-[32rem] w-full h-1 bg-[#ffd63c] mb-6 animate-slide-up"
               style={{ animationDelay: "0.2s" }}
             ></div>
 
             {/* Sub-headline */}
             <h2
               className={`font-bold text-white mb-6 animate-slide-up ${
-                isWebDevelopmentPage 
-                  ? "text-base md:text-xl" 
+                isWebDevelopmentPage
+                  ? "text-base md:text-xl"
                   : "text-2xl md:text-4xl"
               }`}
               style={{ animationDelay: "0.3s" }}
             >
-              {isWebDevelopmentPage ? "websites that fit and perform, Crafted around your specs" : "But No One Gets It Right ?"}
+              {isWebDevelopmentPage
+                ? "websites that fit and perform, Crafted around your specs"
+                : "But No One Gets It Right ?"}
             </h2>
 
             {/* Call to Action */}
@@ -108,16 +88,6 @@ const HeroSection = () => {
                 We'll Build What Matters.
               </div>
             )}
-
-            {/* Description */}
-            {/* <p
-            className="text-lg md:text-xl text-white mb-8 max-w-4xl leading-relaxed animate-slide-up"
-            style={{ animationDelay: "0.8s" }}
-          >
-            At Specslo, we turn your specs into scalable digital products that
-            solve real problems. We build AI software, apps, and websites that
-            help you launch faster and lead your market.
-          </p> */}
 
             {/* Enhanced Buttons */}
             <div
@@ -131,7 +101,9 @@ const HeroSection = () => {
                 className="group relative overflow-hidden"
               >
                 <span className="relative z-10 flex items-center">
-                  {isWebDevelopmentPage ? "Request a Free Quote" : "Explore Our Services"}
+                  {isWebDevelopmentPage
+                    ? "Request a Free Quote"
+                    : "Explore Our Services"}
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -188,18 +160,20 @@ const HeroSection = () => {
                 </div>
               </div>
             </div>
+            </div>
+
+            {/* Right Content - 3D Logo */}
+            <div className="flex-1 lg:max-w-lg xl:max-w-xl h-[400px] lg:h-[600px] flex items-center justify-center translate-y-24 sm:translate-y-0">
+              <Logo3D 
+                className="w-full h-full"
+                scale={isWebDevelopmentPage ? 2.7 : 2.7}
+                position={[0, 0, 0]}
+                autoRotate={true}
+                enableControls={false}
+              />
+            </div>
           </div>
         </div>
-
-        {/* Enhanced Scroll Indicator */}
-        {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-float flex-col items-center md:flex hidden">
-        <div className="w-6 h-10 border-2 border-foreground/50 rounded-full flex  justify-center group cursor-pointer hover:border-accent transition-colors duration-300">
-          <div className="w-1 h-3 bg-accent rounded-full mt-2 animate-bounce group-hover:bg-accent/80 transition-colors duration-300"></div>
-        </div>
-        <div className="text-xs text-foreground/60 mt-2 text-center animate-pulse">
-          Scroll to explore
-        </div>
-      </div> */}
 
         {/* Animated Background Grid */}
         <div className="absolute inset-0 z-0 opacity-10">
@@ -213,20 +187,22 @@ const HeroSection = () => {
         </div>
       </section>
       {/* What to expect section */}
-        <div className="relative z-10 w-full py-[2rem] wrapper text-center bg-gradient-to-b from-transparent to-black">
-          <h2 className="text2">
-            {isWebDevelopmentPage ? (
-              <>
-                <span className="text-yellowClr font-glacial">Websites</span> for Every <span className="text-yellowClr font-glacial">Specs</span>
-              </>
-            ) : (
-              <>
-                What You Can <span className="text-yellowClr font-glacial">Expect</span>{" "}
-                From Us?
-              </>
-            )}
-          </h2>
-        </div>
+      <div className="relative z-10 w-full py-[2rem] wrapper text-center bg-gradient-to-b from-transparent to-black">
+        <h2 className="text2">
+          {isWebDevelopmentPage ? (
+            <>
+              <span className="text-yellowClr font-glacial">Websites</span> for
+              Every <span className="text-yellowClr font-glacial">Specs</span>
+            </>
+          ) : (
+            <>
+              What You Can{" "}
+              <span className="text-yellowClr font-glacial">Expect</span> From
+              Us?
+            </>
+          )}
+        </h2>
+      </div>
     </>
   );
 };
