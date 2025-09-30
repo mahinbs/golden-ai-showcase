@@ -28,8 +28,8 @@ const WebDevelopment = () => {
       <div id="services">
         <WebDevelopmentServices />
       </div>
-      <InteractiveWebsite />
-      <AdvancedWebsite />
+      {/* <InteractiveWebsite />
+      <AdvancedWebsite /> */}
       <div id="key-features">
         <KeyFeatures />
       </div>

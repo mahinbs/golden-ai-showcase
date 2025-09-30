@@ -38,7 +38,7 @@ const Navigation = () => {
     if (location.pathname === "/web-development") {
       return [
         { label: "Services", id: "services" },
-        { label: "Key Features", id: "key-features" },
+        // { label: "Key Features", id: "key-features" },
         { label: "Portfolio", id: "portfolio" },
         { label: "Blog", id: "blog" },
         { label: "Testimonials", id: "testimonials" },
@@ -95,15 +95,18 @@ const Navigation = () => {
               </Link>
             )}
 
-            {location.pathname === "/about" && (
+            {location.pathname === "/about" || location.pathname === "/" ? (
               <Link
                 to="/"
                 className="text-foreground hover:text-accent transition-colors duration-300 font-medium"
               >
                 Home
               </Link>
+            ) : (
+              ""
             )}
-            {location.pathname === "/about" || location.pathname === "/" ? (
+            {location.pathname === "/about" ||
+            location.pathname === "/web-development" ? (
               <Link
                 to="/web-development"
                 className="text-foreground hover:text-accent transition-colors duration-300 font-medium"
