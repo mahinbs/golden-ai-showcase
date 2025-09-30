@@ -2,8 +2,6 @@ import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import WebDevelopmentServices from "@/components/webdevelopment/WebDevelopmentServices";
 import StatsSection from "@/components/webdevelopment/StatsSection";
-import InteractiveWebsite from "@/components/webdevelopment/InteractiveWebsite";
-import AdvancedWebsite from "@/components/webdevelopment/AdvancedWebsite";
 import RoadmapSection from "@/components/RoadmapSection";
 import IndustriesSection from "@/components/IndustriesSection";
 import PortfolioSection from "@/components/PortfolioSection";
@@ -28,8 +26,6 @@ const WebDevelopment = () => {
       <div id="services">
         <WebDevelopmentServices />
       </div>
-      {/* <InteractiveWebsite />
-      <AdvancedWebsite /> */}
       <div id="key-features">
         <KeyFeatures />
       </div>

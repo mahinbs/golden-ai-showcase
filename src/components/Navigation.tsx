@@ -147,13 +147,16 @@ const Navigation = () => {
         {isMobileMenuOpen && (
           <div className="lg:hidden bg-background/95 backdrop-blur-md border-t border-border animate-slide-up">
             <div className="px-4 py-4 space-y-4">
-              {location.pathname === "/about" && (
+              {location.pathname === "/about" ||
+              location.pathname === "/web-development" ? (
                 <Link
                   to="/"
-                  className="text-foreground hover:text-accent transition-colors duration-300 font-medium"
+                  className="block w-full text-left text-foreground hover:text-accent transition-colors duration-300 font-medium py-2"
                 >
                   Home
                 </Link>
+              ) : (
+                ""
               )}
               {location.pathname !== "/about" && (
                 <Link
@@ -165,7 +168,7 @@ const Navigation = () => {
               )}
               <Link
                 to="/web-development"
-                className="text-foreground hover:text-accent transition-colors duration-300 font-medium"
+                className="block w-full text-left text-foreground hover:text-accent transition-colors duration-300 font-medium py-2"
               >
                 Web Development
               </Link>
