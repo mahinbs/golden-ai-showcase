@@ -1,7 +1,8 @@
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
-import WebDevelopmentServices from "@/components/webdevelopment/WebDevelopmentServices";
+import ServicesPackages from "@/components/shared/ServicesPackages";
 import StatsSection from "@/components/webdevelopment/StatsSection";
+import img1 from "@/assets/websites we build/1. Essential Website.png";
 import RoadmapSection from "@/components/RoadmapSection";
 import IndustriesSection from "@/components/IndustriesSection";
 import PortfolioSection from "@/components/PortfolioSection";
@@ -16,15 +17,85 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import KeyFeatures from "@/components/webdevelopment/KeyFeatures";
 import WhyCustomWebsitesMatter from "@/components/webdevelopment/WhyCustomWebsitesMatter";
 import HowWeBuild from "@/components/webdevelopment/HowWeBuild";
+import heroImage from "@/assets/banners/home-banner.png";
 
 const WebDevelopment = () => {
   return (
     <div className="min-h-screen bg-black">
       <Navigation />
-      <HeroSection />
-      <StatsSection />
+      <HeroSection
+        backgroundImage={heroImage}
+        mainHeadline="Custom"
+        highlightedWord="Web"
+        headlineAfterHighlight="Development Solution"
+        subHeadline="websites that fit and perform, Crafted around your specs"
+        primaryButtonText="Request a Free Quote"
+        showSecondaryButton={false}
+        showCtaText={false}
+        bottomSectionText="Websites for Every Specs"
+        bottomHighlightedWord="Websites"
+      />
+      <StatsSection missionText="At Specslo, we build secure, scalable websites crafted around your specs to drive business growth." />
       <div id="services">
-        <WebDevelopmentServices />
+        <ServicesPackages 
+          heading="Websites We Build"
+          description="From simple brand presence sites to advanced platforms with AI and workflow automation, we craft websites that fit your specs and support your business growth."
+          packages={[
+            {
+              title: "Essential",
+              subtitle: "Website",
+              description: "For businesses establishing a credible online presence.",
+              image: img1,
+              features: [
+                "Up to 10 Pages to showcase services clearly.",
+                "Lead Capture Forms to start conversations.",
+                "Mobile-Responsive Design for all devices.",
+                "SSL Security & Core SEO Optimization.",
+                "Fast Loading & Clean User Experience.",
+                "Chat & WhatsApp Widget Integration",
+                "Custom Design (1-2 style options).",
+                "Delivery: 2-3 weeks"
+              ]
+            },
+            {
+              title: "Interactive",
+              subtitle: "Website",
+              description: "For brands ready to engage visitors and build authority.",
+              image: "https://res.cloudinary.com/drdjii8fe/image/upload/v1758983823/2._Interactive_Website_ab0s0h.png",
+              features: [
+                "Everything in Essential Website, plus:",
+                "10 to 25 Pages",
+                "CMS Integration (WordPress/Headless Options)",
+                "Blog & Content Management",
+                "Google Optimization & Search Submission",
+                "Multilingual Support",
+                "Free Stock Images (up to 10)",
+                "Lead Magnet Integration",
+                "Custom Theme (2-3 options)",
+                "Delivery: 4-6 weeks"
+              ]
+            },
+            {
+              title: "Advanced",
+              subtitle: "Website",
+              description: "For scaling brands, digital products, and growth driven businesses.",
+              image: "https://res.cloudinary.com/drdjii8fe/image/upload/v1758986306/3._Advanced_Website_ky2shk.png",
+              features: [
+                "Everything in Interactive Website, plus:",
+                "20+ Pages",
+                "Role-Based Content Management",
+                "Advanced SEO Tools Integration",
+                "AI Chatbot/AI Features Integration",
+                "E-commerce or Membership Functionality",
+                "Blog Categorization & Search System",
+                "Free Stock Images (up to 20)",
+                "Custom Theme (3–4 options)",
+                "Integration with CRM, Analytics, Marketing Tools",
+                "Delivery: 8–12 weeks"
+              ]
+            }
+          ]}
+        />
       </div>
       <div id="key-features">
         <KeyFeatures />

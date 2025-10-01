@@ -4,9 +4,67 @@ import { useLocation } from "react-router-dom";
 import heroImage from "@/assets/banners/home-banner.png";
 import Logo3D from "./Logo3D";
 
-const HeroSection = () => {
+interface HeroSectionProps {
+  // Main headline props
+  mainHeadline?: string;
+  highlightedWord?: string;
+  headlineAfterHighlight?: string;
+  
+  // Subheadline props
+  subHeadline?: string;
+  
+  // Call to action text (optional, shown on home page)
+  ctaText?: string;
+  
+  // Button text
+  primaryButtonText?: string;
+  secondaryButtonText?: string;
+  
+  // Stats
+  stat1Value?: string;
+  stat1Label?: string;
+  stat2Value?: string;
+  stat2Label?: string;
+  stat3Value?: string;
+  stat3Label?: string;
+  
+  // Bottom section text
+  bottomSectionText?: string;
+  bottomHighlightedWord?: string;
+  
+  // Background image
+  backgroundImage?: string;
+  
+  // Show/hide elements
+  showSecondaryButton?: boolean;
+  showCtaText?: boolean;
+  show3DLogo?: boolean;
+}
+
+const HeroSection = ({
+  mainHeadline = "You've Got",
+  highlightedWord = "Specs",
+  headlineAfterHighlight = "",
+  subHeadline = "But No One Gets It Right ?",
+  ctaText = "We'll Build What Matters.",
+  primaryButtonText = "Explore Our Services",
+  secondaryButtonText = "View Our Work",
+  stat1Value = "100+",
+  stat1Label = "Projects Delivered",
+  stat2Value = "50+",
+  stat2Label = "Happy Clients",
+  stat3Value = "99%",
+  stat3Label = "Success Rate",
+  bottomSectionText = "What You Can Expect From Us?",
+  bottomHighlightedWord = "Expect",
+  backgroundImage = heroImage,
+  showSecondaryButton = true,
+  showCtaText = true,
+  show3DLogo = true
+}: HeroSectionProps = {}) => {
   const location = useLocation();
   const isWebDevelopmentPage = location.pathname === "/web-development";
+  const isAppDevelopmentPage = location.pathname === "/app-development";
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -22,7 +80,7 @@ const HeroSection = () => {
         className="relative min-h-screen flex items-center justify-start overflow-hidden"
       >
         <img
-          src={heroImage}
+          src={backgroundImage}
           className="absolute inset-0 h-full w-full z-0 object-cover"
           alt=""
         />
@@ -38,23 +96,14 @@ const HeroSection = () => {
             <div className="flex-1 flex flex-col justify-center text-left animate-fade-in">
             {/* Main Headline */}
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight animate-slide-up">
-              {isWebDevelopmentPage ? (
+              {mainHeadline}{" "}
+              <span className="bg-[#ffd63c] text-black px-4 py-1 rounded-lg">
+                {highlightedWord}
+              </span>
+              {headlineAfterHighlight && (
                 <>
-                  Custom{" "}
-                  <span className="bg-[#ffd63c] text-black px-4 py-1 rounded-lg">
-                    Web
-                  </span>
                   <br />
-                  Development
-                  <br />
-                  Solution
-                </>
-              ) : (
-                <>
-                  You've Got{" "}
-                  <span className="bg-[#ffd63c] text-black px-4 py-1 rounded-lg">
-                    Specs
-                  </span>
+                  {headlineAfterHighlight}
                 </>
               )}
             </h1>
@@ -67,25 +116,19 @@ const HeroSection = () => {
 
             {/* Sub-headline */}
             <h2
-              className={`font-bold text-white mb-6 animate-slide-up ${
-                isWebDevelopmentPage
-                  ? "text-base md:text-xl"
-                  : "text-2xl md:text-4xl"
-              }`}
+              className="font-bold text-white mb-6 animate-slide-up text-base md:text-xl lg:text-2xl"
               style={{ animationDelay: "0.3s" }}
             >
-              {isWebDevelopmentPage
-                ? "websites that fit and perform, Crafted around your specs"
-                : "But No One Gets It Right ?"}
+              {subHeadline}
             </h2>
 
             {/* Call to Action */}
-            {!isWebDevelopmentPage && (
+            {showCtaText && ctaText && (
               <div
                 className="text-2xl md:text-4xl font-bold text-[#ffd63c] mb-6 animate-slide-up"
                 style={{ animationDelay: "0.4s" }}
               >
-                We'll Build What Matters.
+                {ctaText}
               </div>
             )}
 
@@ -101,14 +144,12 @@ const HeroSection = () => {
                 className="group relative overflow-hidden"
               >
                 <span className="relative z-10 flex items-center">
-                  {isWebDevelopmentPage
-                    ? "Request a Free Quote"
-                    : "Explore Our Services"}
+                  {primaryButtonText}
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Button>
-              {!isWebDevelopmentPage && (
+              {showSecondaryButton && (
                 <Button
                   variant="outline"
                   size="xl"
@@ -117,7 +158,7 @@ const HeroSection = () => {
                 >
                   <span className="relative z-10 flex items-center">
                     <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-                    View Our Work
+                    {secondaryButtonText}
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-foreground/5 to-foreground/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </Button>
@@ -131,10 +172,10 @@ const HeroSection = () => {
             >
               <div className="text-left group">
                 <div className="text-3xl md:text-4xl font-bold text-accent mb-2 animate-count-up group-hover:scale-110 transition-transform duration-300">
-                  100+
+                  {stat1Value}
                 </div>
                 <div className="text-foreground/80 text-sm md:text-base group-hover:text-foreground transition-colors duration-300">
-                  Projects Delivered
+                  {stat1Label}
                 </div>
               </div>
               <div
@@ -142,10 +183,10 @@ const HeroSection = () => {
                 style={{ animationDelay: "0.1s" }}
               >
                 <div className="text-3xl md:text-4xl font-bold text-accent mb-2 animate-count-up group-hover:scale-110 transition-transform duration-300">
-                  50+
+                  {stat2Value}
                 </div>
                 <div className="text-foreground/80 text-sm md:text-base group-hover:text-foreground transition-colors duration-300">
-                  Happy Clients
+                  {stat2Label}
                 </div>
               </div>
               <div
@@ -153,25 +194,27 @@ const HeroSection = () => {
                 style={{ animationDelay: "0.2s" }}
               >
                 <div className="text-3xl md:text-4xl font-bold text-accent mb-2 animate-count-up group-hover:scale-110 transition-transform duration-300">
-                  99%
+                  {stat3Value}
                 </div>
                 <div className="text-foreground/80 text-sm md:text-base group-hover:text-foreground transition-colors duration-300">
-                  Success Rate
+                  {stat3Label}
                 </div>
               </div>
             </div>
             </div>
 
             {/* Right Content - 3D Logo */}
-            <div className="flex-1 lg:max-w-lg xl:max-w-xl h-[400px] lg:h-[600px] flex items-center justify-center translate-y-24 sm:translate-y-0">
-              <Logo3D 
-                className="w-full h-full"
-                scale={isWebDevelopmentPage ? 2.8 : 2.8}
-                position={[0, 0, 0]}
-                autoRotate={true}
-                enableControls={false}
-              />
-            </div>
+            {show3DLogo && (
+              <div className="flex-1 lg:max-w-lg xl:max-w-xl h-[400px] lg:h-[600px] flex items-center justify-center translate-y-24 sm:translate-y-0">
+                <Logo3D 
+                  className="w-full h-full"
+                  scale={2.8}
+                  position={[0, 0, 0]}
+                  autoRotate={true}
+                  enableControls={false}
+                />
+              </div>
+            )}
           </div>
         </div>
 
@@ -189,18 +232,30 @@ const HeroSection = () => {
       {/* What to expect section */}
       <div className="relative z-10 w-full py-[2rem] wrapper text-center bg-gradient-to-b from-transparent to-black">
         <h2 className="text2">
-          {isWebDevelopmentPage ? (
-            <>
-              <span className="text-yellowClr font-glacial">Websites</span> for
-              Every <span className="text-yellowClr font-glacial">Specs</span>
-            </>
-          ) : (
-            <>
-              What You Can{" "}
-              <span className="text-yellowClr font-glacial">Expect</span> From
-              Us?
-            </>
-          )}
+          {(() => {
+            // Support multiple highlighted words separated by comma
+            const wordsToHighlight = bottomHighlightedWord.split(',').map(w => w.trim());
+            
+            // Create a regex pattern for all words to highlight
+            const pattern = new RegExp(`(${wordsToHighlight.join('|')})`, 'gi');
+            const parts = bottomSectionText.split(pattern);
+            
+            return parts.map((part, index) => {
+              // Check if this part should be highlighted
+              const shouldHighlight = wordsToHighlight.some(
+                word => part.toLowerCase() === word.toLowerCase()
+              );
+              
+              if (shouldHighlight) {
+                return (
+                  <span key={index} className="text-yellowClr font-glacial">
+                    {part}
+                  </span>
+                );
+              }
+              return <span key={index}>{part}</span>;
+            });
+          })()}
         </h2>
       </div>
     </>

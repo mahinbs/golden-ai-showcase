@@ -86,15 +86,6 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            {location.pathname !== "/about" && (
-              <Link
-                to="/about"
-                className="text-foreground hover:text-accent transition-colors duration-300 font-medium"
-              >
-                Who We Are
-              </Link>
-            )}
-
             {location.pathname === "/about" || location.pathname === "/" ? (
               <Link
                 to="/"
@@ -105,8 +96,16 @@ const Navigation = () => {
             ) : (
               ""
             )}
-            {location.pathname === "/about" ||
-            location.pathname === "/web-development" ? (
+            {location.pathname !== "/about" && (
+              <Link
+                to="/about"
+                className="text-foreground hover:text-accent transition-colors duration-300 font-medium"
+              >
+                Who We Are
+              </Link>
+            )}
+
+            {location.pathname !== "/web-development" ? (
               <Link
                 to="/web-development"
                 className="text-foreground hover:text-accent transition-colors duration-300 font-medium"
