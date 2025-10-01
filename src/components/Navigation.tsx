@@ -47,7 +47,6 @@ const Navigation = () => {
     }
     return [
       { label: "Services", id: "services" },
-      { label: "Industries", id: "industries" },
       { label: "Portfolio", id: "portfolio" },
       { label: "Blog", id: "blog" },
       { label: "Testimonials", id: "testimonials" },
