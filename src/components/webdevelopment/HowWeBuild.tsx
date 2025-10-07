@@ -17,7 +17,7 @@ const HowWeBuild = ({
 }: HowWeBuildProps) => {
   return (
     <div className="py-[5rem] bg-white text-black">
-      <div className="wrapper grid lg:grid-cols-[65%,1fr] gap-10">
+      <div className="wrapper flex flex-col-reverse lg:grid grid-cols-[65%,1fr] gap-10">
         <div className="flex justify-center">
           <img
             src={processImage}

@@ -67,14 +67,14 @@ const ServicesPackages = ({
                                 <span className="bg-yellowClr">{pkg.subtitle}</span>
                               </span>
                             </h3>
-                            <p className="text-gray-600">
+                            <p className="text-gray-600 text-start">
                               {pkg.description}
                             </p>
                           </div>
 
                           <div className="space-y-3">
                             {pkg.features.map((feature, featureIndex) => (
-                              <div key={featureIndex} className="flex items-start gap-3">
+                              <div key={featureIndex} className="flex items-start text-start gap-3">
                                 <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
                                 <span className={`text-sm ${featureIndex === pkg.features.length - 1 ? 'font-semibold' : ''}`}>
                                   {feature}

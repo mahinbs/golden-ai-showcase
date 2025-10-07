@@ -68,22 +68,22 @@ const StatsSection = ({
           {/* Statistics */}
           <div className="grid grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="text-center">
-              <div className="text-6xl lg:text-7xl font-bold text-gray-300 mb-3">{stat1Value}</div>
+              <div className="text-4xl lg:text-7xl font-bold text-gray-300 mb-3">{stat1Value}</div>
               <div className="text-base lg:text-lg text-gray-400">{stat1Label}</div>
             </div>
             <div className="text-center border-l border-r border-gray-600 px-8">
-              <div className="text-6xl lg:text-7xl font-bold text-gray-300 mb-3">{stat2Value}</div>
+              <div className="text-4xl lg:text-7xl font-bold text-gray-300 mb-3">{stat2Value}</div>
               <div className="text-base lg:text-lg text-gray-400">{stat2Label}</div>
             </div>
             <div className="text-center">
-              <div className="text-6xl lg:text-7xl font-bold text-gray-300 mb-3">{stat3Value}</div>
+              <div className="text-4xl lg:text-7xl font-bold text-gray-300 mb-3">{stat3Value}</div>
               <div className="text-base lg:text-lg text-gray-400">{stat3Label}</div>
             </div>
           </div>
         </div>
 
         {/* Bottom Right Character Illustration */}
-        <div className="absolute bottom-8 right-8">
+        <div className="lg:block hidden absolute bottom-8 right-8">
           <div className="relative max-w-xs">
             <img
               src={characterImage}

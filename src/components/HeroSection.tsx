@@ -63,8 +63,6 @@ const HeroSection = ({
   show3DLogo = true
 }: HeroSectionProps = {}) => {
   const location = useLocation();
-  const isWebDevelopmentPage = location.pathname === "/web-development";
-  const isAppDevelopmentPage = location.pathname === "/app-development";
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -77,7 +75,7 @@ const HeroSection = ({
     <>
       <section
         id="hero"
-        className="relative min-h-screen flex items-center justify-start overflow-hidden"
+        className="relative min-h-screen pt-10 flex items-center justify-start overflow-hidden"
       >
         <img
           src={backgroundImage}
