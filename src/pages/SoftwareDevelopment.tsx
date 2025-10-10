@@ -13,13 +13,14 @@ import KeyFeatures from "@/components/webdevelopment/KeyFeatures";
 import WhyCustomWebsitesMatter from "@/components/webdevelopment/WhyCustomWebsitesMatter";
 import HowWeBuild from "@/components/webdevelopment/HowWeBuild";
 import SolutionFocusedServices from "@/components/softwaredevelopment/SolutionFocusedServices";
+import bgImg from '../assets/software-development.webp'
 
 const SoftwareDevelopment = () => {
   return (
     <div className="min-h-screen bg-black">
       <Navigation />
       <HeroSection
-        backgroundImage="https://res.cloudinary.com/drdjii8fe/image/upload/v1759322510/1._Hero_Section_vjqad7.png"
+        backgroundImage={bgImg}
         mainHeadline="Custom"
         highlightedWord="Software"
         headlineAfterHighlight="Development Solutions"

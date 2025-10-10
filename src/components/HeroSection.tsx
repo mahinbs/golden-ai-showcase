@@ -84,7 +84,7 @@ const HeroSection = ({
         />
 
         {/* Completely Black Background */}
-        <div className="absolute inset-0 z-10 bg-black/90"></div>
+        <div className="absolute inset-0 z-10 bg-black/80"></div>
 
         {/* Content */}
         <div className="relative z-10 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
