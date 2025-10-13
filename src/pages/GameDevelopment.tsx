@@ -16,13 +16,14 @@ import PlatformsWeBuildFor from "@/components/gamedevelopment/PlatformsWeBuildFo
 import GameWorldsWeBuild from "@/components/gamedevelopment/GameWorldsWeBuild";
 import GameGenres from "@/components/gamedevelopment/GameGenres";
 import AIPoweredGamingSolutions from "@/components/gamedevelopment/AIPoweredGamingSolutions";
+import heroImg from '../assets/game dev hero.webp'
 
 const GameDevelopment = () => {
   return (
     <div className="min-h-screen bg-black">
       <Navigation />
       <HeroSection
-        backgroundImage="https://res.cloudinary.com/drdjii8fe/image/upload/v1760354680/2._kxdmzd.png"
+        backgroundImage={heroImg}
         mainHeadline=""
         highlightedWord="Game"
         headlineAfterHighlight="Development Solutions"
