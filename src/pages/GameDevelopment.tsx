@@ -23,7 +23,7 @@ const GameDevelopment = () => {
       <Navigation />
       <HeroSection
         backgroundImage="https://res.cloudinary.com/drdjii8fe/image/upload/v1760354680/2._kxdmzd.png"
-        mainHeadline="Custom"
+        mainHeadline=""
         highlightedWord="Game"
         headlineAfterHighlight="Development Solutions"
         subHeadline="From mobile games to AR/VR, we build games that fit your vision and engage your audience."
