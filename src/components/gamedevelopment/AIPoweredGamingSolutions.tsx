@@ -34,9 +34,9 @@ const AIPoweredGamingSolutions = () => {
       <div className="wrapper">
         <div className="space-y-12">
           {/* Title Section */}
-          <div className="text-center space-y-6">
-            <div className="border-y-2 border-white py-4 w-fit mx-auto">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-glacial leading-tight">
+          <div className="text-start space-y-6">
+            <div className="border-y-2 border-white py-4 w-fit">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-glacial !leading-tight">
                 AI-Powered
                 <br />
                 Gaming
@@ -46,7 +46,7 @@ const AIPoweredGamingSolutions = () => {
                 </span>
               </h2>
             </div>
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-gray-300 max-w-3xl leading-relaxed">
               At Specslo, we integrate advanced AI into your games to create dynamic worlds, intelligent NPCs, and data-driven
               gameplay that keeps players engaged and your game evolving.
             </p>

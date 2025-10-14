@@ -75,7 +75,7 @@ const HeroSection = ({
     <>
       <section
         id="hero"
-        className="relative min-h-screen pt-10 flex items-center justify-start overflow-hidden"
+        className="relative min-h-screen pt-10 flex flex-col items-start justify-center overflow-hidden"
       >
         <img
           src={backgroundImage}
@@ -88,7 +88,7 @@ const HeroSection = ({
 
         {/* Content */}
         <div className="relative z-10 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col-reverse lg:grid grid-cols-2 items-center gap-5 min-h-screen">
+          <div className="flex flex-col-reverse lg:grid grid-cols-2 items-center gap-5 min-h-[85vh] pt-16">
           {/* <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between min-h-screen"> */}
             {/* Left Content */}
             <div className="flex-1 flex flex-col justify-center text-left animate-fade-in">
@@ -216,18 +216,7 @@ const HeroSection = ({
           </div>
         </div>
 
-        {/* Animated Background Grid */}
-        <div className="absolute inset-0 z-0 opacity-10">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,215,0,0.3) 1px, transparent 0)`,
-              backgroundSize: "20px 20px",
-            }}
-          ></div>
-        </div>
-      </section>
-      {/* What to expect section */}
+         {/* What to expect section */}
       <div className="relative z-10 w-full py-[2rem] wrapper text-center bg-gradient-to-b from-transparent to-black">
         <h2 className="text2">
           {(() => {
@@ -256,6 +245,19 @@ const HeroSection = ({
           })()}
         </h2>
       </div>
+
+        {/* Animated Background Grid */}
+        <div className="absolute inset-0 z-0 opacity-10">
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,215,0,0.3) 1px, transparent 0)`,
+              backgroundSize: "20px 20px",
+            }}
+          ></div>
+        </div>
+      </section>
+     
     </>
   );
 };
