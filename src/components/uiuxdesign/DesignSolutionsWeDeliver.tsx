@@ -71,18 +71,18 @@ const designSolutions = [
       "Icon Design",
     ],
   },
-  {
-    title: "UX",
-    subtitle: "Writing",
-    description: "Write clear, concise copy that guides users and enhances their experience.",
-    image: "https://res.cloudinary.com/drdjii8fe/image/upload/v1760375452/7._UX_Writing_hezemz.png",
-    features: [
-      "Content Strategy",
-      "Microcopy Writing",
-      "Error Message Design",
-      "Help & Documentation",
-    ],
-  },
+  // {
+  //   title: "UX",
+  //   subtitle: "Writing",
+  //   description: "Write clear, concise copy that guides users and enhances their experience.",
+  //   image: "https://res.cloudinary.com/drdjii8fe/image/upload/v1760375452/7._UX_Writing_hezemz.png",
+  //   features: [
+  //     "Content Strategy",
+  //     "Microcopy Writing",
+  //     "Error Message Design",
+  //     "Help & Documentation",
+  //   ],
+  // },
 ];
 
 const DesignSolutionsWeDeliver = () => {
@@ -90,9 +90,9 @@ const DesignSolutionsWeDeliver = () => {
     <div className="bg-black text-white py-16">
       <div className="wrapper">
         {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-3 gap-8 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* Left Section - Description */}
-          <div className="space-y-6 lg:col-span-3 text-center flex flex-col items-center w-full">
+          <div className="space-y-6 lg:col-span-2 text-center flex flex-col items-center w-full">
             <div className="space-y-4 pb-6">
               <div className="border-y-2 border-white py-3 w-fit mx-auto">
                 <h2 className="text1 z-[2] relative">
