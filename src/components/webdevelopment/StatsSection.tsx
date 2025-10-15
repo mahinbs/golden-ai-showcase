@@ -57,7 +57,7 @@ const StatsSection = ({
         <div className="text-center space-y-12 relative z-[2]">
           {/* Mission Statement */}
           <div>
-            <p className="text-3xl lg:text-4xl xl:text-5xl font-bold leading-relaxed">
+            <p className="text-3xl lg:text-4xl xl:text-5xl leading-relaxed">
               {highlightText(missionText, highlightedWord)}
             </p>
           </div>

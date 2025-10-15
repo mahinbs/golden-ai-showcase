@@ -93,7 +93,7 @@ const HeroSection = ({
             {/* Left Content */}
             <div className="flex-1 flex flex-col justify-center text-left animate-fade-in">
             {/* Main Headline */}
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight animate-slide-up">
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 !leading-tight animate-slide-up">
               {mainHeadline}{" "}
               <span className="bg-[#ffd63c] text-black px-4 py-1 rounded-lg">
                 {highlightedWord}
