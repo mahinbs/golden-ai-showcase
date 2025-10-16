@@ -6,7 +6,7 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import ContactSection from "@/components/ContactSection";
 import { Link } from "react-router-dom";
 import { ourServices } from "../content/ourServices";
-import heroImg from '../assets/blogs-hero.webp'; // Using the same hero image for consistency
+import heroImg from '../assets/services-hero.webp';
 
 const Services = () => {
 
