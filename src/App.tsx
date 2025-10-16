@@ -13,6 +13,9 @@ import AISolutions from "./pages/AISolutions";
 import GameDevelopment from "./pages/GameDevelopment";
 import UIUXDesign from "./pages/UIUXDesign";
 import DataScienceSolutions from "./pages/DataScienceSolutions";
+import HealthcareSolutions from "./pages/HealthcareSolutions";
+import Blogs from "./pages/Blogs";
+import Services from "./pages/Services";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +35,9 @@ const App = () => (
           <Route path="/game-development" element={<GameDevelopment />} />
           <Route path="/uiux-design" element={<UIUXDesign />} />
           <Route path="/data-science-solutions" element={<DataScienceSolutions />} />
+          <Route path="/healthcare-solutions" element={<HealthcareSolutions />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/services" element={<Services />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

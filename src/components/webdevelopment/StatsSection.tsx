@@ -10,6 +10,7 @@ interface StatsSectionProps {
   stat3Value?: string;
   stat3Label?: string;
   characterImage?: string;
+  lineImg?: string;
 }
 
 const StatsSection = ({
@@ -21,30 +22,35 @@ const StatsSection = ({
   stat2Label = "Faster Load Times",
   stat3Value = "60%",
   stat3Label = "SEO Visibility Boost",
-  characterImage = "https://res.cloudinary.com/dknafpppp/image/upload/v1758908591/Screenshot_2025-09-27_at_12.42.42_AM_pc2e1e.png"
+  characterImage = "https://res.cloudinary.com/dknafpppp/image/upload/v1758908591/Screenshot_2025-09-27_at_12.42.42_AM_pc2e1e.png",
+  lineImg = "",
 }: StatsSectionProps) => {
   // Function to highlight specific words in the mission text
   const highlightText = (text: string, wordToHighlight: string) => {
     // Support multiple highlighted words separated by comma
-    const wordsToHighlight = wordToHighlight.split(',').map(w => w.trim());
-    
+    const wordsToHighlight = wordToHighlight.split(",").map((w) => w.trim());
+
     // Always include 'specs' as a highlighted word
-    if (!wordsToHighlight.some(w => w.toLowerCase() === 'specs')) {
-      wordsToHighlight.push('specs');
+    if (!wordsToHighlight.some((w) => w.toLowerCase() === "specs")) {
+      wordsToHighlight.push("specs");
     }
-    
+
     // Create a regex pattern for all words to highlight
-    const pattern = new RegExp(`(${wordsToHighlight.join('|')})`, 'gi');
+    const pattern = new RegExp(`(${wordsToHighlight.join("|")})`, "gi");
     const parts = text.split(pattern);
-    
+
     return parts.map((part, index) => {
       // Check if this part should be highlighted
       const shouldHighlight = wordsToHighlight.some(
-        word => part.toLowerCase() === word.toLowerCase()
+        (word) => part.toLowerCase() === word.toLowerCase()
       );
-      
+
       if (shouldHighlight) {
-        return <span key={index} className="text-[#ffd63c]">{part}</span>;
+        return (
+          <span key={index} className="text-[#ffd63c]">
+            {part}
+          </span>
+        );
       }
       return part;
     });
@@ -63,35 +69,53 @@ const StatsSection = ({
           </div>
 
           {/* Separator Line */}
-          <div className="w-full h-px bg-white max-w-4xl mx-auto"></div>
+          {lineImg ? (
+            <img src={lineImg} alt="line" className="w-full object-contain" />
+          ) : (
+            <div className="w-full h-px bg-white max-w-4xl mx-auto"></div>
+          )}
 
           {/* Statistics */}
           <div className="grid grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="text-center">
-              <div className="text-4xl lg:text-7xl font-bold text-gray-300 mb-3">{stat1Value}</div>
-              <div className="text-base lg:text-lg text-gray-400">{stat1Label}</div>
+              <div className="text-4xl lg:text-7xl font-bold text-gray-300 mb-3">
+                {stat1Value}
+              </div>
+              <div className="text-base lg:text-lg text-gray-400">
+                {stat1Label}
+              </div>
             </div>
             <div className="text-center border-l border-r border-gray-600 px-8">
-              <div className="text-4xl lg:text-7xl font-bold text-gray-300 mb-3">{stat2Value}</div>
-              <div className="text-base lg:text-lg text-gray-400">{stat2Label}</div>
+              <div className="text-4xl lg:text-7xl font-bold text-gray-300 mb-3">
+                {stat2Value}
+              </div>
+              <div className="text-base lg:text-lg text-gray-400">
+                {stat2Label}
+              </div>
             </div>
             <div className="text-center">
-              <div className="text-4xl lg:text-7xl font-bold text-gray-300 mb-3">{stat3Value}</div>
-              <div className="text-base lg:text-lg text-gray-400">{stat3Label}</div>
+              <div className="text-4xl lg:text-7xl font-bold text-gray-300 mb-3">
+                {stat3Value}
+              </div>
+              <div className="text-base lg:text-lg text-gray-400">
+                {stat3Label}
+              </div>
             </div>
           </div>
         </div>
 
         {/* Bottom Right Character Illustration */}
-        <div className="lg:block hidden absolute bottom-8 right-8">
-          <div className="relative max-w-xs">
-            <img
-              src={characterImage}
-              alt="Character working at computer"
-              className="w-full h-auto max-h-[17rem] object-contain"
-            />
+        {characterImage && (
+          <div className="lg:block hidden absolute bottom-8 right-8">
+            <div className="relative max-w-xs">
+              <img
+                src={characterImage}
+                alt="Character working at computer"
+                className="w-full h-auto max-h-[17rem] object-contain"
+              />
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

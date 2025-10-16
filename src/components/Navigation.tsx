@@ -1,12 +1,24 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const location = useLocation();
+
+  // Services data from App.tsx routes
+  const services = [
+    { name: "Web Development", path: "/web-development" },
+    { name: "App Development", path: "/app-development" },
+    { name: "Software Development", path: "/software-development" },
+    { name: "AI Solutions", path: "/ai-solutions" },
+    { name: "Game Development", path: "/game-development" },
+    { name: "UI/UX Design", path: "/uiux-design" },
+    { name: "Data Science Solutions", path: "/data-science-solutions" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,37 +35,6 @@ const Navigation = () => {
       setIsMobileMenuOpen(false);
     }
   };
-
-  // Different navigation items based on current page
-  const getNavItems = () => {
-    if (location.pathname === "/about") {
-      return [
-        { label: "Our Story", id: "about-story" },
-        { label: "Why We Started", id: "why-we-started" },
-        { label: "Partnership", id: "partnership" },
-        { label: "Vision", id: "vision" },
-        { label: "Founder", id: "founder" },
-      ];
-    }
-    if (location.pathname === "/web-development") {
-      return [
-        { label: "Services", id: "services" },
-        // { label: "Key Features", id: "key-features" },
-        { label: "Portfolio", id: "portfolio" },
-        { label: "Blog", id: "blog" },
-        { label: "Testimonials", id: "testimonials" },
-        { label: "FAQ", id: "faq" },
-      ];
-    }
-    return [
-      { label: "Services", id: "services" },
-      { label: "Portfolio", id: "portfolio" },
-      { label: "Blog", id: "blog" },
-      { label: "Testimonials", id: "testimonials" },
-    ];
-  };
-
-  const navItems = getNavItems();
 
   return (
     <nav
@@ -85,44 +66,84 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            {location.pathname === "/about" || location.pathname === "/" ? (
-              <Link
-                to="/"
-                className="text-foreground hover:text-accent transition-colors duration-300 font-medium"
-              >
-                Home
-              </Link>
-            ) : (
-              ""
-            )}
-            {location.pathname !== "/about" && (
-              <Link
-                to="/about"
-                className="text-foreground hover:text-accent transition-colors duration-300 font-medium"
-              >
-                Who We Are
-              </Link>
-            )}
+            {/* Home */}
+            <Link
+              to="/"
+              className={`text-foreground hover:text-accent transition-colors duration-300 font-medium ${
+                location.pathname === "/" ? "text-accent" : ""
+              }`}
+            >
+              Home
+            </Link>
 
-            {location.pathname !== "/web-development" ? (
+            {/* Who We Are */}
+            <Link
+              to="/about"
+              className={`text-foreground hover:text-accent transition-colors duration-300 font-medium ${
+                location.pathname === "/about" ? "text-accent" : ""
+              }`}
+            >
+              Who We Are
+            </Link>
+
+            {/* What We Do - Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setIsServicesDropdownOpen(true)}
+              onMouseLeave={() => setIsServicesDropdownOpen(false)}
+            >
               <Link
-                to="/web-development"
-                className="text-foreground hover:text-accent transition-colors duration-300 font-medium"
+                to="/services"
+                className="flex items-center space-x-1 text-foreground hover:text-accent transition-colors duration-500 font-medium"
               >
-                Web Development
+                <span>What We Do</span>
+                <ChevronDown size={16} />
               </Link>
-            ) : (
-              ""
-            )}
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="text-foreground hover:text-accent transition-colors duration-300 font-medium"
-              >
-                {item.label}
-              </button>
-            ))}
+              
+              {/* Dropdown Menu */}
+              {isServicesDropdownOpen && (
+                <div className="absolute top-full left-0 mt-1 w-64 bg-background/95 backdrop-blur-md border border-border rounded-lg shadow-lg py-2 z-50 -translate-x-1/3">
+                  <Link
+                    to="/services"
+                    className="block px-4 py-2 text-foreground hover:text-accent hover:bg-accent/10 transition-colors duration-300 border-b border-border"
+                    onClick={() => setIsServicesDropdownOpen(false)}
+                  >
+                    View All Services
+                  </Link>
+                  {services.map((service) => (
+                    <Link
+                      key={service.path}
+                      to={service.path}
+                      className="block px-4 py-2 text-foreground hover:text-accent hover:bg-accent/10 transition-colors duration-300"
+                      onClick={() => setIsServicesDropdownOpen(false)}
+                    >
+                      {service.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Healthcare Solutions */}
+            <Link
+              to="/healthcare-solutions"
+              className={`text-foreground hover:text-accent transition-colors duration-300 font-medium ${
+                location.pathname === "/healthcare-solutions" ? "text-accent" : ""
+              }`}
+            >
+              Healthcare Solutions
+            </Link>
+
+            {/* Blogs */}
+            <Link
+              to="/blogs"
+              className={`text-foreground hover:text-accent transition-colors duration-300 font-medium ${
+                location.pathname === "/blogs" ? "text-accent" : ""
+              }`}
+            >
+              Blogs
+            </Link>
+
             <Button
               variant="hero"
               onClick={() => scrollToSection("contact")}
@@ -145,44 +166,84 @@ const Navigation = () => {
         {isMobileMenuOpen && (
           <div className="lg:hidden bg-background/95 backdrop-blur-md border-t border-border animate-slide-up">
             <div className="px-4 py-4 space-y-4">
-              {location.pathname === "/about" ||
-              location.pathname === "/web-development" ? (
-                <Link
-                  to="/"
-                  className="block w-full text-left text-foreground hover:text-accent transition-colors duration-300 font-medium py-2"
-                >
-                  Home
-                </Link>
-              ) : (
-                ""
-              )}
-              {location.pathname !== "/about" && (
-                <Link
-                  to="/about"
-                  className="block w-full text-left text-foreground hover:text-accent transition-colors duration-300 font-medium py-2"
-                >
-                  Who We Are
-                </Link>
-              )}
+              {/* Home */}
               <Link
-                to="/web-development"
-                className="block w-full text-left text-foreground hover:text-accent transition-colors duration-300 font-medium py-2"
+                to="/"
+                className={`block w-full text-left text-foreground hover:text-accent transition-colors duration-300 font-medium py-2 ${
+                  location.pathname === "/" ? "text-accent" : ""
+                }`}
+                onClick={() => setIsMobileMenuOpen(false)}
               >
-                Web Development
+                Home
               </Link>
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left text-foreground hover:text-accent transition-colors duration-300 font-medium py-2"
+
+              {/* Who We Are */}
+              <Link
+                to="/about"
+                className={`block w-full text-left text-foreground hover:text-accent transition-colors duration-300 font-medium py-2 ${
+                  location.pathname === "/about" ? "text-accent" : ""
+                }`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Who We Are
+              </Link>
+
+              {/* What We Do - Mobile Services */}
+              <div className="space-y-2">
+                <Link
+                  to="/services"
+                  className={`block w-full text-left text-foreground hover:text-accent transition-colors duration-300 font-medium py-2 ${
+                    location.pathname === "/services" ? "text-accent" : ""
+                  }`}
+                  onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {item.label}
-                </button>
-              ))}
+                  What We Do
+                </Link>
+                <div className="ml-4 space-y-1">
+                  {services.map((service) => (
+                    <Link
+                      key={service.path}
+                      to={service.path}
+                      className={`block w-full text-left text-foreground hover:text-accent transition-colors duration-300 py-1 ${
+                        location.pathname === service.path ? "text-accent" : ""
+                      }`}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {service.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              {/* Healthcare Solutions */}
+              <Link
+                to="/healthcare-solutions"
+                className={`block w-full text-left text-foreground hover:text-accent transition-colors duration-300 font-medium py-2 ${
+                  location.pathname === "/healthcare-solutions" ? "text-accent" : ""
+                }`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Healthcare Solutions
+              </Link>
+
+              {/* Blogs */}
+              <Link
+                to="/blogs"
+                className={`block w-full text-left text-foreground hover:text-accent transition-colors duration-300 font-medium py-2 ${
+                  location.pathname === "/blogs" ? "text-accent" : ""
+                }`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Blogs
+              </Link>
+
               <Button
                 variant="hero"
                 className="w-full mt-4"
-                onClick={() => scrollToSection("contact")}
+                onClick={() => {
+                  scrollToSection("contact");
+                  setIsMobileMenuOpen(false);
+                }}
               >
                 Get Started
               </Button>
