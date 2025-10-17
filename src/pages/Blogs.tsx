@@ -86,7 +86,7 @@ const Blogs = () => {
         backgroundImage={heroImg}
         mainHeadline=""
         highlightedWord="Blogs"
-        headlineAfterHighlight="& News"
+        headlineAfterHighlight="& Inspecs News"
         subHeadline="Stay updated with the latest insights, trends, and innovations in technology, healthcare, and digital transformation."
         primaryButtonText="Explore Articles"
         showSecondaryButton={false}

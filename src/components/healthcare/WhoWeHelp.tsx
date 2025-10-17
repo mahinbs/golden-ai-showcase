@@ -68,14 +68,11 @@ const WhoWeHelp = () => {
         <div className="lg:grid flex flex-col-reverse grid-cols-[40%,1fr] gap-12 items-start pt-5 lg:pt-10">
           {/* Left Section - Title, Description, and Illustration */}
           <div className="space-y-8">
-            {/* Who We Help Label */}
-            <div className="bg-yellowClr px-4 py-2 rounded-lg inline-block">
-              <span className="text-lg font-bold text-black">Who We Help ?</span>
-            </div>
+            
 
             <div className="border-t border-black"></div>
             {/* Heading */}
-            <h2 className="text-3xl md:text-4xl font-bold">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl !leading-tight font-bold">
               <span className="bg-yellowClr text-black px-2 py-1">Who We</span>
               <br />
               <span className="text-black">Help ?</span>
@@ -105,7 +102,7 @@ const WhoWeHelp = () => {
           <div className="grid grid-cols-3 lg:grid-cols-5 gap-4 pt-10">
             {whoWeHelp.map((category, index) => (
               <div key={index} className="group cursor-pointer">
-                <div className="bg-yellowClr rounded-2xl p-4 border border-black hover:shadow-lg transition-all duration-300 group-hover:scale-105">
+                <div className="bg-yellowClr rounded-2xl p-4 border border-black hover:shadow-lg transition-all duration-300 group-hover:scale-105 h-full">
                   {/* Category Image */}
                   <div className="mb-4">
                     <img

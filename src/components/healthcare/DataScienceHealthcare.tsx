@@ -51,16 +51,11 @@ const DataScienceHealthcare = () => {
         <div className="lg:grid flex flex-col-reverse grid-cols-[40%,1fr] gap-12 items-start pt-5 lg:pt-10 mb-16">
           {/* Left Section - Title, Description, and Illustration */}
           <div className="space-y-8">
-            {/* Data Science Label */}
-            <div className="bg-yellowClr px-4 py-2 rounded-lg inline-block">
-              <span className="text-lg font-bold text-black">
-                Data Science for Healthcare
-              </span>
-            </div>
+           
 
             <div className="border-t border-black"></div>
             {/* Heading */}
-            <h2 className="text-3xl md:text-4xl font-bold">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl !leading-tight font-bold">
               <span className="bg-yellowClr text-black px-2 py-1">Data</span>
               <span className="text-black"> Science for </span>
               <span className="bg-yellowClr text-black px-2 py-1">

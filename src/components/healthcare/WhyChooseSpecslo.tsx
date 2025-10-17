@@ -1,23 +1,31 @@
 const whyChooseSpecslo = [
   {
     title: "Patient-Centered Design",
-    description: "Our healthcare solutions focus on improving patient experience, enhancing accessibility, and fostering stronger patient-provider connections through intuitive digital tools.",
-    image: "https://res.cloudinary.com/drdjii8fe/image/upload/v1760377473/1._Patient_Centered_Design_gmzvxu.png",
+    description:
+      "Our healthcare solutions focus on improving patient experience, enhancing accessibility, and fostering stronger patient-provider connections through intuitive digital tools.",
+    image:
+      "https://res.cloudinary.com/drdjii8fe/image/upload/v1760377473/1._Patient_Centered_Design_gmzvxu.png",
   },
   {
     title: "Built-In Security & Compliance",
-    description: "We prioritize HIPAA, GDPR, and industry-specific standards to ensure your systems remain secure, compliant, and ready for evolving regulations.",
-    image: "https://res.cloudinary.com/drdjii8fe/image/upload/v1760377474/2._Built-In_Security_Compliance_tkjaol.png",
+    description:
+      "We prioritize HIPAA, GDPR, and industry-specific standards to ensure your systems remain secure, compliant, and ready for evolving regulations.",
+    image:
+      "https://res.cloudinary.com/drdjii8fe/image/upload/v1760377474/2._Built-In_Security_Compliance_tkjaol.png",
   },
   {
     title: "Data-Driven Healthcare",
-    description: "Leverage advanced analytics and AI to transform patient data into actionable insights, enabling smarter decisions, personalized care, and operational improvements.",
-    image: "https://res.cloudinary.com/drdjii8fe/image/upload/v1760377474/3._Data-Driven_Healthcare_uv8z4a.png",
+    description:
+      "Leverage advanced analytics and AI to transform patient data into actionable insights, enabling smarter decisions, personalized care, and operational improvements.",
+    image:
+      "https://res.cloudinary.com/drdjii8fe/image/upload/v1760377474/3._Data-Driven_Healthcare_uv8z4a.png",
   },
   {
     title: "Comprehensive Healthcare Solutions",
-    description: "From patient portals and EHR systems to telemedicine and workflow automation, we build solutions that fit your specs and seamlessly integrate into your operations.",
-    image: "https://res.cloudinary.com/drdjii8fe/image/upload/v1760377474/4._Comprehensive_Healthcare_Solutions_myuj5e.png",
+    description:
+      "From patient portals and EHR systems to telemedicine and workflow automation, we build solutions that fit your specs and seamlessly integrate into your operations.",
+    image:
+      "https://res.cloudinary.com/drdjii8fe/image/upload/v1760377474/4._Comprehensive_Healthcare_Solutions_myuj5e.png",
   },
 ];
 
@@ -68,25 +76,25 @@ const WhyChooseSpecslo = () => {
 
           {/* Left Section - Title, Description, and Illustration */}
           <div className="space-y-8">
-            {/* Why Choose Specslo Label */}
-            <div className="bg-yellowClr px-4 py-2 rounded-lg inline-block">
-              <span className="text-lg font-bold text-black">Why Choose Specslo</span>
-            </div>
-
             <div className="border-t border-gray-300"></div>
             {/* Heading */}
-            <h2 className="text-3xl md:text-4xl font-bold">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl !leading-tight font-bold">
+              Why Choose Specslo
               <span className="text-black">for </span>
-              <span className="bg-yellowClr text-black px-2 py-1">Healthcare Solutions</span>
-              <span className="text-black">?</span>
+              <span className="bg-yellowClr text-black px-2">
+                Healthcare
+              </span>
+              <span className="text-black"> Solutions?</span>
             </h2>
 
             {/* Description */}
             <p className="text-lg text-gray-700 leading-relaxed">
-              We empower healthcare providers with scalable, secure, and innovative digital solutions designed around your workflows.
+              We empower healthcare providers with scalable, secure, and
+              innovative digital solutions designed around your workflows.
             </p>
             <p className="text-lg text-gray-700 leading-relaxed">
-              At Specslo, we build technology that enhances patient care and operational efficiency.
+              At Specslo, we build technology that enhances patient care and
+              operational efficiency.
             </p>
 
             {/* Horizontal Lines */}
