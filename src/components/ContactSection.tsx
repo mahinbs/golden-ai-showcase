@@ -108,7 +108,7 @@ const ContactSection = () => {
             <div className="space-y-8 mb-8">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-[#ffd63c] rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-6 h-6 text-white" />
+                  <Mail className="w-6 h-6 text-black" />
                 </div>
                 <div>
                   <p className="font-bold text-white text-lg">Email us</p>
@@ -123,7 +123,7 @@ const ContactSection = () => {
 
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-[#ffd63c] rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Phone className="w-6 h-6 text-white" />
+                  <Phone className="w-6 h-6 text-black" />
                 </div>
                 <div>
                   <p className="font-bold text-white text-lg">Call us</p>
@@ -143,7 +143,7 @@ const ContactSection = () => {
                 className="flex items-start space-x-4 hover:opacity-80 transition-opacity duration-300"
               >
                 <div className="w-12 h-12 bg-[#ffd63c] rounded-lg flex items-center justify-center flex-shrink-0">
-                  <MessageCircle className="w-6 h-6 text-white" />
+                  <MessageCircle className="w-6 h-6 text-black" />
                 </div>
                 <div>
                   <p className="font-bold text-white text-lg">WhatsApp us</p>
@@ -153,7 +153,7 @@ const ContactSection = () => {
 
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-[#ffd63c] rounded-lg flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-6 h-6 text-white" />
+                  <MapPin className="w-6 h-6 text-black" />
                 </div>
                 <div>
                   <p className="font-bold text-white text-lg">Visit us</p>
