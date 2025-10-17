@@ -100,8 +100,6 @@ const BlogSection = () => {
   }
 
   const blogs = blogsData.blogs;
-  const featuredBlog = blogs.find(blog => blog.isFeatured) || blogs[0];
-  const regularBlogs = blogs.filter(blog => blog._id !== featuredBlog._id).slice(0, 3);
 
   return (
     <section id="blog" className="py-24 bg-black">
@@ -127,109 +125,50 @@ const BlogSection = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-          {/* Featured Post */}
-          <Link to={`/blog/${featuredBlog.slug}`}>
-            <Card className="lg:col-span-2 overflow-hidden hover:shadow-card transition-all duration-300 group cursor-pointer animate-slide-up border-border hover:border-accent/20">
-              <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
-                <div className="relative h-64 lg:h-auto overflow-hidden">
-                  <img 
-                    src={featuredBlog.imageUrl} 
-                    alt={featuredBlog.imageAlt}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm font-medium">
-                      Featured
-                    </span>
-                  </div>
-                </div>
-                <div className="p-8 flex flex-col justify-center">
-                  <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
-                    <span className="bg-accent/10 text-accent px-2 py-1 rounded-full">
-                      {featuredBlog.categoryId.name}
-                    </span>
-                    <div className="flex items-center gap-1">
-                      <Calendar className="w-4 h-4" />
-                      {formatDate(featuredBlog.publishDate)}
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Clock className="w-4 h-4" />
-                      {featuredBlog.content ? calculateReadTime(featuredBlog.content) : '5 min read'}
-                    </div>
-                  </div>
-                  
-                  <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-accent transition-colors duration-300">
-                    {featuredBlog.title}
-                  </h3>
-                  
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
-                    {featuredBlog.excerpt}
-                  </p>
-
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <User className="w-4 h-4 text-muted-foreground" />
-                      <span className="text-sm text-muted-foreground">{featuredBlog.author.name}</span>
-                    </div>
-                    <ArrowRight className="w-5 h-5 text-accent group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-              </div>
-            </Card>
-          </Link>
-        </div>
-
-        {/* Regular Posts */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          {regularBlogs.map((post, index) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {blogs.slice(0, 4).map((post) => (
             <Link key={post._id} to={`/blog/${post.slug}`}>
-              <Card 
-                className="overflow-hidden hover:shadow-card transition-all duration-300 group cursor-pointer animate-slide-up border-border hover:border-accent/20"
-                style={{ animationDelay: `${(index + 1) * 0.1}s` }}
-              >
-                <div className="relative h-48 overflow-hidden">
-                  <img 
-                    src={post.imageUrl} 
+              <article className="bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-700 hover:border-yellow-400 group">
+                <div className="aspect-w-16 aspect-h-9">
+                  <img
+                    src={post.imageUrl}
                     alt={post.imageAlt}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-accent/10 backdrop-blur-sm text-accent px-2 py-1 rounded-full text-xs font-medium">
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="bg-yellow-400 text-black px-2 py-1 rounded-full text-xs font-medium">
                       {post.categoryId.name}
                     </span>
-                  </div>
-                </div>
-
-                <div className="p-6">
-                  <div className="flex items-center gap-4 text-xs text-muted-foreground mb-3">
-                    <div className="flex items-center gap-1">
-                      <Calendar className="w-3 h-3" />
-                      {formatDate(post.publishDate)}
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Clock className="w-3 h-3" />
+                    <span className="text-gray-400 text-sm">
                       {post.content ? calculateReadTime(post.content) : '5 min read'}
-                    </div>
+                    </span>
                   </div>
-                  
-                  <h3 className="text-lg font-bold text-foreground mb-3 group-hover:text-accent transition-colors duration-300 line-clamp-2">
+                  <h3 className="text-xl font-bold text-white mb-3 line-clamp-2 group-hover:text-yellow-400 transition-colors duration-300">
                     {post.title}
                   </h3>
-                  
-                  <p className="text-muted-foreground text-sm mb-4 leading-relaxed line-clamp-3">
+                  <p className="text-gray-300 mb-4 line-clamp-3">
                     {post.excerpt}
                   </p>
-
-                  <div className="flex items-center justify-between pt-4 border-t border-border">
+                  <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <User className="w-3 h-3 text-muted-foreground" />
-                      <span className="text-xs text-muted-foreground">{post.author.name}</span>
+                      <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
+                        <span className="text-black font-bold text-sm">
+                          {post.authorId.name.split(' ').map(n => n[0]).join('')}
+                        </span>
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-white">{post.authorId.name}</p>
+                        <p className="text-xs text-gray-400">{formatDate(post.publishDate)}</p>
+                      </div>
                     </div>
-                    <ArrowRight className="w-4 h-4 text-accent group-hover:translate-x-1 transition-transform" />
+                    <span className="text-yellow-400 hover:text-yellow-500 font-medium group-hover:translate-x-1 transition-all duration-300">
+                      Read More →
+                    </span>
                   </div>
                 </div>
-              </Card>
+              </article>
             </Link>
           ))}
         </div>

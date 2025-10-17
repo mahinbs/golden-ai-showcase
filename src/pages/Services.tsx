@@ -94,7 +94,7 @@ const Services = () => {
       {/* Client Support Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-[60%,1fr] gap-12 items-center">
+          <div className="flex flex-col-reverse lg:grid grid-cols-[60%,1fr] gap-12 items-center">
             {/* Left Section - Client Support Process */}
 
             <div className="flex gap-4">

@@ -88,7 +88,7 @@ const Blogs = () => {
         searchTerm === "" ||
         post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        post.author.name.toLowerCase().includes(searchTerm.toLowerCase());
+        post.authorId.name.toLowerCase().includes(searchTerm.toLowerCase());
       return matchesCategory && matchesSearch;
     }) || [];
 
@@ -247,7 +247,7 @@ const Blogs = () => {
                         <div className="flex items-center gap-2">
                           <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
                             <span className="text-black font-bold text-sm">
-                              {post.author.name
+                              {post.authorId.name
                                 .split(" ")
                                 .map((n) => n[0])
                                 .join("")}
@@ -255,7 +255,7 @@ const Blogs = () => {
                           </div>
                           <div>
                             <p className="text-sm font-medium text-white">
-                              {post.author.name}
+                              {post.authorId.name}
                             </p>
                             <p className="text-xs text-gray-400">
                               {formatDate(post.publishDate)}
@@ -323,7 +323,7 @@ const Blogs = () => {
                         <div className="flex items-center gap-2">
                           <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
                             <span className="text-black font-bold text-sm">
-                              {post.author.name
+                              {post.authorId.name
                                 .split(" ")
                                 .map((n) => n[0])
                                 .join("")}
@@ -331,7 +331,7 @@ const Blogs = () => {
                           </div>
                           <div>
                             <p className="text-sm font-medium text-white">
-                              {post.author.name}
+                              {post.authorId.name}
                             </p>
                             <p className="text-xs text-gray-400">
                               {formatDate(post.publishDate)}

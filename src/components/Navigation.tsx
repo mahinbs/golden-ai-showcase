@@ -7,6 +7,7 @@ const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const location = useLocation();
 
   // Services data from App.tsx routes
@@ -47,22 +48,23 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <div
+          <Link
+            to="/"
             className="flex items-center cursor-pointer hover:opacity-80 transition-opacity duration-300"
-            onClick={() => {
-              if (location.pathname === "/about") {
-                scrollToSection("about-story");
-              } else {
-                scrollToSection("hero");
-              }
-            }}
+            // onClick={() => {
+            //   if (location.pathname === "/about") {
+            //     scrollToSection("about-story");
+            //   } else {
+            //     scrollToSection("hero");
+            //   }
+            // }}
           >
             <img
               src="https://res.cloudinary.com/dknafpppp/image/upload/v1758189905/LOGO_SpecsLo_rectangle_no_bg_ot6afi.png"
               alt="SpecsLo Logo"
               className="h-20 w-auto max-h-full object-contain"
             />
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
@@ -87,7 +89,7 @@ const Navigation = () => {
             </Link>
 
             {/* What We Do - Dropdown */}
-            <div 
+            <div
               className="relative"
               onMouseEnter={() => setIsServicesDropdownOpen(true)}
               onMouseLeave={() => setIsServicesDropdownOpen(false)}
@@ -99,7 +101,7 @@ const Navigation = () => {
                 <span>What We Do</span>
                 <ChevronDown size={16} />
               </Link>
-              
+
               {/* Dropdown Menu */}
               {isServicesDropdownOpen && (
                 <div className="absolute top-full left-0 mt-1 w-64 bg-background/95 backdrop-blur-md border border-border rounded-lg shadow-lg py-2 z-50 -translate-x-1/3">
@@ -128,7 +130,9 @@ const Navigation = () => {
             <Link
               to="/healthcare-solutions"
               className={`text-foreground hover:text-accent transition-colors duration-300 font-medium ${
-                location.pathname === "/healthcare-solutions" ? "text-accent" : ""
+                location.pathname === "/healthcare-solutions"
+                  ? "text-accent"
+                  : ""
               }`}
             >
               Healthcare Solutions
@@ -191,37 +195,63 @@ const Navigation = () => {
               </Link>
 
               {/* What We Do - Mobile Services */}
-              <div className="space-y-2">
-                <Link
-                  to="/services"
-                  className={`block w-full text-left text-foreground hover:text-accent transition-colors duration-300 font-medium py-2 ${
+              <div className="space-y-4">
+                <button
+                  className={`flex items-center justify-between w-full text-left text-foreground hover:text-accent transition-colors duration-300 font-medium py-2 ${
                     location.pathname === "/services" ? "text-accent" : ""
                   }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
                 >
-                  What We Do
-                </Link>
-                <div className="ml-4 space-y-1">
-                  {services.map((service) => (
+                  <span>What We Do</span>
+                  <ChevronDown
+                    size={16}
+                    className={`transition-transform duration-300 ${
+                      isMobileServicesOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+                {isMobileServicesOpen && (
+                  <div className="ml-4 space-y-1">
                     <Link
-                      key={service.path}
-                      to={service.path}
+                      to="/services"
                       className={`block w-full text-left text-foreground hover:text-accent transition-colors duration-300 py-1 ${
-                        location.pathname === service.path ? "text-accent" : ""
+                        location.pathname === "/services" ? "text-accent" : ""
                       }`}
-                      onClick={() => setIsMobileMenuOpen(false)}
+                      onClick={() => {
+                        setIsMobileMenuOpen(false);
+                        setIsMobileServicesOpen(false);
+                      }}
                     >
-                      {service.name}
+                      View All Services
                     </Link>
-                  ))}
-                </div>
+                    {services.map((service) => (
+                      <Link
+                        key={service.path}
+                        to={service.path}
+                        className={`block w-full text-left text-foreground hover:text-accent transition-colors duration-300 py-1 ${
+                          location.pathname === service.path
+                            ? "text-accent"
+                            : ""
+                        }`}
+                        onClick={() => {
+                          setIsMobileMenuOpen(false);
+                          setIsMobileServicesOpen(false);
+                        }}
+                      >
+                        {service.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </div>
 
               {/* Healthcare Solutions */}
               <Link
                 to="/healthcare-solutions"
                 className={`block w-full text-left text-foreground hover:text-accent transition-colors duration-300 font-medium py-2 ${
-                  location.pathname === "/healthcare-solutions" ? "text-accent" : ""
+                  location.pathname === "/healthcare-solutions"
+                    ? "text-accent"
+                    : ""
                 }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
