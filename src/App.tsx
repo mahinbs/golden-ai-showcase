@@ -15,6 +15,7 @@ import UIUXDesign from "./pages/UIUXDesign";
 import DataScienceSolutions from "./pages/DataScienceSolutions";
 import HealthcareSolutions from "./pages/HealthcareSolutions";
 import Blogs from "./pages/Blogs";
+import BlogDetail from "./pages/BlogDetail";
 import Services from "./pages/Services";
 import ContactUs from "./pages/ContactUs";
 
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="/data-science-solutions" element={<DataScienceSolutions />} />
           <Route path="/healthcare-solutions" element={<HealthcareSolutions />} />
           <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blog/:slug" element={<BlogDetail />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<ContactUs />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

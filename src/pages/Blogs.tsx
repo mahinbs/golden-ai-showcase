@@ -1,86 +1,140 @@
 import React, { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import ContactSection from "@/components/ContactSection";
-import heroImg from '../assets/blogs-hero.webp'
+import heroImg from "../assets/blogs-hero.webp";
 
-// Blog data from BlogSection component
-const blogPosts = [
-  {
-    id: 1,
-    title: "The Future of AI in Healthcare: Transforming Patient Care",
-    excerpt: "Explore how artificial intelligence is revolutionizing healthcare delivery, from diagnostic imaging to personalized treatment plans.",
-    author: "Dr. Sarah Chen",
-    date: "2024-01-15",
-    category: "Healthcare",
-    readTime: "8 min read",
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    featured: true
-  },
-  {
-    id: 2,
-    title: "Machine Learning Operations: Best Practices for 2024",
-    excerpt: "Learn the essential MLOps strategies that ensure your AI models perform reliably in production environments.",
-    author: "Alex Rodriguez",
-    date: "2024-01-12",
-    category: "Technology",
-    readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    featured: false
-  },
-  {
-    id: 3,
-    title: "Building Ethical AI: A Developer's Guide",
-    excerpt: "Understanding the principles of responsible AI development and how to implement fairness and transparency in your models.",
-    author: "Maria Santos",
-    date: "2024-01-10",
-    category: "Ethics",
-    readTime: "10 min read", 
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    featured: false
-  },
-  {
-    id: 4,
-    title: "Generative AI in Business: Opportunities and Challenges",
-    excerpt: "An in-depth analysis of how generative AI is reshaping industries and what businesses need to consider for adoption.",
-    author: "David Kim",
-    date: "2024-01-08",
-    category: "Business",
-    readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    featured: false
+// API base URL
+const API_BASE_URL = "https://blogplatform-backend-cloudinary-weld.vercel.app";
+
+// Types for blog data
+interface Blog {
+  _id: string;
+  title: string;
+  slug: string;
+  content?: string;
+  authorId: {
+    _id: string;
+    name: string;
+  };
+  categoryId: {
+    _id: string;
+    name: string;
+    slug: string;
+  };
+  tags: string[];
+  excerpt: string;
+  imageAlt: string;
+  isFeatured: boolean;
+  author: {
+    _id: string;
+    name: string;
+  };
+  metaDescription: string;
+  metaKeywords: string[];
+  imageUrl: string;
+  status: string;
+  publishDate: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+interface BlogsResponse {
+  success: boolean;
+  blogs: Blog[];
+  totalCount: number;
+  currentPage: number;
+  totalPages: number | null;
+}
+
+// Fetch blogs function
+const fetchBlogs = async (): Promise<BlogsResponse> => {
+  const response = await fetch(`${API_BASE_URL}/api/blogs/published`);
+  if (!response.ok) {
+    throw new Error("Failed to fetch blogs");
   }
-];
-
-const categories = [
-  "All",
-  "Healthcare",
-  "Technology", 
-  "Ethics",
-  "Business",
-];
+  return response.json();
+};
 
 const Blogs = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchTerm, setSearchTerm] = useState("");
 
-  const filteredPosts = blogPosts.filter((post) => {
-    const matchesCategory = selectedCategory === "All" || post.category === selectedCategory;
-    const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         post.author.toLowerCase().includes(searchTerm.toLowerCase());
-    return matchesCategory && matchesSearch;
+  // Fetch blogs using TanStack Query
+  const {
+    data: blogsData,
+    isLoading,
+    error,
+  } = useQuery({
+    queryKey: ["blogs"],
+    queryFn: fetchBlogs,
   });
 
-  const featuredPosts = blogPosts.filter(post => post.featured);
-  const regularPosts = filteredPosts.filter(post => !post.featured);
+  // Get unique categories from blogs
+  const categories = blogsData?.blogs
+    ? ["All", ...new Set(blogsData.blogs.map((blog) => blog.categoryId.name))]
+    : ["All"];
+
+  // Filter blogs based on category and search
+  const filteredPosts =
+    blogsData?.blogs?.filter((post) => {
+      const matchesCategory =
+        selectedCategory === "All" || post.categoryId.name === selectedCategory;
+      const matchesSearch =
+        searchTerm === "" ||
+        post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        post.author.name.toLowerCase().includes(searchTerm.toLowerCase());
+      return matchesCategory && matchesSearch;
+    }) || [];
+
+
+  const featuredPosts = filteredPosts.filter((post) => post.isFeatured);
+  const regularPosts = filteredPosts.filter((post) => !post.isFeatured);
+
+  // Helper function to format date
+  const formatDate = (dateString: string) => {
+    return new Date(dateString).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  };
+
+  // Helper function to calculate read time
+  const calculateReadTime = (content: string) => {
+    const wordsPerMinute = 200;
+    const wordCount = content.split(" ").length;
+    const readTime = Math.ceil(wordCount / wordsPerMinute);
+    return `${readTime} min read`;
+  };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-black flex items-center justify-center">
+        <div className="text-white text-xl">Loading blogs...</div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-black flex items-center justify-center">
+        <div className="text-white text-xl">
+          Error loading blogs. Please try again later.
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-black">
       <Navigation />
-      
+
       {/* Hero Section */}
       <HeroSection
         backgroundImage={heroImg}
@@ -122,7 +176,12 @@ const Blogs = () => {
                   stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
                 </svg>
               </div>
             </div>
@@ -150,7 +209,7 @@ const Blogs = () => {
       </section>
 
       {/* Featured Posts Section */}
-      {selectedCategory === "All" && (
+      {selectedCategory === "All" && featuredPosts.length > 0 && (
         <section className="py-16 bg-black">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
@@ -158,45 +217,58 @@ const Blogs = () => {
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {featuredPosts.map((post) => (
-                <article key={post.id} className="bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-700">
-                  <div className="aspect-w-16 aspect-h-9">
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full h-48 object-cover"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="bg-yellow-400 text-black px-2 py-1 rounded-full text-xs font-medium">
-                        {post.category}
-                      </span>
-                      <span className="text-gray-400 text-sm">{post.readTime}</span>
+                <Link key={post._id} to={`/blog/${post.slug}`}>
+                  <article className="bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-700 hover:border-yellow-400 group">
+                    <div className="aspect-w-16 aspect-h-9">
+                      <img
+                        src={post.imageUrl}
+                        alt={post.imageAlt}
+                        className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-3 line-clamp-2">
-                      {post.title}
-                    </h3>
-                    <p className="text-gray-300 mb-4 line-clamp-3">
-                      {post.excerpt}
-                    </p>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
-                          <span className="text-black font-bold text-sm">
-                            {post.author.split(' ').map(n => n[0]).join('')}
-                          </span>
-                        </div>
-                        <div>
-                          <p className="text-sm font-medium text-white">{post.author}</p>
-                          <p className="text-xs text-gray-400">{new Date(post.date).toLocaleDateString()}</p>
-                        </div>
+                    <div className="p-6">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="bg-yellow-400 text-black px-2 py-1 rounded-full text-xs font-medium">
+                          {post.categoryId.name}
+                        </span>
+                        <span className="text-gray-400 text-sm">
+                          {post.content
+                            ? calculateReadTime(post.content)
+                            : "5 min read"}
+                        </span>
                       </div>
-                      <button className="text-yellow-400 hover:text-yellow-500 font-medium">
-                        Read More →
-                      </button>
+                      <h3 className="text-xl font-bold text-white mb-3 line-clamp-2 group-hover:text-yellow-400 transition-colors duration-300">
+                        {post.title}
+                      </h3>
+                      <p className="text-gray-300 mb-4 line-clamp-3">
+                        {post.excerpt}
+                      </p>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
+                            <span className="text-black font-bold text-sm">
+                              {post.author.name
+                                .split(" ")
+                                .map((n) => n[0])
+                                .join("")}
+                            </span>
+                          </div>
+                          <div>
+                            <p className="text-sm font-medium text-white">
+                              {post.author.name}
+                            </p>
+                            <p className="text-xs text-gray-400">
+                              {formatDate(post.publishDate)}
+                            </p>
+                          </div>
+                        </div>
+                        <span className="text-yellow-400 hover:text-yellow-500 font-medium group-hover:translate-x-1 transition-all duration-300">
+                          Read More →
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                </article>
+                  </article>
+                </Link>
               ))}
             </div>
           </div>
@@ -207,80 +279,75 @@ const Blogs = () => {
       <section className="py-16 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
-            {selectedCategory === "All" ? "All Articles" : `${selectedCategory} Articles`}
+            {selectedCategory === "All"
+              ? "All Articles"
+              : `${selectedCategory} Articles`}
           </h2>
-          
-          {regularPosts.length === 0 ? (
+
+          {filteredPosts.length === 0 ? (
             <div className="text-center py-12">
-              <p className="text-gray-400 text-lg">No articles found matching your criteria.</p>
+              <p className="text-gray-400 text-lg">
+                No articles found matching your criteria.
+              </p>
             </div>
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {regularPosts.map((post) => (
-                <article key={post.id} className="bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-700">
-                  <div className="aspect-w-16 aspect-h-9">
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full h-48 object-cover"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="bg-yellow-400 text-black px-2 py-1 rounded-full text-xs font-medium">
-                        {post.category}
-                      </span>
-                      <span className="text-gray-400 text-sm">{post.readTime}</span>
+              {filteredPosts.map((post) => (
+                <Link key={post._id} to={`/blog/${post.slug}`}>
+                  <article className="bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-700 hover:border-yellow-400 group">
+                    <div className="aspect-w-16 aspect-h-9">
+                      <img
+                        src={post.imageUrl}
+                        alt={post.imageAlt}
+                        className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-3 line-clamp-2">
-                      {post.title}
-                    </h3>
-                    <p className="text-gray-300 mb-4 line-clamp-3">
-                      {post.excerpt}
-                    </p>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
-                          <span className="text-black font-bold text-sm">
-                            {post.author.split(' ').map(n => n[0]).join('')}
-                          </span>
-                        </div>
-                        <div>
-                          <p className="text-sm font-medium text-white">{post.author}</p>
-                          <p className="text-xs text-gray-400">{new Date(post.date).toLocaleDateString()}</p>
-                        </div>
+                    <div className="p-6">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="bg-yellow-400 text-black px-2 py-1 rounded-full text-xs font-medium">
+                          {post.categoryId.name}
+                        </span>
+                        <span className="text-gray-400 text-sm">
+                          {post.content
+                            ? calculateReadTime(post.content)
+                            : "5 min read"}
+                        </span>
                       </div>
-                      <button className="text-yellow-400 hover:text-yellow-500 font-medium">
-                        Read More →
-                      </button>
+                      <h3 className="text-xl font-bold text-white mb-3 line-clamp-2 group-hover:text-yellow-400 transition-colors duration-300">
+                        {post.title}
+                      </h3>
+                      <p className="text-gray-300 mb-4 line-clamp-3">
+                        {post.excerpt}
+                      </p>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
+                            <span className="text-black font-bold text-sm">
+                              {post.author.name
+                                .split(" ")
+                                .map((n) => n[0])
+                                .join("")}
+                            </span>
+                          </div>
+                          <div>
+                            <p className="text-sm font-medium text-white">
+                              {post.author.name}
+                            </p>
+                            <p className="text-xs text-gray-400">
+                              {formatDate(post.publishDate)}
+                            </p>
+                          </div>
+                        </div>
+                        <span className="text-yellow-400 hover:text-yellow-500 font-medium group-hover:translate-x-1 transition-all duration-300">
+                          Read More →
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                </article>
+                  </article>
+                </Link>
               ))}
             </div>
           )}
-        </div>
-      </section>
-
-      {/* Newsletter Subscription */}
-      <section className="py-16 bg-black">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Stay <span className="text-yellow-400">Updated</span>
-          </h2>
-          <p className="text-gray-300 mb-8 text-lg">
-            Subscribe to our newsletter and never miss the latest insights and industry updates.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg border-2 border-gray-600 bg-gray-800 text-white placeholder-gray-400 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400"
-            />
-            <button className="px-6 py-3 bg-yellow-400 text-black font-bold rounded-lg hover:bg-yellow-500 transition-colors duration-300">
-              Subscribe
-            </button>
-          </div>
         </div>
       </section>
 
