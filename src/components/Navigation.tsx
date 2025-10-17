@@ -144,13 +144,15 @@ const Navigation = () => {
               Blogs
             </Link>
 
-            <Button
-              variant="hero"
-              onClick={() => scrollToSection("contact")}
-              className="ml-4"
+            {/* Contact Us */}
+            <Link
+              to="/contact"
+              className={`text-foreground hover:text-accent transition-colors duration-300 font-medium ${
+                location.pathname === "/contact" ? "text-accent" : ""
+              }`}
             >
-              Get Started
-            </Button>
+              Contact Us
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -237,16 +239,16 @@ const Navigation = () => {
                 Blogs
               </Link>
 
-              <Button
-                variant="hero"
-                className="w-full mt-4"
-                onClick={() => {
-                  scrollToSection("contact");
-                  setIsMobileMenuOpen(false);
-                }}
+              {/* Contact Us */}
+              <Link
+                to="/contact"
+                className={`block w-full text-left text-foreground hover:text-accent transition-colors duration-300 font-medium py-2 ${
+                  location.pathname === "/contact" ? "text-accent" : ""
+                }`}
+                onClick={() => setIsMobileMenuOpen(false)}
               >
-                Get Started
-              </Button>
+                Contact Us
+              </Link>
             </div>
           </div>
         )}
