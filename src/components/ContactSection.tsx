@@ -1,11 +1,16 @@
-import { Mail, Phone, MapPin, Send, ArrowRight, MessageCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Send, ArrowRight, MessageCircle, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { ourServices } from "../content/ourServices";
+import axios from "axios";
+import toast from "react-hot-toast";
+import { useState } from "react";
 
 const ContactSection = () => {
+  const navigate = useNavigate();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const {
     register,
     handleSubmit,
@@ -35,6 +40,7 @@ const ContactSection = () => {
     customService: string;
     requirements: string[];
   }) => {
+    setIsSubmitting(true);
     try {
       // Build the basic contact information
       let body =
@@ -72,13 +78,30 @@ const ContactSection = () => {
 
       body += "\n";
 
-      // For now, just log the form data
-      console.log("Form submitted:", body);
-      alert("Form submitted successfully! We'll get back to you soon.");
-      reset();
+      const data = {
+        body,
+        name: "SPECSLO",
+        subject: "New Contact Form Submission - Specslo",
+        to: "support@specslo.com",
+      };
+
+      const res = await axios.post(
+        "https://send-mail-redirect-boostmysites.vercel.app/send-email",
+        data
+      );
+
+      if (res.data.success) {
+        toast.success(res.data.message);
+        reset();
+        navigate("/thank-you");
+      } else {
+        toast.error(res.data.message);
+      }
     } catch (err) {
       console.error("Form submission error:", err);
-      alert("Something went wrong. Please try again.");
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -256,7 +279,7 @@ const ContactSection = () => {
                         id={service.id.toString()}
                         type="checkbox"
                         value={service.id.toString()}
-                        className="rounded-md accent-primary1 w-4 h-4"
+                        className="rounded-md accent-primary1 w-4 h-4 accent-yellowClr"
                         {...register("requirements", {
                           required: "Please select at least one requirement",
                         })}
@@ -331,9 +354,24 @@ const ContactSection = () => {
                 ></textarea>
               </div>
 
-              <Button type="submit" variant="hero" size="lg" className="w-full group">
-                Send Message
-                <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <Button 
+                type="submit" 
+                variant="hero" 
+                size="lg" 
+                className="w-full group"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                    Sending Message...
+                  </>
+                ) : (
+                  <>
+                    Send Message
+                    <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </>
+                )}
               </Button>
             </form>
           </Card>

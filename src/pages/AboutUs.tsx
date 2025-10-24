@@ -2,7 +2,6 @@ import img1 from "../assets/aboutus/aboutus.webp";
 import whyWeStarted1 from "../assets/aboutus/Why We Started 1.png";
 import whyWeStarted2 from "../assets/aboutus/Why We Started 2.webp";
 import founder from "../assets/Founder.webp";
-import ContactForm from "../components/ContactForm";
 import PageBanner from "../components/PageBanner";
 import banner from "../assets/banners/whoweare.webp";
 import partnership1 from "../assets/aboutus/Partnership 1.jpg";
@@ -266,7 +265,6 @@ const AboutUs = () => {
       >
         <CTA />
       </section>
-      {/* <ContactForm /> */}
       <ContactSection />
       <Footer />
     </>
