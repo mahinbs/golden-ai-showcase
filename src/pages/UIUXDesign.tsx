@@ -73,7 +73,7 @@ const UIUXDesign = () => {
         <TestimonialsSection />
       </div>
       <div id="faq">
-        <FAQSection isWebDevelopment={false} />
+        <FAQSection serviceType="uiux-design" />
       </div>
       <ContactSection />
       <KeyFeatures

@@ -1,6 +1,5 @@
 import React from "react";
 import Navigation from "@/components/Navigation";
-import HeroSection from "@/components/HeroSection";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import ContactSection from "@/components/ContactSection";
@@ -15,26 +14,61 @@ const Services = () => {
     <div className="min-h-screen bg-black">
       <Navigation />
 
-      {/* Hero Section */}
-      <HeroSection
-        backgroundImage={heroImg}
-        mainHeadline=""
-        highlightedWord="What We"
-        headlineAfterHighlight="Do"
-        subHeadline="Comprehensive technology solutions tailored to your business needs. From web development to AI solutions, we transform your ideas into reality."
-        primaryButtonText="Get Started Today"
-        showSecondaryButton={false}
-        showCtaText={false}
-        stat1Value="7+"
-        stat1Label="Service Categories"
-        stat2Value="100+"
-        stat2Label="Projects Completed"
-        stat3Value="99%"
-        stat3Label="Client Satisfaction"
-        bottomSectionText="Innovation Through Technology"
-        bottomHighlightedWord="Innovation"
-        show3DLogo={false}
-      />
+      {/* Custom Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-start overflow-hidden">
+        {/* Background Image */}
+        <img
+          src={heroImg}
+          className="absolute inset-0 h-full w-full z-0 object-cover"
+          alt="Services Hero Background"
+        />
+
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 z-10 bg-black/80"></div>
+
+        {/* Content */}
+        <div className="relative z-20 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl">
+            {/* Main Heading */}
+            <h1 className="text-6xl md:text-8xl font-bold text-[#ffd63c] mb-6 leading-tight">
+              Solutions
+            </h1>
+
+            {/* Sub-heading */}
+            <h2 className="text-2xl md:text-3xl font-medium text-white mb-6">
+              Built Around Your Specs.
+            </h2>
+
+            {/* Yellow Separator Line */}
+            <div className="h-1 max-w-md w-full bg-[#ffd63c] mb-8"></div>
+
+            {/* Description */}
+            <p className="text-lg md:text-xl text-white mb-8 leading-relaxed max-w-3xl">
+              From AI-powered systems to scalable apps, websites, and custom
+              software, we craft future-ready digital solutions that fit your
+              workflows, goals, and vision.
+            </p>
+
+            {/* CTA Button */}
+            <Link
+              to="/contact"
+              className="inline-block bg-[#ffd63c] text-black px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#e6c035] transition-colors duration-300"
+            >
+              Request a free quote
+            </Link>
+          </div>
+        </div>
+
+        {/* Bottom Tagline */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 text-center">
+          <p className="text-white text2">
+            <span className="text-white">What We Build,</span>{" "}
+            <span className="text-[#ffd63c] font-semibold">
+              We Build to Fit
+            </span>
+          </p>
+        </div>
+      </section>
 
       <ServicesSection />
 
@@ -46,7 +80,7 @@ const Services = () => {
             <div className="space-y-8">
               {/* Title with yellow highlight */}
               <div className="space-y-4">
-                <h2 className="text-4xl md:text-5xl font-bold text-white">
+                <h2 className="text-4xl md:text-5xl font-bold !leading-tight text-white">
                   Our{" "}
                   <span className="bg-yellow-400 text-black px-2 py-1">
                     Delivery
@@ -112,7 +146,7 @@ const Services = () => {
               {/* Title with yellow highlight */}
               <div className="space-y-4">
                 <div className="h-0.5 w-full bg-black"></div>
-                <h2 className="text-4xl md:text-5xl font-bold text-black">
+                <h2 className="text-4xl md:text-5xl font-bold !leading-tight text-black">
                   Client{" "}
                   <span className="bg-yellow-400 text-black px-2 py-1">
                     Support

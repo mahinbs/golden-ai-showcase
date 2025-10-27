@@ -25,7 +25,7 @@ const Index = () => {
       <BlogSection />
       <TestimonialsSection />
       <HealthcareSection />
-      <FAQSection />
+      <FAQSection serviceType="general" />
       <BrochureSection />
       <ContactSection />
       <Footer />

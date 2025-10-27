@@ -282,9 +282,9 @@ const ITSolutionsFlipCards = () => {
         {/* Main Title Section */}
         <div className="text-center mb-16">
           <div className="border-y-2 border-white py-3 w-fit mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold !leading-tight">
+            <h2 className="text-4xl md:text-5xl font-bold !leading-tight !leading-tight">
               <span className="text-white">IT Solutions for Healthcare </span>
-              <span className="bg-yellowClr text-black px-4 py-1">We Deliver</span>
+              <span className="bg-yellowClr text-black px-4">We Deliver</span>
             </h2>
           </div>
         </div>

@@ -28,7 +28,7 @@ const WebDevelopment = () => {
         mainHeadline="Custom"
         highlightedWord="Web"
         headlineAfterHighlight="Development Solution"
-        subHeadline="websites that fit and perform, Crafted around your specs"
+        subHeadline="Websites that fit and perform, crafted around your specs"
         primaryButtonText="Request a Free Quote"
         showSecondaryButton={false}
         showCtaText={false}
@@ -125,7 +125,7 @@ const WebDevelopment = () => {
         <TestimonialsSection />
       </div>
       <div id="faq">
-        <FAQSection isWebDevelopment={true} />
+        <FAQSection serviceType="web-development" />
       </div>
       <BrochureSection />
       <ContactSection />

@@ -11,6 +11,7 @@ interface Logo3DProps {
   rotation?: [number, number, number];
   autoRotate?: boolean;
   enableControls?: boolean;
+  onLoad?: () => void;
 }
 
 function LogoModel({
@@ -34,8 +35,20 @@ function LogoModel({
       const box = new THREE.Box3().setFromObject(scene);
       const size = box.getSize(new THREE.Vector3());
       const maxDimension = Math.max(size.x, size.y, size.z);
-      const scaleFactor = 1.5 / maxDimension; // Fit within 1.5 units for better containment
+      
+      // Use a more consistent scale factor based on the scale prop
+      let scaleFactor;
+      if (scale >= 2) {
+        scaleFactor = 1.5 / maxDimension; // Larger scale for bigger displays
+      } else if (scale >= 1) {
+        scaleFactor = 1.8 / maxDimension; // Medium scale
+      } else {
+        scaleFactor = 1.5 / maxDimension; // Default scale
+      }
+      
       groupRef.current.scale.setScalar(scaleFactor * scale);
+      
+     
     }
   }, [scene, scale]);
 
@@ -62,6 +75,7 @@ export default function Logo3D({
   rotation = [0, 0, 0],
   autoRotate = true,
   enableControls = false,
+  // onLoad,
 }: Logo3DProps) {
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
@@ -79,16 +93,32 @@ export default function Logo3D({
     return () => window.removeEventListener("resize", updateDimensions);
   }, []);
 
+  // Recalculate scale when dimensions change
+  useEffect(() => {
+    if (dimensions.width > 0 && dimensions.height > 0) {
+      // Force a re-render by updating the scale
+      const timeout = setTimeout(() => {
+        // This will trigger the LogoModel to recalculate its scale
+        window.dispatchEvent(new Event('resize'));
+      }, 100);
+      
+      return () => clearTimeout(timeout);
+    }
+  }, [dimensions]);
+
   return (
     <div
       ref={containerRef}
       className={`w-full h-full three-d-element !min-h-[300px] lg:!min-h-[400px] ${className}`}
-      // style={{ minHeight: "400px" }}
+      style={{ 
+        minHeight: "300px",
+        minWidth: "300px"
+      }}
     >
         <Canvas
           camera={{
-            position: [0, 0, 8],
-            fov: 45,
+            position: [0, 0, 6],
+            fov: 50,
           }}
           style={{
             background: "transparent",

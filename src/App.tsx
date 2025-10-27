@@ -19,6 +19,10 @@ import BlogDetail from "./pages/BlogDetail";
 import Services from "./pages/Services";
 import ContactUs from "./pages/ContactUs";
 import ThankYou from "./pages/ThankYou";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
+import Disclaimer from "./pages/Disclaimer";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -28,22 +32,35 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/web-development" element={<WebDevelopment />} />
           <Route path="/app-development" element={<AppDevelopment />} />
-          <Route path="/software-development" element={<SoftwareDevelopment />} />
+          <Route
+            path="/software-development"
+            element={<SoftwareDevelopment />}
+          />
           <Route path="/ai-solutions" element={<AISolutions />} />
           <Route path="/game-development" element={<GameDevelopment />} />
           <Route path="/uiux-design" element={<UIUXDesign />} />
-          <Route path="/data-science-solutions" element={<DataScienceSolutions />} />
-          <Route path="/healthcare-solutions" element={<HealthcareSolutions />} />
+          <Route
+            path="/data-science-solutions"
+            element={<DataScienceSolutions />}
+          />
+          <Route
+            path="/healthcare-solutions"
+            element={<HealthcareSolutions />}
+          />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blog/:slug" element={<BlogDetail />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/thank-you" element={<ThankYou />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/disclaimer" element={<Disclaimer />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

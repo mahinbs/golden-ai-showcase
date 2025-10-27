@@ -79,7 +79,7 @@ const DataScienceSolutions = () => {
         <TestimonialsSection />
       </div>
       <div id="faq">
-        <FAQSection isWebDevelopment={false} />
+        <FAQSection serviceType="data-science" />
       </div>
       <ContactSection />
       <KeyFeatures

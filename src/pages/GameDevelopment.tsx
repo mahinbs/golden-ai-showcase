@@ -90,7 +90,7 @@ const GameDevelopment = () => {
         <TestimonialsSection />
       </div>
       <div id="faq">
-        <FAQSection isWebDevelopment={false} />
+        <FAQSection serviceType="game-development" />
       </div>
       <ContactSection />
       <KeyFeatures

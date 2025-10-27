@@ -48,9 +48,9 @@ const DeliveringImpactfulDataSolutions = () => {
         {/* Main Title Section */}
         <div className="text-start mb-16">
           <div className="border-y-2 border-white py-3 w-fit">
-            <h2 className="text-4xl md:text-5xl font-bold">
+            <h2 className="text-4xl md:text-5xl font-bold !leading-tight">
               <span className="text-white">Delivering Impactful </span>
-              <span className="bg-yellowClr text-black px-4 py-1">
+              <span className="bg-yellowClr text-black px-4">
                 Data Solutions
               </span>
             </h2>

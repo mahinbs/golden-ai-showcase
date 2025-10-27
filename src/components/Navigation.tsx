@@ -48,23 +48,16 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link
-            to="/"
+          <a
+            href="/"
             className="flex items-center cursor-pointer hover:opacity-80 transition-opacity duration-300"
-            // onClick={() => {
-            //   if (location.pathname === "/about") {
-            //     scrollToSection("about-story");
-            //   } else {
-            //     scrollToSection("hero");
-            //   }
-            // }}
           >
             <img
               src="https://res.cloudinary.com/dknafpppp/image/upload/v1758189905/LOGO_SpecsLo_rectangle_no_bg_ot6afi.png"
               alt="SpecsLo Logo"
               className="h-20 w-auto max-h-full object-contain"
             />
-          </Link>
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
@@ -104,7 +97,7 @@ const Navigation = () => {
 
               {/* Dropdown Menu */}
               {isServicesDropdownOpen && (
-                <div className="absolute top-full left-0 mt-1 w-64 bg-background/95 backdrop-blur-md border border-border rounded-lg shadow-lg py-2 z-50 -translate-x-1/3">
+                <div className="absolute top-full left-0 mt-0 w-64 bg-background/95 backdrop-blur-md border border-border rounded-lg shadow-lg py-2 z-50 -translate-x-1/3">
                   <Link
                     to="/services"
                     className="block px-4 py-2 text-foreground hover:text-accent hover:bg-accent/10 transition-colors duration-300 border-b border-border"
@@ -197,7 +190,7 @@ const Navigation = () => {
               {/* What We Do - Mobile Services */}
               <div className="space-y-4">
                 <button
-                  className={`flex items-center justify-between w-full text-left text-foreground hover:text-accent transition-colors duration-300 font-medium py-2 ${
+                  className={`flex items-center justify-between w-full text-left text-foreground hover:text-accent transition-colors duration-400 font-medium py-2 ${
                     location.pathname === "/services" ? "text-accent" : ""
                   }`}
                   onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
@@ -205,7 +198,7 @@ const Navigation = () => {
                   <span>What We Do</span>
                   <ChevronDown
                     size={16}
-                    className={`transition-transform duration-300 ${
+                    className={`transition-transform duration-400 ${
                       isMobileServicesOpen ? "rotate-180" : ""
                     }`}
                   />
@@ -214,7 +207,7 @@ const Navigation = () => {
                   <div className="ml-4 space-y-1">
                     <Link
                       to="/services"
-                      className={`block w-full text-left text-foreground hover:text-accent transition-colors duration-300 py-1 ${
+                      className={`block w-full text-left text-foreground hover:text-accent transition-colors duration-400 py-1 ${
                         location.pathname === "/services" ? "text-accent" : ""
                       }`}
                       onClick={() => {

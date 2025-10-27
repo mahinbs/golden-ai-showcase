@@ -37,7 +37,7 @@ const PlatformsWeBuildFor = () => {
                   data-aos="fade-right"
                   className="absolute left-0 top-0 w-[3rem] h-full bg-yellowClr z-0"
                 ></div>
-                <span className="pl-4">
+                <span className="">
                   <span className="relative z-[1] font-glacial">
                     Platforms We Build <br />
                     Games For

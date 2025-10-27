@@ -44,7 +44,7 @@ const GameGenres = () => {
             <div className="space-y-4">
               <h2 className="text1 z-[2] relative">
                 <div className="absolute left-0 top-0 w-[3rem] h-full bg-yellowClr z-0"></div>
-                <span className="pl-4">
+                <span className="">
                   <span className="relative z-[1] font-glacial">
                     Game
                     <br />

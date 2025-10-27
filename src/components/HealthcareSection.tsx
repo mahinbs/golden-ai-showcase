@@ -15,7 +15,7 @@ const HealthcareSection = () => {
             {/* Main heading */}
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
               <div className="inline-block">
-                <span className="bg-[#ffd63c] text-black px-4 py-2 rounded-lg">Healthcare</span>
+                <span className="bg-[#ffd63c] text-black px-4 rounded-lg">Healthcare</span>
               </div>
               <div className="text-white mt-2">Solutions</div>
             </h2>
@@ -41,7 +41,7 @@ const HealthcareSection = () => {
           {/* Right Side - AI in Healthcare Image */}
           <div className="relative animate-slide-up" style={{ animationDelay: '0.3s' }}>
             <img 
-              src="https://res.cloudinary.com/dknafpppp/image/upload/v1758564091/How-Smart-is-AI-in-Healthcare-1320x660_ixoip3.webp" 
+              src="https://res.cloudinary.com/drdjii8fe/image/upload/v1758619021/Healthcare_Solution_ehkweg.jpg" 
               alt="AI in Healthcare - Smart healthcare solutions and technology"
               className="w-full h-96 object-cover rounded-lg shadow-lg"
             />

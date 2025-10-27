@@ -180,7 +180,7 @@ const AISolutions = () => {
         <TestimonialsSection />
       </div>
       <div id="faq">
-        <FAQSection isWebDevelopment={false} />
+        <FAQSection serviceType="ai-solutions" />
       </div>
       <ContactSection />
       <KeyFeatures

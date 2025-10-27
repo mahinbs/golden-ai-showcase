@@ -76,7 +76,7 @@ const StatsSection = ({
           )}
 
           {/* Statistics */}
-          <div className="grid grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="grid sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="text-center">
               <div className="text-4xl lg:text-7xl font-bold text-gray-300 mb-3">
                 {stat1Value}
@@ -85,7 +85,7 @@ const StatsSection = ({
                 {stat1Label}
               </div>
             </div>
-            <div className="text-center border-l border-r border-gray-600 px-8">
+            <div className="text-center sm:border-l sm:border-r border-gray-600 px-8">
               <div className="text-4xl lg:text-7xl font-bold text-gray-300 mb-3">
                 {stat2Value}
               </div>

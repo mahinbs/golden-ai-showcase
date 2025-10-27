@@ -59,7 +59,7 @@ const PageBanner = ({
 
             {subtitle && (
               <p
-                className="text-lg !font-normal max-w-2xl"
+                className="text-xl md:text-2xl !font-normal max-w-2xl"
               >
                 {subtitle}
               </p>

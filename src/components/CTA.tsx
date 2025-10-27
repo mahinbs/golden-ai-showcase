@@ -1,8 +1,39 @@
 import bgImg1 from "../assets/cta/cta-bg-1.webp";
 import img1 from "../assets/cta/cta-1.png";
-import { handleDownloadBrochure } from "./BrochureSection";
+import { useState } from "react";
+import toast from "react-hot-toast";
 
 const CTA = () => {
+  const [isDownloading, setIsDownloading] = useState(false);
+
+  const handleDownloadBrochure = async () => {
+    setIsDownloading(true);
+    try {
+      // Show loading toast
+      toast.loading('Preparing brochure download...', { id: 'brochure-download' });
+      
+      // Create a temporary anchor element to trigger download
+      const link = document.createElement('a');
+      link.href = '/assets/Specslo_Brochure.pdf';
+      link.download = 'Specslo_Brochure.pdf';
+      link.target = '_blank';
+      
+      // Append to body, click, and remove
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      // Show success toast
+      toast.success('Brochure download started!', { id: 'brochure-download' });
+    } catch (error) {
+      console.error('Error downloading brochure:', error);
+      toast.error('Failed to download brochure. Please try again.', { id: 'brochure-download' });
+      // Fallback to opening in new tab if download fails
+      window.open('/assets/Specslo_Brochure.pdf', '_blank');
+    } finally {
+      setIsDownloading(false);
+    }
+  };
   return (
     <div className="py-14">
       <div className="wrapper">

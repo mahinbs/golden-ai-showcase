@@ -78,7 +78,7 @@ const HealthcareSolutions = () => {
         <TestimonialsSection />
       </div>
       <div id="faq">
-        <FAQSection isWebDevelopment={false} />
+        <FAQSection serviceType="healthcare" />
       </div>
       <ContactSection />
       <KeyFeatures

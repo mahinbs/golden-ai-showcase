@@ -1,11 +1,39 @@
 import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react";
+import { Download, Loader2 } from "lucide-react";
+import { useState } from "react";
+import toast from "react-hot-toast";
 
-export const handleDownloadBrochure = () => {
-  // You can replace this with actual brochure download logic
-  window.open('/brochure.pdf', '_blank');
-};
 const BrochureSection = () => {
+  const [isDownloading, setIsDownloading] = useState(false);
+
+  const handleDownloadBrochure = async () => {
+    setIsDownloading(true);
+    try {
+      // Show loading toast
+      toast.loading('Preparing brochure download...', { id: 'brochure-download' });
+      
+      // Create a temporary anchor element to trigger download
+      const link = document.createElement('a');
+      link.href = '/assets/Specslo_Brochure.pdf';
+      link.download = 'Specslo_Brochure.pdf';
+      link.target = '_blank';
+      
+      // Append to body, click, and remove
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      // Show success toast
+      toast.success('Brochure download started!', { id: 'brochure-download' });
+    } catch (error) {
+      console.error('Error downloading brochure:', error);
+      toast.error('Failed to download brochure. Please try again.', { id: 'brochure-download' });
+      // Fallback to opening in new tab if download fails
+      window.open('/assets/Specslo_Brochure.pdf', '_blank');
+    } finally {
+      setIsDownloading(false);
+    }
+  };
 
   return (
     <section className="py-24 bg-black relative overflow-hidden">
@@ -34,10 +62,20 @@ const BrochureSection = () => {
             {/* Download Button */}
             <Button 
               onClick={handleDownloadBrochure}
-              className="bg-[#ffd63c] text-black hover:bg-[#ffd63c]/90 px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300 hover:scale-105"
+              disabled={isDownloading}
+              className="bg-[#ffd63c] text-black hover:bg-[#ffd63c]/90 px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300 hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
             >
-              <Download className="mr-2 h-5 w-5" />
-              Download Brochure
+              {isDownloading ? (
+                <>
+                  <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                  Downloading...
+                </>
+              ) : (
+                <>
+                  <Download className="mr-2 h-5 w-5" />
+                  Download Brochure
+                </>
+              )}
             </Button>
           </div>
           

@@ -197,7 +197,7 @@ const SoftwareDevelopment = () => {
         <TestimonialsSection />
       </div>
       <div id="faq">
-        <FAQSection isWebDevelopment={false} />
+        <FAQSection serviceType="software-development" />
       </div>
       <ContactSection />
       <KeyFeatures

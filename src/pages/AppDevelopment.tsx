@@ -20,7 +20,7 @@ const AppDevelopment = () => {
     <div className="min-h-screen bg-black">
       <Navigation />
       <HeroSection
-        backgroundImage="https://res.cloudinary.com/drdjii8fe/image/upload/v1759220174/1._Hero_Image_dol3if.png"
+        backgroundImage="https://res.cloudinary.com/drdjii8fe/image/upload/v1761157541/5_mob1dw.jpg"
         mainHeadline="Custom"
         highlightedWord="App"
         headlineAfterHighlight="Development Solutions"
@@ -36,6 +36,7 @@ const AppDevelopment = () => {
         stat3Label="Improved User Stickiness"
         bottomSectionText="Apps Built Around Your Specs"
         bottomHighlightedWord="Apps, Specs"
+        noBlackOverlay={true}
       />
       <StatsSection
         missionText="At Specslo, we build Mobile Apps crafted around your specs, ensuring intuitive interfaces and scalable performance."
@@ -198,7 +199,7 @@ AI-powered tools, we build apps that match your mission and drive your business 
         <TestimonialsSection />
       </div>
       <div id="faq">
-        <FAQSection isWebDevelopment={false} />
+        <FAQSection serviceType="app-development" />
       </div>
       <ContactSection />
       <KeyFeatures
