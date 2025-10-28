@@ -1,4 +1,11 @@
-import { Mail, Phone, MapPin, Send, ArrowRight, MessageCircle, Loader2 } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  MessageCircle,
+  Loader2,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link, useNavigate } from "react-router-dom";
@@ -117,15 +124,17 @@ const ContactSection = () => {
           <div className="animate-fade-in">
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
               <div>Ready to Share</div>
-              <div>Your <span className="text-[#ffd63c]">Specs</span> ?</div>
+              <div>
+                Your <span className="text-[#ffd63c]">Specs</span> ?
+              </div>
             </h2>
-            
+
             {/* Yellow separator line */}
             <div className="w-full h-0.5 bg-[#ffd63c] mb-8"></div>
-            
+
             <p className="text-lg md:text-xl text-white mb-8 leading-relaxed">
-              Talk to us about your next project and see how we
-              turn ideas into scalable, high-impact digital products.
+              Talk to us about your next project and see how we turn ideas into
+              scalable, high-impact digital products.
             </p>
 
             <div className="space-y-8 mb-8">
@@ -159,9 +168,9 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              <a 
-                href="https://api.whatsapp.com/send/?phone=917597406130&text&type=phone_number&app_absent=0" 
-                target="_blank" 
+              <a
+                href="https://api.whatsapp.com/send/?phone=917597406130&text&type=phone_number&app_absent=0"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start space-x-4 hover:opacity-80 transition-opacity duration-300"
               >
@@ -180,20 +189,11 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="font-bold text-white text-lg">Visit us</p>
-                  <p className="text-white">Jupiter Plaza, Sector-4, Udaipur, India</p>
+                  <p className="text-white">
+                    Jupiter Plaza, Sector-4, Udaipur, India
+                  </p>
                 </div>
               </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                variant="hero" 
-                size="lg"
-                className="group"
-              >
-                Schedule Consultation
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
             </div>
           </div>
 
@@ -242,7 +242,9 @@ const ContactSection = () => {
                     })}
                   />
                   {errors.phone && (
-                    <small className="text-red-500">{errors.phone.message}</small>
+                    <small className="text-red-500">
+                      {errors.phone.message}
+                    </small>
                   )}
                 </div>
               </div>
@@ -284,7 +286,10 @@ const ContactSection = () => {
                           required: "Please select at least one requirement",
                         })}
                       />
-                      <label htmlFor={service.id.toString()} className="cursor-pointer text-sm">
+                      <label
+                        htmlFor={service.id.toString()}
+                        className="cursor-pointer text-sm"
+                      >
                         {service.title}
                       </label>
                     </div>
@@ -354,10 +359,10 @@ const ContactSection = () => {
                 ></textarea>
               </div>
 
-              <Button 
-                type="submit" 
-                variant="hero" 
-                size="lg" 
+              <Button
+                type="submit"
+                variant="hero"
+                size="lg"
                 className="w-full group"
                 disabled={isSubmitting}
               >
@@ -377,7 +382,6 @@ const ContactSection = () => {
           </Card>
         </div>
       </div>
-
     </section>
   );
 };
