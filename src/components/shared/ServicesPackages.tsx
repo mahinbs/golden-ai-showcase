@@ -25,7 +25,7 @@ const ServicesPackages = ({
     <div className="bg-white text-black py-16">
       <div className="wrapper">
         {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-8 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Section - Description */}
           <div className="space-y-6">
             <div className="space-y-4">
@@ -51,13 +51,13 @@ const ServicesPackages = ({
 
           {/* Package Cards */}
           {packages.map((pkg, index) => (
-            <div key={index} className="flip-card">
-              <div className="flip-card-inner">
+            <div key={index} className="flip-card group">
+              <div className="flip-card-inner relative w-full h-full">
                 {/* Front - Package Details */}
-                <div className="flip-card-front">
-                  <div className="relative h-full">
-                    <div className={`${index % 2 === 0 ? 'translate-x-4' : '-translate-x-4'} -translate-y-4 bg-yellowClr w-full h-full absolute inset-0 z-[-2] rounded-3xl`} />
-                    <div className="h-full">
+                <div className="flip-card-front absolute inset-0 w-full h-full">
+                  <div className="relative h-full w-full">
+                    {/* <div className={`-translate-y-4 bg-yellowClr w-full h-full absolute inset-0 z-[-2] rounded-3xl`} /> */}
+                    <div className="h-full w-full">
                       <div className="bg-white h-full border-2 border-black rounded-3xl shadow-lg">
                         <div className="space-y-6 z-[10] p-8">
                           <div>
@@ -89,8 +89,8 @@ const ServicesPackages = ({
                 </div>
 
                 {/* Back - Package Image */}
-                <div className="flip-card-back">
-                  <div className="mx-auto relative h-full">
+                <div className="flip-card-back absolute inset-0 w-full h-full">
+                  <div className="mx-auto relative h-full w-full">
                     <div className={`${index % 2 === 0 ? '-translate-x-4' : 'translate-x-4'} -translate-y-4 bg-yellowClr w-full h-full absolute inset-0 z-[-2] rounded-3xl`} />
                     <img
                       src={pkg.image}

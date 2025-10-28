@@ -76,7 +76,7 @@ const PortfolioSection = () => {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
-                    target.src = "/src/assets/portfolio-bg.jpg";
+                    target.src = "/placeholder.svg";
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-primary opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>

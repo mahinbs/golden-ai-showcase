@@ -8,7 +8,7 @@ export const portfolioData = {
       description:
         "High-speed internet service provider website with modern design and seamless user experience.",
       technologies: ["React", "Node.js", "MongoDB", "AWS"],
-      image: "/src/assets/portfolio/web-development/5ghomes.webp",
+      image: "/assets/portfolio/web-development/5ghomes.webp",
       link: "https://5ghighspeedinternet.co",
     },
     {
@@ -18,7 +18,7 @@ export const portfolioData = {
       description:
         "Investment and financial services website with advanced analytics and client portal.",
       technologies: ["Next.js", "TypeScript", "PostgreSQL", "Stripe"],
-      image: "/src/assets/portfolio/web-development/cold-creekcap.webp",
+      image: "/assets/portfolio/web-development/cold-creekcap.webp",
       link: "https://www.coldcreekcap.com",
     },
     {
@@ -28,7 +28,7 @@ export const portfolioData = {
       description:
         "Real estate platform with property listings, virtual tours, and advanced search functionality.",
       technologies: ["Vue.js", "Express", "MySQL", "Google Maps API"],
-      image: "/src/assets/portfolio/web-development/think-reality.webp",
+      image: "/assets/portfolio/web-development/think-reality.webp",
       link: "https://thinkrealty.ae",
     },
     {
@@ -38,7 +38,7 @@ export const portfolioData = {
       description:
         "E-commerce platform with comprehensive product catalog, payment integration, and order management.",
       technologies: ["React", "Node.js", "MongoDB", "Razorpay"],
-      image: "/src/assets/portfolio/web-development/akash-mega-mart.webp",
+      image: "/assets/portfolio/web-development/akash-mega-mart.webp",
       link: "https://akashmegamart.com/",
     },
     {
@@ -48,7 +48,7 @@ export const portfolioData = {
       description:
         "Immersive experience design company website with 3D elements and interactive portfolio showcase.",
       technologies: ["Three.js", "React", "WebGL", "GSAP"],
-      image: "/src/assets/portfolio/web-development/midwam.webp",
+      image: "/assets/portfolio/web-development/midwam.webp",
       link: "https://www.midwam.com/en/about",
     },
   ],
@@ -60,7 +60,7 @@ export const portfolioData = {
       description:
         "Cross-platform mobile e-commerce app with offline support, push notifications, and seamless shopping experience.",
       technologies: ["React Native", "Redux", "Firebase", "Stripe"],
-      image: "/src/assets/portfolio/app-development/akash_mega_mart-app.webp",
+      image: "/assets/portfolio/app-development/akash_mega_mart-app.webp",
       link: "https://play.google.com/store/apps/details?id=com.app.akash_mega_mart",
     },
     {
@@ -70,7 +70,7 @@ export const portfolioData = {
       description:
         "Social media app for sharing emotions and experiences with AI-powered content recommendations.",
       technologies: ["Flutter", "Firebase", "TensorFlow", "AWS"],
-      image: "/src/assets/portfolio/app-development/feelit_app.webp",
+      image: "/assets/portfolio/app-development/feelit_app.webp",
       link: "https://play.google.com/store/apps/details?id=com.feelit.feelit_app",
     },
     {
@@ -80,7 +80,7 @@ export const portfolioData = {
       description:
         "Financial analytics and investment tracking app with real-time market data and portfolio management.",
       technologies: ["React Native", "Node.js", "WebSocket", "Chart.js"],
-      image: "/src/assets/portfolio/app-development/klikomics.webp",
+      image: "/assets/portfolio/app-development/klikomics.webp",
       link: "https://play.google.com/store/apps/details?id=com.klikomics.android&pcampaignid=web_share",
     },
     {
@@ -90,7 +90,7 @@ export const portfolioData = {
       description:
         "AI-powered photo editing app with automatic enhancement, filters, and social sharing features.",
       technologies: ["Flutter", "TensorFlow Lite", "OpenCV", "Firebase"],
-      image: "/src/assets/portfolio/app-development/autosnap-app.webp",
+      image: "/assets/portfolio/app-development/autosnap-app.webp",
       link: "https://play.google.com/store/apps/details?id=com.Zigna.AutoSnap&pcampaignid=web_share",
     },
     {
@@ -100,7 +100,7 @@ export const portfolioData = {
       description:
         "Vehicle rental platform with GPS tracking, payment integration, and real-time booking system.",
       technologies: ["React Native", "Google Maps", "Stripe", "Socket.io"],
-      image: "/src/assets/portfolio/app-development/rentop.webp",
+      image: "/assets/portfolio/app-development/rentop.webp",
       link: "https://play.google.com/store/apps/details?id=com.rentop&pcampaignid=web_share",
     },
   ],
@@ -112,7 +112,7 @@ export const portfolioData = {
       description:
         "Immersive 3D bowling game with realistic physics, multiple lanes, and multiplayer support.",
       technologies: ["Unity", "C#", "Photon", "Blender"],
-      image: "/src/assets/portfolio/game development/3d bowling game.webp",
+      image: "/assets/portfolio/game development/3d bowling game.webp",
       link: "#",
     },
     {
@@ -123,7 +123,7 @@ export const portfolioData = {
         "High-octane racing game with extreme stunts, multiple vehicles, and challenging tracks.",
       technologies: ["Unity", "C#", "Unity Analytics", "3D Modeling"],
       image:
-        "/src/assets/portfolio/game development/car stunt extreme racing.webp",
+        "/assets/portfolio/game development/car stunt extreme racing.webp",
       link: "#",
     },
   ],
@@ -135,7 +135,7 @@ export const portfolioData = {
       description:
         "Decentralized cryptocurrency exchange platform with advanced trading features and security protocols.",
       technologies: ["Solidity", "Web3.js", "React", "Ethereum"],
-      image: "/src/assets/portfolio/blockchain/cryptopadie.webp",
+      image: "/assets/portfolio/blockchain/cryptopadie.webp",
       link: "#",
     },
     {
@@ -145,7 +145,7 @@ export const portfolioData = {
       description:
         "NFT marketplace with minting, trading, and auction features for digital art and collectibles.",
       technologies: ["Solidity", "IPFS", "Next.js", "OpenSea API"],
-      image: "/src/assets/portfolio/blockchain/nanoflow.webp",
+      image: "/assets/portfolio/blockchain/nanoflow.webp",
       link: "#",
     },
     {
@@ -155,7 +155,7 @@ export const portfolioData = {
       description:
         "DeFi lending platform with yield farming, staking, and automated market making capabilities.",
       technologies: ["Solidity", "Hardhat", "React", "Chainlink"],
-      image: "/src/assets/portfolio/blockchain/padipal.webp",
+      image: "/assets/portfolio/blockchain/padipal.webp",
       link: "#",
     },
   ],
@@ -173,7 +173,7 @@ export const getAllPortfolioItems = () => {
 
 // Get portfolio items by category
 export const getPortfolioByCategory = (category: string) => {
-  const categoryMap: { [key: string]: any[] } = {
+  const categoryMap: { [key: string]: typeof portfolioData.webDevelopment } = {
     "web-development": portfolioData.webDevelopment,
     "app-development": portfolioData.appDevelopment,
     "game-development": portfolioData.gameDevelopment,

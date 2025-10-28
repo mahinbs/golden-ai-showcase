@@ -115,17 +115,17 @@ const DesignSolutionsWeDeliver = () => {
 
           {/* Design Solution Cards */}
           {designSolutions.map((solution, index) => (
-            <div key={index} className="flip-card !h-[25rem] pr-5">
-              <div className="flip-card-inner">
+            <div key={index} className="flip-card !h-[25rem] pr-5 group">
+              <div className="flip-card-inner relative w-full h-full">
                 {/* Front - Solution Details */}
-                <div className="flip-card-front">
-                  <div className="relative h-full">
+                <div className="flip-card-front absolute inset-0 w-full h-full">
+                  <div className="relative h-full w-full">
                     <div
                       className={`${
                         index % 2 === 0 ? "translate-x-4" : "-translate-x-4"
                       } -translate-y-4 bg-yellowClr w-full h-full absolute inset-0 z-[-2] rounded-3xl`}
                     />
-                    <div className="h-full">
+                    <div className="h-full w-full">
                       <div className="bg-black h-full border-2 border-white rounded-3xl shadow-lg">
                         <div className="space-y-6 z-[10] p-8">
                           <div>
@@ -168,8 +168,8 @@ const DesignSolutionsWeDeliver = () => {
                 </div>
 
                 {/* Back - Solution Image */}
-                <div className="flip-card-back">
-                  <div className="mx-auto relative h-full overflow-hidden rounded-3xl">
+                <div className="flip-card-back absolute inset-0 w-full h-full">
+                  <div className="mx-auto relative h-full w-full overflow-hidden rounded-3xl">
                     <div
                       className={`${
                         index % 2 === 0 ? "-translate-x-4" : "translate-x-4"

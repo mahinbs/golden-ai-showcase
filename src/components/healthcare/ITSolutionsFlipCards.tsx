@@ -282,7 +282,7 @@ const ITSolutionsFlipCards = () => {
         {/* Main Title Section */}
         <div className="text-center mb-16">
           <div className="border-y-2 border-white py-3 w-fit mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold !leading-tight !leading-tight">
+            <h2 className="text-4xl md:text-5xl font-bold !leading-tight">
               <span className="text-white">IT Solutions for Healthcare </span>
               <span className="bg-yellowClr text-black px-4">We Deliver</span>
             </h2>
@@ -303,17 +303,17 @@ const ITSolutionsFlipCards = () => {
               {/* Solutions Grid */}
               <div className="grid lg:grid-cols-3 gap-8">
                 {category.solutions.map((solution, solutionIndex) => (
-                  <div key={solutionIndex} className="flip-card !h-[28rem] pr-5">
-                    <div className="flip-card-inner">
+                  <div key={solutionIndex} className="flip-card !h-[28rem] pr-5 group">
+                    <div className="flip-card-inner relative w-full h-full">
                       {/* Front - Solution Image */}
-                      <div className="flip-card-front">
-                        <div className="relative h-full">
-                          <div
+                      <div className="flip-card-front absolute inset-0 w-full h-full">
+                        <div className="relative h-full w-full">
+                          {/* <div
                             className={`${
                               solutionIndex % 2 === 0 ? "translate-x-4" : "-translate-x-4"
                             } -translate-y-4 bg-yellowClr w-full h-full absolute inset-0 z-[-2] rounded-3xl`}
-                          />
-                          <div className="h-full">
+                          /> */}
+                          <div className="h-full w-full">
                             <div className="bg-black h-full border-2 border-white rounded-3xl shadow-lg overflow-hidden">
                               <div className="h-full flex items-center justify-center">
                                 <img
@@ -328,14 +328,14 @@ const ITSolutionsFlipCards = () => {
                       </div>
 
                       {/* Back - Solution Details */}
-                      <div className="flip-card-back">
-                        <div className="mx-auto relative h-full">
+                      <div className="flip-card-back absolute inset-0 w-full h-full">
+                        <div className="mx-auto relative h-full w-full">
                           <div
                             className={`${
                               solutionIndex % 2 === 0 ? "-translate-x-4" : "translate-x-4"
                             } -translate-y-4 bg-yellowClr w-full h-full absolute inset-0 z-[-2] rounded-3xl`}
                           />
-                          <div className="h-full">
+                          <div className="h-full w-full">
                             <div className="bg-white h-full border-2 border-black rounded-3xl shadow-lg">
                               <div className="space-y-6 z-[10] p-8">
                                 <div>
