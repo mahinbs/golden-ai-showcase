@@ -18,7 +18,11 @@ const PortfolioSection = () => {
   const categories = [
     { id: "all", name: "All Projects" },
     { id: "web-development", name: "Web Development" },
+    { id: "saas", name: "SaaS" },
+    { id: "ecommerce-websites", name: "E-commerce Websites" },
     { id: "app-development", name: "App Development" },
+    { id: "ai", name: "AI Projects" },
+    { id: "chatbot", name: "Chatbot Projects" },
     { id: "game-development", name: "Game Development" },
     { id: "blockchain", name: "Blockchain" },
   ];
@@ -63,9 +67,19 @@ const PortfolioSection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {projects.map((project, index) => (
+          {projects.map((project, index) => {
+            const subcategoryTags =
+              project.subcategory
+                ?.split("/")
+                .map((tag) => tag.trim())
+                .filter(Boolean) ?? [];
+            const technologyTags = project.technologies ?? [];
+            const typeTags = project.type ? [project.type] : [];
+            const chips = [...subcategoryTags, ...technologyTags, ...typeTags];
+
+            return (
             <Card
-              key={index}
+              key={`${project.title}-${project.id}`}
               className="overflow-hidden hover:shadow-card transition-all duration-300 group cursor-pointer animate-slide-up border-border hover:border-accent/20"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
@@ -109,19 +123,22 @@ const PortfolioSection = () => {
                 </p>
 
                 {/* Technologies */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="text-xs bg-accent/10 text-accent px-2 py-1 rounded-full"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+                {chips.length > 0 && (
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {chips.map((chip, chipIndex) => (
+                      <span
+                        key={`${project.title}-${chip}-${chipIndex}`}
+                        className="text-xs bg-accent/10 text-accent px-2 py-1 rounded-full"
+                      >
+                        {chip}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
             </Card>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
