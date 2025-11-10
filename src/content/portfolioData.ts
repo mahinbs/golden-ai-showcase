@@ -51,7 +51,7 @@ export const portfolioData: Record<PortfolioCategoryKey, PortfolioItem[]> = {
       description:
         "E-commerce platform for retail products with seamless checkout and product filtering",
       image: portfolioImage("web-development/akash-mega-mart.webp"),
-      link: "#",
+      link: "https://akashmegamart.com/",
       category: "Web Development",
     },
     {
@@ -105,7 +105,7 @@ export const portfolioData: Record<PortfolioCategoryKey, PortfolioItem[]> = {
       description:
         "Executive-level job opportunities platform balancing editorial content, career advice, and job listings",
       image: portfolioImage("web-development/The Ladders.png"),
-      link: "#",
+      link: "https://theladders.com",
       category: "Web Development",
     },
     {
@@ -456,8 +456,8 @@ export const portfolioData: Record<PortfolioCategoryKey, PortfolioItem[]> = {
         "Healthcare and lifestyle management app for patients and caregivers with medication reminders and health records",
       image: portfolioImage("app-development/Hayaty.webp"),
       link: "#",
-      iosLink: "https://apps.apple.com/app/hayaty",
-      androidLink: "https://play.google.com/store/apps/details?id=com.hayaty.app",
+      iosLink: "#",
+      androidLink: "#",
       category: "App Development",
       subcategory: "Health / Wellness",
     },
@@ -691,7 +691,7 @@ export const portfolioData: Record<PortfolioCategoryKey, PortfolioItem[]> = {
       image: portfolioImage(
         "recent/Speaksify – AI-Powered Public Speaking Coach.jpg",
       ),
-      link: "#",
+      link: "https://www.speaksify.eu/",
       category: "AI Projects",
       subcategory: "ai",
       type: "AI Calling Agency",
