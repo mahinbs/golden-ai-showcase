@@ -1,4 +1,10 @@
-import { ExternalLink, Github, ArrowRight } from "lucide-react";
+import {
+  ExternalLink,
+  Github,
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -176,84 +182,102 @@ const PortfolioSection = ({ isSlider = false }: PortfolioSectionProps) => {
         </div>
 
         {isSlider ? (
-          <div ref={sliderRef} className="keen-slider">
-            {projects.concat(projects, projects, projects).map((project) => {
-              const subcategoryTags =
-                project.subcategory
-                  ?.split("/")
-                  .map((tag) => tag.trim())
-                  .filter(Boolean) ?? [];
-              const technologyTags = project.technologies ?? [];
-              const typeTags = project.type ? [project.type] : [];
-              const chips = [
-                ...subcategoryTags,
-                ...technologyTags,
-                ...typeTags,
-              ];
+          <div>
+            <div ref={sliderRef} className="keen-slider">
+              {projects.concat(projects, projects, projects).map((project) => {
+                const subcategoryTags =
+                  project.subcategory
+                    ?.split("/")
+                    .map((tag) => tag.trim())
+                    .filter(Boolean) ?? [];
+                const technologyTags = project.technologies ?? [];
+                const typeTags = project.type ? [project.type] : [];
+                const chips = [
+                  ...subcategoryTags,
+                  ...technologyTags,
+                  ...typeTags,
+                ];
 
-              return (
-                <div
-                  key={`${project.title}-${project.id}`}
-                  className="keen-slider__slide"
-                >
-                  <Card className="overflow-hidden hover:shadow-card transition-all duration-300 group cursor-pointer border-border hover:border-accent/20 h-full">
-                    <div className="relative aspect-[4/3] overflow-hidden">
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.src = "/placeholder.svg";
-                        }}
-                      />
-                      <div className="absolute inset-0 bg-gradient-primary opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
-                      <div className="absolute top-4 left-4">
-                        <span className="bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm font-medium">
-                          {project.category}
-                        </span>
+                return (
+                  <div
+                    key={`${project.title}-${project.id}`}
+                    className="keen-slider__slide"
+                  >
+                    <Card className="overflow-hidden hover:shadow-card transition-all duration-300 group cursor-pointer border-border hover:border-accent/20 h-full">
+                      <div className="relative aspect-[4/3] overflow-hidden">
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.src = "/placeholder.svg";
+                          }}
+                        />
+                        <div className="absolute inset-0 bg-gradient-primary opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
+                        <div className="absolute top-4 left-4">
+                          <span className="bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm font-medium">
+                            {project.category}
+                          </span>
+                        </div>
+                        <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          {project.link && project.link !== "#" && (
+                            <a
+                              href={project.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="p-2 bg-background/20 backdrop-blur-sm rounded-full hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer"
+                            >
+                              <ExternalLink className="w-4 h-4" />
+                            </a>
+                          )}
+                        </div>
                       </div>
-                      <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        {project.link && project.link !== "#" && (
-                          <a
-                            href={project.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-2 bg-background/20 backdrop-blur-sm rounded-full hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer"
-                          >
-                            <ExternalLink className="w-4 h-4" />
-                          </a>
+
+                      <div className="p-6">
+                        <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-accent transition-colors duration-300">
+                          {project.title}
+                        </h3>
+
+                        <p className="text-muted-foreground mb-4 leading-relaxed">
+                          {project.description}
+                        </p>
+
+                        {/* Technologies */}
+                        {chips.length > 0 && (
+                          <div className="flex flex-wrap gap-2 mb-4">
+                            {chips.map((chip, chipIndex) => (
+                              <span
+                                key={`${project.title}-${chip}-${chipIndex}`}
+                                className="text-xs bg-accent/10 text-accent px-2 py-1 rounded-full"
+                              >
+                                {chip}
+                              </span>
+                            ))}
+                          </div>
                         )}
                       </div>
-                    </div>
-
-                    <div className="p-6">
-                      <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-accent transition-colors duration-300">
-                        {project.title}
-                      </h3>
-
-                      <p className="text-muted-foreground mb-4 leading-relaxed">
-                        {project.description}
-                      </p>
-
-                      {/* Technologies */}
-                      {chips.length > 0 && (
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          {chips.map((chip, chipIndex) => (
-                            <span
-                              key={`${project.title}-${chip}-${chipIndex}`}
-                              className="text-xs bg-accent/10 text-accent px-2 py-1 rounded-full"
-                            >
-                              {chip}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  </Card>
-                </div>
-              );
-            })}
+                    </Card>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="flex justify-center gap-4 mt-8">
+              <button
+                onClick={() => instanceRef.current?.prev()}
+                className="bg-black/80 hover:bg-black/90 text-white border-white/50 flex items-center justify-center hover:border-white/40 rounded-full w-12 h-12 hover:text-white border"
+                aria-label="Previous slide"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+              <button
+                onClick={() => instanceRef.current?.next()}
+                className="bg-black/80 hover:bg-black/90 text-white border-white/50 flex items-center justify-center hover:border-white/40 rounded-full w-12 h-12 hover:text-white border"
+                aria-label="Next slide"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+            </div>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
