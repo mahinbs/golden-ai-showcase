@@ -70,7 +70,7 @@ const DataScienceSolutions = () => {
       </div>
 
       <div id="portfolio">
-        <PortfolioSection />
+        <PortfolioSection isSlider={true} />
       </div>
       <div id="blog">
         <BlogSection />

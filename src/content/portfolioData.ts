@@ -34,7 +34,7 @@ export const portfolioData: Record<PortfolioCategoryKey, PortfolioItem[]> = {
     //     "Financial services and investment platform with a minimalist design, sharp typography, and detailed service breakdowns",
     //   image: portfolioImage("web-development/cold-creekcap.webp"),
     //   link: "https://www.coldcreekcap.com",
-    //   category: "Web Development",
+    //   category: "Website Development",
     // },
     {
       id: 2,
@@ -43,7 +43,7 @@ export const portfolioData: Record<PortfolioCategoryKey, PortfolioItem[]> = {
         "Premium property portal for the UAE market with advanced property filtering, project highlights, and multilingual support",
       image: portfolioImage("web-development/think-reality.webp"),
       link: "https://thinkrealty.ae",
-      category: "Web Development",
+      category: "Website Development",
     },
     {
       id: 3,
@@ -52,7 +52,7 @@ export const portfolioData: Record<PortfolioCategoryKey, PortfolioItem[]> = {
         "E-commerce platform for retail products with seamless checkout and product filtering",
       image: portfolioImage("web-development/akash-mega-mart.webp"),
       link: "https://akashmegamart.com/",
-      category: "Web Development",
+      category: "Website Development",
     },
     {
       id: 4,
@@ -61,7 +61,7 @@ export const portfolioData: Record<PortfolioCategoryKey, PortfolioItem[]> = {
         "Creative technology and innovation company combining immersive visuals with clean interface for exhibitions, VR, AR, and live experiences",
       image: portfolioImage("web-development/midwam.webp"),
       link: "https://www.midwam.com/en/about",
-      category: "Web Development",
+      category: "Website Development",
     },
     {
       id: 5,
@@ -70,7 +70,7 @@ export const portfolioData: Record<PortfolioCategoryKey, PortfolioItem[]> = {
         "Promotional website for broadband service provider with plan comparisons, service availability checkers, and inquiry forms",
       image: portfolioImage("web-development/5ghomes.webp"),
       link: "#",
-      category: "Web Development",
+      category: "Website Development",
     },
     {
       id: 6,
@@ -79,7 +79,7 @@ export const portfolioData: Record<PortfolioCategoryKey, PortfolioItem[]> = {
         "Marketing automation platform allowing businesses to automate customer journeys using visual flowcharts with modern animations",
       image: portfolioImage("web-development/Autopilot.png"),
       link: "https://autopilot.com",
-      category: "Web Development",
+      category: "Website Development",
     },
     {
       id: 7,
@@ -88,7 +88,7 @@ export const portfolioData: Record<PortfolioCategoryKey, PortfolioItem[]> = {
         "Powerful job search engine for blue-collar and gig workers with location-based job discovery and mobile-optimized layout",
       image: portfolioImage("web-development/Gigzio.png"),
       link: "https://gigzio.com",
-      category: "Web Development",
+      category: "Website Development",
     },
     {
       id: 8,
@@ -97,7 +97,7 @@ export const portfolioData: Record<PortfolioCategoryKey, PortfolioItem[]> = {
         "Global industrial solutions provider with multilingual support, animation-driven UI, and structured service flows",
       image: portfolioImage("web-development/FE Group.png"),
       link: "#",
-      category: "Web Development",
+      category: "Website Development",
     },
     {
       id: 9,
@@ -106,7 +106,7 @@ export const portfolioData: Record<PortfolioCategoryKey, PortfolioItem[]> = {
         "Executive-level job opportunities platform balancing editorial content, career advice, and job listings",
       image: portfolioImage("web-development/The Ladders.png"),
       link: "https://theladders.com",
-      category: "Web Development",
+      category: "Website Development",
     },
     {
       id: 10,
@@ -115,7 +115,7 @@ export const portfolioData: Record<PortfolioCategoryKey, PortfolioItem[]> = {
         "Creative agency portfolio showcasing digital experiences with storytelling, micro-interactions, and parallax visuals",
       image: portfolioImage("web-development/Huge Inc.png"),
       link: "https://hugeinc.com",
-      category: "Web Development",
+      category: "Website Development",
     },
     {
       id: 11,
@@ -124,7 +124,7 @@ export const portfolioData: Record<PortfolioCategoryKey, PortfolioItem[]> = {
         "Learning platform offering coding tutorials, mentorship, and job prep with community focus and structured courses",
       image: portfolioImage("web-development/CodeHelp.png"),
       link: "https://codehelp.in",
-      category: "Web Development",
+      category: "Website Development",
     },
     {
       id: 12,
@@ -133,7 +133,7 @@ export const portfolioData: Record<PortfolioCategoryKey, PortfolioItem[]> = {
         "AI-powered spray product showcase with slick transitions, 3D mockups, and dark theme for maximum visual impact",
       image: portfolioImage("web-development/Spray (Bluestar).png"),
       link: "https://spray.com",
-      category: "Web Development",
+      category: "Website Development",
     },
     {
       id: 13,
@@ -142,7 +142,7 @@ export const portfolioData: Record<PortfolioCategoryKey, PortfolioItem[]> = {
         "Game studio and creative agency with atmospheric design elements, immersive animations, and character visuals",
       image: portfolioImage("web-development/Arcane Mirage.png"),
       link: "https://arcanemirage.com",
-      category: "Web Development",
+      category: "Website Development",
     },
     {
       id: 14,
@@ -151,7 +151,7 @@ export const portfolioData: Record<PortfolioCategoryKey, PortfolioItem[]> = {
         "WordPress-based EdTech platform offering online courses, video lectures, and certification programs",
       image: portfolioImage("web-development/MasterShala.png"),
       link: "https://mastershala.com",
-      category: "Web Development",
+      category: "Website Development",
     },
     {
       id: 15,
@@ -160,7 +160,7 @@ export const portfolioData: Record<PortfolioCategoryKey, PortfolioItem[]> = {
         "Cultural learning platform promoting Indian Vedic chants and spiritual mantras with guided audio and video content",
       image: portfolioImage("web-development/Mantra Dhwani.png"),
       link: "https://mantradhwani.com",
-      category: "Web Development",
+      category: "Website Development",
     },
     {
       id: 16,
@@ -169,7 +169,7 @@ export const portfolioData: Record<PortfolioCategoryKey, PortfolioItem[]> = {
         "Educational services platform providing structured programs and resources for regional educational development",
       image: portfolioImage("web-development/Educateast.png"),
       link: "#",
-      category: "Web Development",
+      category: "Website Development",
     },
     {
       id: 17,
@@ -178,7 +178,7 @@ export const portfolioData: Record<PortfolioCategoryKey, PortfolioItem[]> = {
         "EdTech platform focused on self-improvement and career-building courses with interactive modules and clean UI",
       image: portfolioImage("web-development/Guyariv.png"),
       link: "https://guyariv.com",
-      category: "Web Development",
+      category: "Website Development",
     },
     {
       id: 18,
@@ -187,7 +187,7 @@ export const portfolioData: Record<PortfolioCategoryKey, PortfolioItem[]> = {
         "English language training platform for IELTS, TOEFL, and spoken English courses with mobile-optimized learning",
       image: portfolioImage("web-development/Backstage English RC.png"),
       link: "#",
-      category: "Web Development",
+      category: "Website Development",
     },
     {
       id: 19,
@@ -196,7 +196,7 @@ export const portfolioData: Record<PortfolioCategoryKey, PortfolioItem[]> = {
         "Tamil Nadu-based online education platform for government schemes, competitive exams, and digital skilling",
       image: portfolioImage("web-development/Of Course TN.png"),
       link: "https://ofcoursetn.com",
-      category: "Web Development",
+      category: "Website Development",
     },
     {
       id: 20,
@@ -205,7 +205,7 @@ export const portfolioData: Record<PortfolioCategoryKey, PortfolioItem[]> = {
         "New Orleans-based catering company website with online event booking, gallery sliders, and elegant menu sections",
       image: portfolioImage("web-development/Messina’s Catering.png"),
       link: "https://messinascatering.com",
-      category: "Web Development",
+      category: "Website Development",
     },
     {
       id: 21,
@@ -216,7 +216,7 @@ export const portfolioData: Record<PortfolioCategoryKey, PortfolioItem[]> = {
         "web-development/CoffeeLavka Express Track – Real-Time Coffee Order Tracking Platform.jpg",
       ),
       link: "#",
-      category: "Web Development",
+      category: "Website Development",
     },
     {
       id: 22,
@@ -227,7 +227,7 @@ export const portfolioData: Record<PortfolioCategoryKey, PortfolioItem[]> = {
         "web-development/Crave Kitchen – Digital Food Hall Platform.png",
       ),
       link: "https://cravekitchen.com",
-      category: "Web Development",
+      category: "Website Development",
     },
     {
       id: 23,
@@ -238,7 +238,7 @@ export const portfolioData: Record<PortfolioCategoryKey, PortfolioItem[]> = {
         "web-development/Fashion Journey Navigator – Personalized Style Discovery Platform.jpg",
       ),
       link: "#",
-      category: "Web Development",
+      category: "Website Development",
     },
     {
       id: 24,
@@ -249,7 +249,7 @@ export const portfolioData: Record<PortfolioCategoryKey, PortfolioItem[]> = {
         "web-development/Interview Pro – Professional Interview Scheduling & Management Platform.jpg",
       ),
       link: "#",
-      category: "Web Development",
+      category: "Website Development",
     },
     {
       id: 25,
@@ -260,7 +260,7 @@ export const portfolioData: Record<PortfolioCategoryKey, PortfolioItem[]> = {
         "web-development/Mediverse Connect AI – AI-Powered Healthcare Networking Platform.jpg",
       ),
       link: "#",
-      category: "Web Development",
+      category: "Website Development",
     },
     {
       id: 26,
@@ -271,7 +271,7 @@ export const portfolioData: Record<PortfolioCategoryKey, PortfolioItem[]> = {
         "web-development/StreamVerse – Smart Rental Management Platform.jpg",
       ),
       link: "#",
-      category: "Web Development",
+      category: "Website Development",
     },
     {
       id: 27,
@@ -282,7 +282,7 @@ export const portfolioData: Record<PortfolioCategoryKey, PortfolioItem[]> = {
         "web-development/UPSC Aids – Personalized Mentorship & UPSC Preparation Dashboard.jpg",
       ),
       link: "#",
-      category: "Web Development",
+      category: "Website Development",
     },
   ],
   ecommerceWebsites: [

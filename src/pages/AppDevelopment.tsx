@@ -190,7 +190,7 @@ AI-powered tools, we build apps that match your mission and drive your business 
       />
 
       <div id="portfolio">
-        <PortfolioSection />
+        <PortfolioSection isSlider={true} />
       </div>
       <div id="blog">
         <BlogSection />

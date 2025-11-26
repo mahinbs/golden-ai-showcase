@@ -69,7 +69,7 @@ const PrivacyPolicy = () => {
                 We use collected information to:
               </p>
               <ul className="list-disc pl-6 space-y-2 text-gray-700">
-                <li>Deliver and manage services including software, app, and web development.</li>
+                <li>Deliver and manage services including software, app, and website development.</li>
                 <li>Communicate with you regarding projects, support, or marketing updates.</li>
                 <li>Improve website performance, security, and user experience.</li>
                 <li>Personalize content and service recommendations.</li>

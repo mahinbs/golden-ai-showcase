@@ -12,7 +12,7 @@ import { serviceImages } from "./serviceImages";
 export const ourServices = [
   {
     id: 1,
-    title: "Web Development",
+    title: "Website Development",
     image: webDevImage,
     desc: "We craft fast, clear websites from scratch that align with your vision and drive real results.",
     serviceDetails: {
@@ -20,7 +20,7 @@ export const ourServices = [
       img1: serviceImages.webDev.img1,
       img2: serviceImages.webDev.img2,
       whyChooseContent: {
-        heading: "Why Choose Specslo for Web Development?",
+        heading: "Why Choose Specslo for Website Development?",
         list: [
           {
             title: "Future-Ready Solutions",
@@ -112,7 +112,7 @@ export const ourServices = [
         },
       ],
       solutionUseCases: {
-        heading: "Revolutionize Your Business with Web Development Solutions",
+        heading: "Revolutionize Your Business with Website Development Solutions",
         contentArr: [
           {
             title: "Use Case 1: E-Commerce Platforms",

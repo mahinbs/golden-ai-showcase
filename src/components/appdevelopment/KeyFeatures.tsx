@@ -36,7 +36,7 @@ const features = [
 
 const KeyFeatures = ({
   title = "Key Features of Our",
-  subtitle = "Web Development",
+  subtitle = "Website Development",
   titleSize = "text2",
   description = "",
   showImage = true,

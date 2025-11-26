@@ -12,7 +12,7 @@ const Navigation = () => {
 
   // Services data from App.tsx routes
   const services = [
-    { name: "Web Development", path: "/web-development" },
+    { name: "Website Development", path: "/web-development" },
     { name: "App Development", path: "/app-development" },
     { name: "Software Development", path: "/software-development" },
     { name: "AI Solutions", path: "/ai-solutions" },

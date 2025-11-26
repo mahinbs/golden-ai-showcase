@@ -57,7 +57,7 @@ const FAQSection = ({
         answer: "We build all types of websites including business websites, e-commerce stores, portfolios, blogs, corporate sites, and custom web applications. From simple brochure sites to complex platforms with AI integration, we handle projects of any size and complexity."
       },
       {
-        question: "How long does web development take?",
+        question: "How long does website development take?",
         answer: "Development time varies based on project complexity. Simple websites take 2-4 weeks, while complex applications can take 2-6 months. We provide detailed timelines during consultation and keep you updated throughout the development process."
       },
       {
@@ -65,7 +65,7 @@ const FAQSection = ({
         answer: "Yes, we offer comprehensive maintenance packages including security updates, content updates, performance monitoring, backups, and technical support. Our maintenance plans ensure your website stays secure, fast, and up-to-date."
       },
       {
-        question: "What technologies do you use for web development?",
+        question: "What technologies do you use for website development?",
         answer: "We use modern technologies like React, Next.js, Vue.js, Node.js, Python, and various databases. Our tech stack includes cloud platforms (AWS, Azure), payment gateways (Stripe, Razorpay), and deployment tools (Docker, Vercel) to build scalable, secure applications."
       },
       {

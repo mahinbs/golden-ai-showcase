@@ -125,7 +125,7 @@ const PortfolioSection = ({ isSlider = false }: PortfolioSectionProps) => {
 
   const categories = [
     { id: "all", name: "All Projects" },
-    { id: "web-development", name: "Web Development" },
+    { id: "web-development", name: "Website Development" },
     { id: "saas", name: "SaaS" },
     { id: "ecommerce-websites", name: "E-commerce Websites" },
     { id: "app-development", name: "App Development" },
