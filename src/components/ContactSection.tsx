@@ -15,7 +15,11 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { useState } from "react";
 
-const ContactSection = () => {
+interface ContactSectionProps {
+  onClose?: () => void;
+}
+
+const ContactSection = ({ onClose }: ContactSectionProps = {}) => {
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const {
@@ -100,7 +104,15 @@ const ContactSection = () => {
       if (res.data.success) {
         toast.success(res.data.message);
         reset();
-        navigate("/thank-you");
+        if (onClose) {
+          onClose();
+          // Still navigate after a short delay to show the thank you page
+          setTimeout(() => {
+            navigate("/thank-you");
+          }, 500);
+        } else {
+          navigate("/thank-you");
+        }
       } else {
         toast.error(res.data.message);
       }
@@ -117,10 +129,11 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-black text-primary-foreground">
+    <section id="contact" className={`${onClose ? 'py-8' : 'py-24'} bg-black text-primary-foreground`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className={`grid grid-cols-1 ${onClose ? 'lg:grid-cols-1' : 'lg:grid-cols-2'} gap-16 items-center`}>
           {/* Left Column - Contact Info */}
+          {!onClose && (
           <div className="animate-fade-in">
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
               <div>Ready to Share</div>
@@ -196,6 +209,7 @@ const ContactSection = () => {
               </div>
             </div>
           </div>
+          )}
 
           {/* Right Column - Contact Form */}
           <Card className="p-8 animate-slide-up bg-background text-foreground">

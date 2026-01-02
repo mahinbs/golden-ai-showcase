@@ -2,12 +2,14 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import ContactModal from "@/components/ContactModal";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const location = useLocation();
 
   // Services data from App.tsx routes
@@ -150,6 +152,16 @@ const Navigation = () => {
             >
               Contact Us
             </Link>
+
+            {/* Get a Free Quote Button */}
+            <Button
+              variant="hero"
+              size="default"
+              onClick={() => setIsQuoteModalOpen(true)}
+              className="ml-4"
+            >
+              Get a Free Quote
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -272,10 +284,24 @@ const Navigation = () => {
               >
                 Contact Us
               </Link>
+
+              {/* Get a Free Quote Button - Mobile */}
+              <Button
+                variant="hero"
+                size="lg"
+                className="w-full mt-4"
+                onClick={() => {
+                  setIsQuoteModalOpen(true);
+                  setIsMobileMenuOpen(false);
+                }}
+              >
+                Get a Free Quote
+              </Button>
             </div>
           </div>
         )}
       </div>
+      <ContactModal open={isQuoteModalOpen} onOpenChange={setIsQuoteModalOpen} />
     </nav>
   );
 };
